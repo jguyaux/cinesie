@@ -132,7 +132,7 @@ nav a:hover {
 /* SECTIONS */
 .section {
     padding: 0px 0px;
-    text-align: center;
+    text-align: justify;
     margin-top: 0;
 }
 
@@ -282,6 +282,11 @@ nav a:hover {
     z-index: 2;
     pointer-events: none;
     font-weight: 300;
+}
+
+.project-description {
+    text-align: justify;
+
 }
 
 /* Opacité réduite des textes au survol */
@@ -463,7 +468,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Contenu du projet */
 .project-page {
-    padding: 40px;
+    padding: 5px;
     display: flex;
     justify-content: center; /* Centrer la section horizontalement */
     align-items: flex-start; /* Alignement du contenu au début verticalement */
@@ -549,7 +554,7 @@ h1, h2, h3, h4, h5, h6 {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Deux images par ligne */
     gap: 2.5px; /* Espacement entre les images */
-    margin-top: 20px; /* Espacement entre la description et la grille d'images */
+    margin-top: 0px; /* Espacement entre la description et la grille d'images */
     justify-items: center; /* Centrer les images dans la grille */
 }
 
@@ -666,7 +671,13 @@ h1, h2, h3, h4, h5, h6 {
     .image-grid {
         grid-template-columns: 1fr; /* Une seule image par ligne sur mobile */
     }
+
+    /* Désactiver l'affichage de la modale sur les petits écrans */
+    .modal {
+        display: none !important; /* L'important pour forcer l'overriding de l'affichage */
+    }
 }
+
 
 /* Section des icônes avec description */
 .icons-section {
