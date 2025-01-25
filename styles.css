@@ -36,8 +36,6 @@ header .logo {
 }
 
 /* ===== Liens du menu ===== */
-
-
 nav a {
     color: black;
     text-decoration: none;
@@ -94,38 +92,51 @@ nav a:hover {
     display: flex;
 }
 
+.menu {
+    list-style: none; /* Supprime les bullet points */
+    padding: 0; /* Enlève les marges internes de la liste */
+    margin: 0; /* Enlève les marges externes de la liste */
+}
+
+.menu li {
+    list-style: none; /* Assure qu'aucune puce ne s'affiche */
+}
+
+
 /* ===== Menu Mobile ===== */
 @media (max-width: 900px) {
     .menu {
         display: none;
         flex-direction: column;
         width: 100%;
-        background-color: #fff;
-        position: absolute;
-        top: 60px;
+        background-color: rgba(255, 255, 255, 0.9); /* Fond blanc légèrement transparent */
+        position: fixed; /* Fixé pour occuper toute la zone de l'écran */
+        top: 0;
         left: 0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
+        height: 100%; /* Occupe toute la hauteur */
+        justify-content: center; /* Centre verticalement les liens */
+        align-items: center; /* Centre horizontalement les liens */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+        z-index: 1000; /* Toujours au-dessus */
     }
 
     .menu a {
-        padding: 10px;
-        font-size: 18px;
-        color: #333;
-        text-align: center;
-        border-bottom: 1px solid #ddd;
-    }
-
-    .menu a:hover {
-        background-color: #f0f0f0;
+        display: block; /* Assure que chaque lien occupe toute sa ligne */
+        margin: 20px 0; /* Espacement vertical entre les liens */
+        font-size: 22px; /* Taille plus grande des liens */
+        color: #333; /* Couleur du texte */
+        text-align: center; /* Centre le texte */
+        text-decoration: none; /* Supprime le soulignement */
     }
 
     .menu-toggle {
-        display: flex;
+        display: flex; /* Affiche le menu hamburger */
+        position: relative; /* Pas d'impact sur l'affichage */
+        z-index: 1100; /* Toujours au-dessus */
     }
 
     .menu.active {
-        display: flex !important;
+        display: flex !important; /* Affiche le menu */
     }
 }
 

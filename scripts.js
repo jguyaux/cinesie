@@ -60,4 +60,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+function toggleMenu() {
+    const menu = document.querySelector('.menu');
+    const toggle = document.querySelector('.menu-toggle');
+    menu.classList.toggle('active');
+    toggle.classList.toggle('active');
+}
+
+
 
