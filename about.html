@@ -1,0 +1,101 @@
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio Minimaliste</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    </head>
+    <body>
+        <!-- HEADER -->
+        <header>
+            <a href="index.html">
+                <img src="images/logo.svg" alt="Logo" class="logo">
+            </a>
+            <nav>
+                <!-- Icône du menu hamburger -->
+                <div class="menu-toggle" id="menu-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <!-- Menu principal -->
+                <ul class="menu" id="menu">
+                    <li><a href="index.html">Projets</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="showreeel.html">Showreel</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Section À propos avec images ajoutées -->
+        <section class="about-grid">
+            <!-- Membre 1 -->
+            <div class="grid-item member">
+                <div class="member-photo-container">
+                    <div class="member-text">
+                        <h2 class="member-name">Jonas Guyaux</h2>
+                        <p class="subtitle">Réalisateur, directeur photo, monteur</p>
+                    </div>
+                    <img src="images/jonas.avif" alt="Membre 1" class="member-photo">
+                </div>
+                <p>C'est l'envie de visibiliser et valoriser des parcours de vie qui motive Jonas à se lancer sérieusement dans la vidéo en 2018. Anthropologue de formation, il veut montrer que la réalité des personnes s'inscrit dans des structures sociales et des choix politiques.
+                    Il travaille depuis cinq ans dans le secteur associatif (Animateur vidéo à ATD Quart Monde, Chargé de communication à la Fédération des Services Sociaux) et réalise de nombreuses vidéos pour le non-marchand.
+                    Il est l'auteur de trois documentaires : "La vie au bout de chez soi", "Libre" et "Equilibre".</p>
+            </div>
+
+            <!-- Section collective -->
+            <div class="grid-item collective">
+                <img src="images/cinesie.avif" alt="Membre 2" class="collective-photo">
+                <p>Emma et Jonas se sont rencontrés à l'école de photographie et techniques visuelles Agnès Varda à Bruxelles en 2020. Ils explorent, à travers la vidéo, des univers variés (culture, sports, musique, danse, travail social, luttes) avec l'envie d'utiliser l'image et le son comme levier de changement vers plus de justice sociale et climatique. Les créations peuvent prendre la forme de documentaires, aftermovies, vidéos promotionnelles, spot de sensibilisation... Toujours pour mettre en lumière de nouveaux récits, des initiatives inspirantes et des démarches poétiques et artistiques. Ils ont, tous deux, des spécificités différentes et complémentaires.</p>
+            </div>
+
+            <!-- Membre 2 -->
+            <div class="grid-item member">
+                <div class="member-photo-container">
+                    <div class="member-text">
+                        <h2 class="member-name">Emma Landet-Lacoste</h2>
+                        <p class="subtitle">Réalisatrice, directrice photo, monteuse</p>
+                    </div>
+                    <img src="images/emma.avif" alt="Membre 2" class="member-photo">
+                </div>
+                <p>Après avoir reçue son Diplôme National Supérieurs d'Expression Plastique, en école supérieure d'Arts​,
+                    Emma puise son inspiration dans les arts, particulièrement la danse. Elle voit dans la vidéo un moyen d’expression complet qui allie esthétique et engagement social. Emma privilégie une approche authentique et intime, avec un style brut et poétique. Elle explore les dimensions sociales et éducatives, cherchant à révéler et illuminer ce qui réside en chacun. Sa démarche vise à créer du lien et à inspirer des changements justes et significatifs.</p>
+            </div>
+        </section>
+
+        <!-- Section Icônes avec descriptions -->
+<section class="icons-section">
+    <div class="icon-grid">
+        <div class="icon-item">
+            <img src="images/icon1.png" alt="Icône 1" class="icon">
+            <p class="icon-description"> Nous voulons créer des contenus qui valorisent et encouragent les alternatives écologiques et sociales. </p>
+        </div>
+        <div class="icon-item">
+            <img src="images/icon2.png" alt="Icône 2" class="icon">
+            <p class="icon-description">Nous partons de vos objectifs et réalités pour construire des formules adaptées à vos besoins.</p>
+        </div>
+        <div class="icon-item">
+            <img src="images/icon3.png" alt="Icône 3" class="icon">
+            <p class="icon-description">Nous apportons un regard créatif et des rendus professionnels (cinématographique) à vos projets.</p>
+        </div>
+        <div class="icon-item">
+            <img src="images/icon4.png" alt="Icône 4" class="icon">
+            <p class="icon-description">Nous prenons en charge les différentes étapes de production  : préparation en amont, tournage, montage, étalonnage, mixage...</p>
+        </div>
+    </div>
+</section>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>&copy; 2024 Mon Portfolio. Tous droits réservés.</p>
+        </footer>
+
+        <!-- Script personnalisé -->
+        <script src="scripts.js"></script>
+    </body>
+    </html>

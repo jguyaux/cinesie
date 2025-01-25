@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Équilibre / Documentaire </title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <!-- Lien vers Google Fonts pour la police Dancing Script -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <a href="index.html">
+            <img src="images/logo.svg" alt="Logo" class="logo">
+        </a>
+        <nav>
+            <!-- Icône du menu hamburger -->
+            <div class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <!-- Menu principal -->
+            <ul class="menu" id="menu">
+                <li><a href="index.html">Projets</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="showreel.html">Showreel</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenu du projet -->
+    <main class="project-page">
+        <!-- Section vidéo et description -->
+        <section class="project-details">
+            <div class="project-title">
+                <h2>Équilibre</h2>
+                <h3>Documentaire</h3>
+            </div>
+            <!-- Image de remplacement (pas de vidéo) -->
+            <div class="video-container image-placeholder">
+                <img src="images/projet5.jpg" alt="Image de couv">
+            </div>
+            <div class="project-description">
+                <p> <strong>Synopsis : </strong> Pamela partage sa vie entre la ville et la montagne. Pour elle, se mouvoir « entre ciel et terre » n’est pas un passe-temps. Il y a dans ces paysages quelque chose d’essentiel avec lequel elle a besoin de renouer. Dialogue avec soi. Dialogue avec l’environnement. La montagne peut-elle nous aider à retrouver des équilibres perdus ?</P>
+                    <p><strong> Réalisation: </strong>Jonas Guyaux / <strong> Assistante réalisation : </strong> Emma Landet-Lacoste / <strong> Avec </strong> Pamela Ghislain, Carmen Lonfat, Christophher Stalmans / <strong> BO : </strong> Peperstreet Project (Jérôme Dejean & Christophe Janssen) / <strong> Avec le soutien </strong> du Club Alpin Belge Bruxelles Brabant et du camp de base </p>
+            </div>
+        </section>        
+
+        <!-- Grille d'arrêts sur image -->
+        <section class="image-grid">
+            <div class="image-item">
+                <img src="images/projet5-image14.jpeg" alt="Arrêt sur image 1">
+            </div>
+            <div class="image-item">
+                <img src="images/projet5-image13.png" alt="Arrêt sur image 2">
+            </div>
+            <div class="image-item">
+                <img src="images/projet5-image1.jpg" alt="Arrêt sur image 3">
+            </div>
+            <div class="image-item">
+                <img src="images/projet5-image2.jpg" alt="Arrêt sur image 4">
+            </div>
+            <div class="image-item">
+                <img src="images/projet5-image3.jpg" alt="Arrêt sur image 1">
+            </div>
+            <div class="image-item">
+                <img src="images/projet5-image4.jpg" alt="Arrêt sur image 2">
+            </div>
+            <div class="image-item">
+                <img src="images/projet5-image5.jpg" alt="Arrêt sur image 3">
+            </div>
+            <div class="image-item">
+                <img src="images/projet5-image6.jpg" alt="Arrêt sur image 4">
+            </div>
+            <div class="image-item">
+                <img src="images/projet5-image7.jpg" alt="Arrêt sur image 1">
+            </div>
+            <div class="image-item">
+                <img src="images/projet5-image8.jpg" alt="Arrêt sur image 2">
+            </div>
+            <div class="image-item">
+                <img src="images/projet5-image10.jpg" alt="Arrêt sur image 3">
+            </div>
+            <div class="image-item">
+                <img src="images/projet5-image11.jpg" alt="Arrêt sur image 4">
+            </div>
+            <div class="video-container image-placeholder">
+                <img src="images/projet5-image12.jpg" alt="Image de couv">
+            </div>
+            <div class="video-container image-placeholder">
+                <img src="images/projet5-image15.JPG" alt="Image de couv">
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 Mon Portfolio. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Script personnalisé -->
+    <script src="scripts.js"></script>
+
+<!-- Visionneuse Modale -->
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    
+    <!-- Flèche gauche -->
+    <button class="prev" id="prevBtn">&#10094;</button>
+    
+    <!-- Image dans la modale -->
+    <img class="modal-content" id="modalImage">
+    
+    <!-- Flèche droite -->
+    <button class="next" id="nextBtn">&#10095;</button>
+
+    <div id="caption"></div>
+</div>
+
+</body>
+</html>

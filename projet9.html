@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terrain vague - Live session</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <!-- Lien vers Google Fonts pour la police Dancing Script -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <a href="index.html">
+            <img src="images/logo.svg" alt="Logo" class="logo">
+        </a>
+        <nav>
+            <!-- Icône du menu hamburger -->
+            <div class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <!-- Menu principal -->
+            <ul class="menu" id="menu">
+                <li><a href="index.html">Projets</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="showreel.html">Showreel</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenu du projet -->
+    <main class="project-page">
+        <!-- Section vidéo et description -->
+        <section class="project-details">
+            <div class="project-title">
+                <h2>Terrain Vague : Live session</h2>
+                <h3>Un homme heureux - cover - William Sheller</h3>
+            </div>
+            <div class="video-container">
+                <!-- Lien vers la vidéo YouTube -->
+                <iframe src="https://www.youtube.com/embed/qC0-ykhmUSA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="project-description">
+                <p> Réalisation: Jonas Guyaux et Emma Landet-Lacoste -
+                    Cadre: Emma Landet-Lacoste -
+                    Direction Artistique: Robin Beumier -
+                    Mixage son : Maxime Baldewyns -
+                    Guitare et arrangement: Maxime Baldewyns et Dionysios Wautier -
+                    Chant: Lola Jaquemin et Pierre Guyaux</p>
+            </div>
+        </section>        
+
+        <!-- Grille d'arrêts sur image -->
+        <section class="image-grid">
+            <div class="image-item">
+                <img src="images/projet1-image1.jpg" alt="Arrêt sur image 1">
+            </div>
+            <div class="image-item">
+                <img src="images/projet1-image2.jpg" alt="Arrêt sur image 2">
+            </div>
+            <div class="image-item">
+                <img src="images/projet1-image3.jpg" alt="Arrêt sur image 3">
+            </div>
+            <div class="image-item">
+                <img src="images/projet1-image4.jpg" alt="Arrêt sur image 4">
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 Mon Portfolio. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Script personnalisé -->
+    <script src="scripts.js"></script>
+
+<!-- Visionneuse Modale -->
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    
+    <!-- Flèche gauche -->
+    <button class="prev" id="prevBtn">&#10094;</button>
+    
+    <!-- Image dans la modale -->
+    <img class="modal-content" id="modalImage">
+    
+    <!-- Flèche droite -->
+    <button class="next" id="nextBtn">&#10095;</button>
+
+    <div id="caption"></div>
+</div>
+
+</body>
+</html>
