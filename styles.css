@@ -14,13 +14,25 @@ header {
     background: transparent;
     color: white;
     padding: 20px 20px;
+    z-index: 1200;
+    position: relative; /* Ajoutez position relative pour le contexte du z-index */
 }
 
 header .logo {
     max-width: 100%;
     height: auto;
     width: 300px;
+    z-index: 1200; /* Le logo doit être au-dessus du menu */
+    position: relative; /* Ajoutez position relative pour que le z-index fonctionne */
 }
+
+/* Menu */
+.menu {
+    display: flex;
+    position: relative; /* Ajoutez position relative au menu aussi */
+    z-index: 1000; /* Assurez-vous que le menu a un z-index inférieur à celui du logo */
+}
+
 
 /* Media Query pour les écrans plus petits */
 @media (max-width: 768px) {
@@ -49,6 +61,25 @@ nav a {
 
 nav a:hover {
     color: #0000006c;
+}
+
+/* ===== Menu Desktop ===== */
+.menu {
+    display: flex;
+}
+
+.menu {
+    list-style: none; /* Supprime les bullet points */
+    padding: 0; /* Enlève les marges internes de la liste */
+    margin: 0; /* Enlève les marges externes de la liste */
+}
+
+.menu li {
+    list-style: none; /* Assure qu'aucune puce ne s'affiche */
+}
+
+.menu a.active {
+    font-weight: 600; /* Met le lien en gras */
 }
 
 /* Étend et repositionne le menu sur les grands écrans */
@@ -87,29 +118,13 @@ nav a:hover {
     width: 100%;
 }
 
-/* ===== Menu Desktop ===== */
-.menu {
-    display: flex;
-}
-
-.menu {
-    list-style: none; /* Supprime les bullet points */
-    padding: 0; /* Enlève les marges internes de la liste */
-    margin: 0; /* Enlève les marges externes de la liste */
-}
-
-.menu li {
-    list-style: none; /* Assure qu'aucune puce ne s'affiche */
-}
-
-
 /* ===== Menu Mobile ===== */
 @media (max-width: 900px) {
     .menu {
         display: none;
         flex-direction: column;
         width: 100%;
-        background-color: rgba(255, 255, 255, 0.9); /* Fond blanc légèrement transparent */
+        background-color: rgba(255, 255, 255, 0.95); /* Fond blanc légèrement transparent */
         position: fixed; /* Fixé pour occuper toute la zone de l'écran */
         top: 0;
         left: 0;

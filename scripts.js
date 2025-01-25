@@ -67,5 +67,34 @@ function toggleMenu() {
     toggle.classList.toggle('active');
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    // Récupérer tous les éléments .project-card
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    // Convertir la NodeList en tableau pour pouvoir utiliser shuffle
+    const projectCardsArray = Array.from(projectCards);
+
+    // Fonction de mélange aléatoire
+    function shuffleArray(arr) {
+        for (let i = arr.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]]; // Échanger les éléments
+        }
+    }
+
+    // Mélanger les cartes de projet
+    shuffleArray(projectCardsArray);
+
+    // Réorganiser les éléments dans le DOM
+    const grid = document.querySelector('.projects-grid');
+    grid.innerHTML = ''; // Vider la grille
+    projectCardsArray.forEach(card => grid.appendChild(card)); // Ajouter les cartes dans l'ordre mélangé
+
+    // Appliquer un délai d'animation dynamique sur chaque carte mélangée
+    projectCardsArray.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.1}s`; // Augmenter progressivement le délai
+    });
+});
+
 
 
