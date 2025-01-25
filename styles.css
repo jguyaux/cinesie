@@ -802,13 +802,22 @@ footer {
 
 .contact-description {
     font-size: 1.2em;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     color: #555;
 }
 
 .contact-description a {
     color: #333;
 
+}
+
+@media (max-width: 768px) {
+    .contact-description {
+        font-size: 1em;
+        margin-bottom: 20px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
 }
 
 .contact-form {
