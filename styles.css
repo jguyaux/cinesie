@@ -437,8 +437,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .grid-item p {
-    font-size: 16px; /* Taille de la police pour les descriptions */
-    color: #666; /* Couleur du texte (gris clair) */
+    font-size: 18px; /* Taille de la police pour les descriptions */
+    color: #252525; /* Couleur du texte (gris clair) */
     line-height: 1.6; /* Espacement entre les lignes pour une meilleure lisibilité */
     text-align: justify center;
 }
@@ -472,7 +472,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .grid-item {
-        margin-bottom: 20px; /* Espace supplémentaire entre les éléments sur mobile */
+        margin-bottom: 0px; /* Espace supplémentaire entre les éléments sur mobile */
     }
 
     /* Utilisez 'order' pour modifier l'ordre des éléments sur petits écrans */
@@ -680,22 +680,33 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Responsive pour les petits écrans */
 @media (max-width: 768px) {
+    /* Réduire l'espacement entre les éléments dans .project-details */
     .project-details {
-        gap: 20px; /* Espacement entre les éléments */
+        gap: 10px; /* Réduit l'espace entre la vidéo, la description et les images */
         align-items: center; /* Centrer les éléments sur mobile */
     }
 
+    /* Réduire les marges de la vidéo */
     .video-container {
-        width: 100%; /* La vidéo occupe toute la largeur sur mobile */
+        margin-bottom: 10px; /* Réduit l'espace sous la vidéo */
     }
 
+    /* Ajuster les marges de la description */
     .project-description {
         width: 100%; /* La description occupe toute la largeur sur mobile */
-        padding: 20px;
+        padding: 0px; /* Réduit l'espace interne de la description */
+        margin-bottom: 0px; /* Réduit l'espace sous la description */
     }
 
+    /* Réduire l'espacement dans la grille d'images */
     .image-grid {
         grid-template-columns: 1fr; /* Une seule image par ligne sur mobile */
+        gap: 2px; /* Réduit l'espacement entre les images */
+    }
+
+    /* Réduire les marges des images dans la grille */
+    .image-item img {
+        margin-bottom: 0px; /* Réduit l'espace sous les images */
     }
 
     /* Désactiver l'affichage de la modale sur les petits écrans */
@@ -755,5 +766,96 @@ h1, h2, h3, h4, h5, h6 {
     .icon-grid {
         grid-template-columns: 1fr; /* 1 colonne sur les très petits écrans */
     }
+}
+
+footer {
+    background-color: #ffffff;
+    color: rgb(30, 30, 30);
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right : 20px;
+}
+
+@media (max-width: 768px) {
+footer {
+        margin-left : 0px;
+        margin-right : 0px;
+    }
+}
+
+/* SECTION CONTACT */
+.contact-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    margin-top: 50px;
+}
+
+.contact-title {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.contact-description {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.contact-description a {
+    color: #333;
+
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 1em;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.contact-button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #555;
 }
 
