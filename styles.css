@@ -229,6 +229,20 @@ nav a:hover {
     order: 9;
 }
 
+.project-10 {
+    order: 10;
+}
+
+.project-11 {
+    order: 11;
+}
+
+.project-12 {
+    order: 12;
+}
+
+
+
 .project-card .project-image {
     position: relative;
     width: 100%;
