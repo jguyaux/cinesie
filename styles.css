@@ -428,15 +428,16 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 40px; /* Espacement après cette section */
 }
 
-/* Image collective : taille réduite */
 .collective-photo {
     width: 70%; /* Image moins large */
-    max-width: 800px; /* Limite la largeur */
+    max-width: 600px; /* Limite la largeur */
     aspect-ratio: 16 / 9; /* Ratio d'image */
     object-fit: contain; /* Affiche toute l'image sans déformation */
     object-position: center; /* Centre l'image */
     margin-bottom: 20px; /* Espacement sous l'image */
+    margin-top: -70px; /* Remonte l'image en réduisant l'espace en haut */
 }
+
 
 /* === Section membres (en deux colonnes) === */
 .members-container {
