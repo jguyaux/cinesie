@@ -497,16 +497,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* === Responsive : Grille en une colonne sur petits écrans === */
+
 @media (max-width: 1200px) {
-    .members-container {
-        grid-template-columns: 1fr; /* Une seule colonne sur les écrans étroits */
-    }
 
     .collective-photo {
         width: 100%; /* Image pleine largeur */
     }
 }
 
+@media (max-width: 728px) {
+    .main-container {
+        margin: 0px;
+        padding: 0px;
+    }
+    .members-container {
+        grid-template-columns: 1fr; /* Une seule colonne sur les écrans étroits */;
+        gap: 1px;
+    }
+}
 /* Garantir le calcul de la taille avec les paddings et bordures */
 *,
 *::before,
