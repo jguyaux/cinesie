@@ -6,6 +6,17 @@ body, html {
     scroll-behavior: smooth;
 }
 
+ul {
+    list-style-type: disc; /* Garde les puces de base */
+    padding-left: 20px; /* Ajoute un peu de marge à gauche pour bien espacer les éléments */
+}
+
+ul li {
+    font-size: 1.2em;
+    margin-bottom: 10px; /* Ajoute un peu d'espace entre les éléments */
+}
+
+
 /* HEADER */
 header {
     display: flex;
@@ -394,117 +405,167 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* ===== Grille à propos ===== */
+/* ===== Section À propos ===== */
+/* Conteneur principal */
+.main-container {
+    max-width: 1400px; /* Limite la largeur du contenu */
+    margin: 0 auto; /* Centre le contenu horizontalement */
+    padding: 0 20px; /* Ajoute un peu de marge à gauche et à droite */
+}
+
+/* Reste des styles inchangés... */
 .about-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Trois colonnes égales */
-    gap: 2.5px; /* Espace entre les éléments de la grille */
-    padding: 50px 20px; /* Padding autour de la section */
-    margin: 0 auto; /* Centre la grille horizontalement */
+    display: flex;
+    flex-direction: column; /* Affiche les sections l'une après l'autre */
+    padding: 50px 20px;
+    margin: 0 auto; /* Centre le contenu */
 }
 
-/* Pour chaque élément de la grille */
-.grid-item {
-    text-align: center; /* Centre le texte à l'intérieur de chaque élément */
-    padding: 20px; /* Ajoute du padding autour des éléments */
-    background: #fff; /* Fond blanc pour chaque élément */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Ajoute une transition au survol */
+/* === Section collective (en premier) === */
+.collective {
+    order: -1; /* Place la section collective en haut */
+    text-align: center; /* Centre le contenu */
+    padding: 100 px;
+    margin-bottom: 40px; /* Espacement après cette section */
 }
 
-.member-photo {
-    width: 100%; /* Assure que l'image occupe toute la largeur de l'élément */
-    aspect-ratio: 6 / 4; /* Contraint l'image au ratio 16:9 */
-    object-fit: cover; /* Recadre l'image pour remplir le ratio sans déformation */
-    object-position: 50% 10%; /* Affiche la partie centrale supérieure (ajustable) */
-    height: auto; /* Ajuste la hauteur de manière proportionnelle */
-    margin-bottom: 10px; /* Ajoute un espace sous l'image */
-}
-
+/* Image collective : taille réduite */
 .collective-photo {
-    width: 100%; /* Assure que l'image occupe toute la largeur de l'élément */
-    aspect-ratio: 16 / 9; /* Contraint l'image au ratio 16:9 */
-    object-fit: contain; /* Recadre l'image pour remplir le ratio sans déformation */
-    object-position: center; /* Centre le contenu de l'image */
-    margin-bottom: 10px; /* Ajoute un espace sous l'image */
+    width: 70%; /* Image moins large */
+    max-width: 800px; /* Limite la largeur */
+    aspect-ratio: 16 / 9; /* Ratio d'image */
+    object-fit: contain; /* Affiche toute l'image sans déformation */
+    object-position: center; /* Centre l'image */
+    margin-bottom: 20px; /* Espacement sous l'image */
 }
 
+/* === Section membres (en deux colonnes) === */
+.members-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes pour les membres */
+    gap: 40px; /* Espace entre les colonnes */
+}
+
+/* Chaque membre */
+.grid-item {
+    text-align: center; /* Centre le texte */
+    padding: 20px;
+    background: #fff; /* Fond blanc */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation au survol */
+}
+
+/* Image des membres */
+.member-photo {
+    width: 100%; /* Occupe toute la largeur */
+    aspect-ratio: 6 / 4; /* Ratio personnalisé */
+    object-fit: cover; /* Remplit sans déformer */
+    object-position: 50% 10%; /* Ajuste la position */
+    margin-bottom: 10px; /* Espacement sous l'image */
+}
+
+/* Titres */
 .grid-item h1, .grid-item h2 {
     margin-bottom: 10px; /* Espace sous les titres */
-    font-size: 1.5em;
-    text-align: center;
-    font-weight: bold;
-    font-family: 'Helvetica', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #333; /* Couleur du texte */
+    font-size: 1.5em; /* Taille du titre */
+    text-align: center; /* Centre */
+    font-weight: bold; /* Gras */
+    font-family: 'Helvetica', sans-serif; /* Police */
+    text-transform: uppercase; /* Majuscules */
+    letter-spacing: 1px; /* Espacement des lettres */
+    color: #333; /* Couleur sombre */
 }
 
+/* Sous-titres */
 .subtitle {
     font-family: 'Helvetica', sans-serif;
     text-transform: uppercase;
     text-align: center;
     font-size: 1em;
-    color: #282828; /* Couleur gris clair pour le sous-titre */
-    font-weight: 300; /* Poids léger */
-    letter-spacing: 1px; /* Espacement léger des lettres */
-    margin-top: 10px; /* Espace au-dessus du sous-titre */
+    color: #282828; /* Gris foncé */
+    font-weight: 300; /* Léger */
+    letter-spacing: 1px; /* Espacement */
+    margin-top: 10px; /* Espace au-dessus */
+    
 }
 
+/* Paragraphe */
 .grid-item p {
-    font-size: 20px; /* Taille de la police pour les descriptions */
-    color: #252525; /* Couleur du texte (gris clair) */
-    line-height: 1.6; /* Espacement entre les lignes pour une meilleure lisibilité */
-    text-align: justify center;
+    font-size: 20px;
+    color: #252525; /* Gris foncé */
+    line-height: 1.6; /* Espacement entre les lignes */
+    text-align: justify; /* Justifie le texte */
 }
 
-/* Responsive Design : Grille en une colonne sur les petits écrans */
-
-/* Responsive Design : Grille en une colonne sur les petits écrans */
+/* === Responsive : Grille en une colonne sur petits écrans === */
 @media (max-width: 1200px) {
-    .about-grid {
-        grid-template-columns: 1fr; /* Une seule colonne sur les petits écrans */
+    .members-container {
+        grid-template-columns: 1fr; /* Une seule colonne sur les écrans étroits */
     }
 
-    .grid-item {
-        margin-bottom: 20px; /* Espace supplémentaire entre les éléments sur mobile */
-    }
-
-    /* Utilisez 'order' pour modifier l'ordre des éléments sur petits écrans */
-    .collective {
-        order: -1; /* Met la section collective en premier */
-    }
-
-    .grid-item.member {
-        order: 1; /* L'ordre des membres sera de 1 (ils suivront après le collectif) */
+    .collective-photo {
+        width: 100%; /* Image pleine largeur */
     }
 }
 
-
-@media (max-width: 768px) {
-    .about-grid {
-        grid-template-columns: 1fr; /* Une seule colonne sur les petits écrans */
-    }
-
-    .grid-item {
-        margin-bottom: 0px; /* Espace supplémentaire entre les éléments sur mobile */
-    }
-
-    /* Utilisez 'order' pour modifier l'ordre des éléments sur petits écrans */
-    .collective {
-        order: -1; /* Met la section collective en premier */
-    }
-
-    .grid-item.member {
-        order: 1; /* L'ordre des membres sera de 1 (ils suivront après le collectif) */
-    }
-}
-
-/* S'assurer que le calcul de la taille inclut les bordures et paddings */
+/* Garantir le calcul de la taille avec les paddings et bordures */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
+
+/* Section des icônes avec description */
+.icons-section {
+    padding: 10px 10px;
+    text-align: center;
+    background-color: #ffffff4e;
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
+    gap: 30px; /* Espacement entre les éléments */
+    max-width: 1800px;
+    margin: 0 auto; /* Centrer la grille */
+}
+
+.icon-item {
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.icon-item:hover {
+    transform: scale(1.05);
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+}
+
+.icon-description {
+    font-size: 1.2em;
+    color: #333;
+    line-height: 1.4;
+    margin-top: 10px;
+}
+
+/* Responsive pour les petits écrans */
+@media (max-width: 768px) {
+    .icon-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .icon-grid {
+        grid-template-columns: 1fr; /* 1 colonne sur les très petits écrans */
+    }
+}
+
 
 /* Contenu du projet */
 .project-page {
@@ -726,59 +787,6 @@ h1, h2, h3, h4, h5, h6 {
     /* Désactiver l'affichage de la modale sur les petits écrans */
     .modal {
         display: none !important; /* L'important pour forcer l'overriding de l'affichage */
-    }
-}
-
-
-/* Section des icônes avec description */
-.icons-section {
-    padding: 10px 10px;
-    text-align: center;
-    background-color: #ffffff4e;
-}
-
-.icon-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
-    gap: 30px; /* Espacement entre les éléments */
-    max-width: 1800px;
-    margin: 0 auto; /* Centrer la grille */
-}
-
-.icon-item {
-    background-color: #fff;
-    padding: 10px;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.icon-item:hover {
-    transform: scale(1.05);
-}
-
-.icon {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 15px;
-}
-
-.icon-description {
-    font-size: 1.2em;
-    color: #333;
-    line-height: 1.4;
-    margin-top: 10px;
-}
-
-/* Responsive pour les petits écrans */
-@media (max-width: 768px) {
-    .icon-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur mobile */
-    }
-}
-
-@media (max-width: 480px) {
-    .icon-grid {
-        grid-template-columns: 1fr; /* 1 colonne sur les très petits écrans */
     }
 }
 
