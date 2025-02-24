@@ -434,7 +434,7 @@ h1, h2, h3, h4, h5, h6 {
     aspect-ratio: 16 / 9; /* Ratio d'image */
     object-fit: contain; /* Affiche toute l'image sans déformation */
     object-position: center; /* Centre l'image */
-    margin-bottom: 20px; /* Espacement sous l'image */
+    margin-bottom: 0px; /* Espacement sous l'image */
     margin-top: -70px; /* Remonte l'image en réduisant l'espace en haut */
 }
 
@@ -509,10 +509,11 @@ h1, h2, h3, h4, h5, h6 {
     .main-container {
         margin: 0px;
         padding: 0px;
+        
     }
     .members-container {
         grid-template-columns: 1fr; /* Une seule colonne sur les écrans étroits */;
-        gap: 1px;
+        gap: 0px;
     }
 }
 /* Garantir le calcul de la taille avec les paddings et bordures */
