@@ -799,6 +799,22 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+/* Par défaut : ratio classique (16:9) */
+.responsive-square {
+    width: 100%;
+    aspect-ratio: 16 / 9; 
+}
+
+/* Sur les petits écrans (inférieur à 768px), passer en carré */
+@media (max-width: 600px) {
+    .responsive-square {
+        aspect-ratio: 1 / 1; /* Format carré */
+        max-width: 500px; /* Facultatif : limiter la taille */
+        margin: 0 auto; /* Centrer si nécessaire */
+    }
+}
+
+
 footer {
     background-color: #ffffff;
     color: rgb(30, 30, 30);
@@ -898,4 +914,6 @@ footer {
 .contact-button:hover {
     background-color: #555;
 }
+
+
 
