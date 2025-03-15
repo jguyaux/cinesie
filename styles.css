@@ -405,6 +405,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ===== Section À propos ===== */
+
 /* Conteneur principal */
 .main-container {
     max-width: 1400px; /* Limite la largeur du contenu */
@@ -493,7 +494,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 20px;
     color: #252525; /* Gris foncé */
     line-height: 1.6; /* Espacement entre les lignes */
-    text-align: justify; /* Justifie le texte */
 }
 
 /* === Responsive : Grille en une colonne sur petits écrans === */
@@ -563,7 +563,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Responsive pour les petits écrans */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .icon-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur mobile */
     }
