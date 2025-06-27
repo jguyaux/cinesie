@@ -229,27 +229,31 @@ nav a:hover {
 }
 
 .project-7 {
-    order: 7;
-}
-
-.project-8 {
     order: 8;
 }
 
-.project-9 {
+.project-8 {
     order: 9;
 }
 
-.project-10 {
+.project-9 {
     order: 10;
 }
 
-.project-11 {
+.project-10 {
     order: 11;
+}
+
+.project-11 {
+    order: 12;
 }
 
 .project-12 {
     order: 5;
+}
+
+.project-13 {
+    order: 7;
 }
 
 
