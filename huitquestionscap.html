@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echos Communication | L'outil CAP en pratique | Vidéo informative</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <!-- Lien vers Google Fonts pour la police Dancing Script -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="images/favico.svg">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <a href="index.html">
+            <img src="images/logo.svg" alt="Logo" class="logo">
+        </a>
+        <nav>
+            <!-- Icône du menu hamburger -->
+            <div class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <!-- Menu principal -->
+            <ul class="menu" id="menu">
+                <li><a href="index.html">Projets</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="showreel.html">Showreel</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenu du projet -->
+    <main class="project-page">
+<!-- Section vidéo et description -->
+        <section class="project-details">
+            <div class="project-title">
+                <h2>l'Outil CAP</h2>
+                <h3>Capsules tutorielles</h3>
+            </div>
+               <!-- Conteneur vidéo avec un iframe -->
+
+    <!-- Image de remplacement (pas de vidéo) -->
+    <div class="video-container image-placeholder">
+        <img src="images/echos3.jpg" alt="Image de couv">
+    </div>
+          
+            <div class="project-description">
+                <p> <strong>Réalisation d'une série de capsules permettant de prendre en main l'outil CAP (Co-construire un Accord de Partenariat) pour l'ASBL Echos Communications. </strong>
+                    L'idée de cet outil est que les acteurs du nord et du sud puissent se mettre autour d'une table pour discuter, sans tabous, 
+                    des questions cruciales d'un partenariat afin de s'assurer que chacun prenne une juste place dans la collaboration.
+                </p>
+                <p>Retour d'Echos Communication sur la collaboration avec Cinésie : Notre ONG a fait appel à Cinésie à plusieurs reprises pour la création de capsules vidéos
+et nous avons beaucoup apprécié leur travail et écoute. Un regard sensible et engagé !
+ </p>
+            </div>
+        </section>
+
+        <!-- Grille d'arrêts sur image -->
+        <section class="image-grid">
+
+            <div class="image-item">
+                <img src="images/echos1.jpg" alt="Arrêt sur image 1">
+            </div>
+            <div class="image-item">
+                <img src="images/echos2.jpg" alt="Arrêt sur image 2">
+            </div>
+            <div class="image-item">
+                <img src="images/echos3.jpg" alt="Arrêt sur image 3">
+            </div>
+            <div class="image-item">
+                <img src="images/echos4.jpg" alt="Arrêt sur image 4">
+            </div>
+            <div class="image-item">
+                <img src="images/echos5.jpg" alt="Arrêt sur image 4">
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Emma Landet-Lacoste, Jonas Guyaux - cinesieprod@gmail.com</p>
+            <p>&copy; 2024 Cinésie Production - Tous droits réservés.</p>
+    </footer>
+
+<!-- Script personnalisé -->
+<script src="scripts.js"></script>
+
+<!-- Visionneuse Modale -->
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    
+    <!-- Flèche gauche -->
+    <button class="prev" id="prevBtn">&#10094;</button>
+    
+    <!-- Image dans la modale -->
+    <img class="modal-content" id="modalImage">
+    
+    <!-- Flèche droite -->
+    <button class="next" id="nextBtn">&#10095;</button>
+
+    <div id="caption"></div>
+</div>
+
+</body>
+
+</html>
