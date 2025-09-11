@@ -94,7 +94,7 @@ nav a:hover {
 }
 
 /* Étend et repositionne le menu sur les grands écrans */
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
     nav {
         display: flex;
         justify-content: flex-start; /* Aligne le menu à gauche */
@@ -130,7 +130,7 @@ nav a:hover {
 }
 
 /* ===== Menu Mobile ===== */
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .menu {
         display: none;
         flex-direction: column;
@@ -919,5 +919,18 @@ footer {
     background-color: #555;
 }
 
+.intro-card {
+    background-color: #000;    /* Fond noir */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
 
-
+.intro-text-atelier {
+    color: #fff;               /* Texte blanc */
+    max-width: 600px;
+    text-align: center;
+    font-size: 4em;
+    line-height: 1.8;
+}
