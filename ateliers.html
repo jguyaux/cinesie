@@ -12,36 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="images/favico.svg">
     <meta name="google-site-verification" content="T4iRZUlVsxJhO3E-glsmUzUN11FviYiPqVxgLXwq-Bg" />
-
-    <!-- Styles rapides pour que la carte d'intro s'affiche correctement.
-         Tu peux déplacer ces règles dans styles.css si tu préfères. -->
-    <style>
-        .intro-card {
-            background-color: #000;       /* fond noir */
-            color: #fff;                  /* texte blanc */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 24px;
-            box-sizing: border-box;
-            text-align: center;
-            min-height: 220px;           /* pour que la carte ait une taille comparable aux autres */
-        }
-
-        .intro-text-atelier {
-            max-width: 620px;
-            width: 90%;
-            margin: 0;
-            font-size: 1.05rem;
-            line-height: 1.6;
-            color: inherit;              /* hérite du blanc */
-        }
-
-        @media (max-width: 600px) {
-            .intro-card { padding: 18px; min-height: 180px; }
-            .intro-text-atelier { font-size: 0.98rem; }
-        }
-    </style>
+    
 </head>
 <body>
     <!-- HEADER -->
@@ -55,14 +26,13 @@
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
-          <ul class="menu" id="menu">
-    <li><a href="index.html">Projets</a></li>
-    <li><a href="about.html">À propos</a></li>
-    <li><a href="showreel.html">Showreel</a></li>
-    <li><a href="ateliers.html" class="active">Ateliers</a></li>
-    <li><a href="contact.html">Contact</a></li>
-</ul>
-
+            <ul class="menu" id="menu">
+                <li><a href="index.html">Projets</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="showreel.html">Showreel</a></li>
+                <li><a href="ateliers.html" class="active">Ateliers</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -71,33 +41,36 @@
         <div class="projects-grid">
             <!-- Atelier 1 -->
             <div class="project-card atelier-1">
-                <a href="atelier-photo.html" class="project-link">
+                <a href="atelier.html?atelier=photo" class="project-link">
                     <div class="project-image">
                         <img src="images/atelier1.jpg" alt="Atelier Photo" class="default-image">
                         <img src="images/atelier2.jpg" alt="Atelier Photo Hover" class="hover-image">
                         <div class="project-title">Atelier Photo</div>
                     </div>
                     <div class="project-info">
-                        <p>Prendre en main votre appareil photo</p>
+                        <p>Initiation à la photographie</p>
                     </div>
                 </a>
             </div>
 
-            <!-- REMPLACÉ : Atelier 2 devient la carte d'introduction (fond noir) -->
-            <div class="project-card atelier-2 intro-card" aria-hidden="false" role="region" aria-label="Introduction aux ateliers Cinésie">
-                <div class="intro-text-atelier">
-                    <p>
-                        Avec Cinésie, nous vous proposons une série d’ateliers pratiques pour découvrir
-                        et expérimenter les outils de la photo et de la vidéo. Que vous soyez débutant·e
-                        ou déjà initié·e, ces ateliers vous permettront de mieux comprendre la technique
-                        et de développer votre créativité à travers l’image et le son.
-                    </p>
+            <!-- CARTE DESCRIPTION -->
+            <div class="project-card atelier-description">
+                <div class="about-content">
+                    <h2>Apprenez l'image et le son avec Cinésie</h2>
+                    <div class="about-description">
+                        <p>
+                            Avec Cinésie, nous vous proposons une série d'ateliers pratiques pour découvrir
+                            et expérimenter les outils de la photo et de la vidéo. Que vous soyez débutant·e
+                            ou déjà initié·e, ces ateliers vous permettront de mieux comprendre la technique
+                            et de développer votre créativité à travers l'image et le son. 
+                        </p>
+                    </div>
                 </div>
             </div>
 
             <!-- Atelier 3 -->
             <div class="project-card atelier-3">
-                <a href="atelier-montage.html" class="project-link">
+                <a href="atelier.html?atelier=montage" class="project-link">
                     <div class="project-image">
                         <img src="images/atelier3.jpg" alt="Atelier Montage" class="default-image">
                         <img src="images/projet3-image4.webp" alt="Atelier Montage Hover" class="hover-image">
@@ -150,8 +123,6 @@
                     </div>
                 </a>
             </div>
-
-            <!-- (tu peux dupliquer ce modèle et remplacer titres/images pour chacun des ateliers suivants) -->
         </div>
     </section>
 

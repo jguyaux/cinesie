@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinésie production | Atelier Photo</title>
+    <meta name="description" content="Atelier d'initiation à la photographie - Une journée complète pour maîtriser votre appareil photo et pratiquer la street photo à Bruxelles">
+    <link rel="stylesheet" href="styles.css">
+    <script src="atelier-simple.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <link rel="icon" type="image/svg+xml" href="images/favico.svg">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <a href="index.html">
+            <img src="images/logo.svg" alt="Logo" class="logo">
+        </a>
+        <nav>
+            <div class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="menu" id="menu">
+                <li><a href="index.html">Projets</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="showreel.html">Showreel</a></li>
+                <li><a href="ateliers.html" class="active">Ateliers</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Section Atelier Photo -->
+    <div class="main-container">
+        <section class="about-grid">
+
+           <!-- Section héro avec image en fond MAIS contenu séparé -->
+<section class="atelier-hero">
+    <div class="hero-background">
+        <!-- L'image est uniquement en background -->
+    </div>
+    <div class="atelier-hero-content">
+        <h1>Atelier d'initiation à la photographie</h1>
+        <p class="hero-subtitle">Une journée complète pour maîtriser votre appareil photo<br>et pratiquer la street photo dans Bruxelles</p>
+        <div class="hero-highlights">
+            <div class="highlight-item">
+                <span class="highlight-number">1</span>
+                <span class="highlight-text">Journée</span>
+            </div>
+            <div class="highlight-item">
+                <span class="highlight-number">8</span>
+                <span class="highlight-text">Participants max</span>
+            </div>
+            <div class="highlight-item">
+                <span class="highlight-number">120€</span>
+                <span class="highlight-text">Par personne</span>
+            </div>
+        </div>
+    </div>
+</section>
+            
+            <!-- Nouvelle section déroulement avec timeline -->
+            <section class="timeline-section">
+                <h2>Déroulement de la journée</h2>
+                <p class="section-intro">De la théorie le matin à la pratique l'après-midi, une journée immersive pour progresser rapidement</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">1</div>
+                        <div class="timeline-content">
+                            <h3>🕤 Matinée théorique</h3>
+                            <p class="timeline-time">9h30 - 12h30</p>
+                            <ul>
+                                <li>Comprendre les fondamentaux : ouverture, vitesse, ISO</li>
+                                <li>Maîtriser la composition et le cadrage</li>
+                                <li>Apprivoiser la lumière naturelle</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2</div>
+                        <div class="timeline-content">
+                            <h3>🍽️ Pause conviviale</h3>
+                            <p class="timeline-time">12h30 - 13h30</p>
+                            <ul>
+                                <li>Déjeuner offert</li>
+                                <li>Échanges et questions</li>
+                                <li>Préparation de la session pratique</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker">3</div>
+                        <div class="timeline-content">
+                            <h3>📸 Après-midi pratique</h3>
+                            <p class="timeline-time">13h30 - 17h00</p>
+                            <ul>
+                                <li>Session de street photo à Bruxelles</li>
+                                <li>Accompagnement personnalisé</li>
+                                <li>Exercices concrets et défis créatifs</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker">4</div>
+                        <div class="timeline-content">
+                            <h3>💫 Conclusion</h3>
+                            <p class="timeline-time">17h00 - 17h30</p>
+                            <ul>
+                                <li>Revue des photos réalisées</li>
+                                <li>Conseils personnalisés</li>
+                                <li>Pistes pour continuer à progresser</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section informations pratiques -->
+            <section class="info-section">
+                <div class="info-grid">
+                    <div class="info-content">
+                        <h2>Informations pratiques</h2>
+                        <div class="atelier-details">
+                            <div class="detail-item">
+                                <h3>📅 Date et horaire</h3>
+                                <p>Une journée complète de 9h30 à 17h30</p>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <h3>📍 Lieu</h3>
+                                <p>Bruxelles - Centre-ville<br>
+                                <em>L'adresse exacte vous sera communiquée après inscription</em></p>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <h3>🎯 Public</h3>
+                                <p>Débutants et amateurs souhaitant maîtriser leur appareil photo<br>
+                                <strong>Appareil photo requis</strong> (reflex, hybride ou bridge)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-visual">
+                        <div class="visual-card">
+                            <div class="visual-item">
+                                <span class="visual-icon">👥</span>
+                                <div class="visual-text">
+                                    <strong>8 participants max</strong>
+                                    <span>Accompagnement personnalisé</span>
+                                </div>
+                            </div>
+                            <div class="visual-item">
+                                <span class="visual-icon">💶</span>
+                                <div class="visual-text">
+                                    <strong>120€ par personne</strong>
+                                    <span>Déjeuner et matériel inclus</span>
+                                </div>
+                            </div>
+                            <div class="visual-item">
+                                <span class="visual-icon">📷</span>
+                                <div class="visual-text">
+                                    <strong>Street photo</strong>
+                                    <span>Pratique en situation réelle</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section contact -->
+            <section class="contact-cta">
+                <div class="cta-content">
+                    <h2>Prêt·e à capturer Bruxelles ?</h2>
+                    <p>Rejoignez notre prochain atelier et transformez votre regard sur la photographie</p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="cta-button primary">S'inscrire à l'atelier</a>
+                        <a href="contact.html" class="cta-button secondary">Plus d'informations</a>
+                    </div>
+                    <div class="contact-info">
+                        <p>📧 cinesieprod@gmail.com</p>
+                    </div>
+                </div>
+            </section>
+
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Emma Landet-Lacoste, Jonas Guyaux - cinesieprod@gmail.com</p>
+        <p>&copy; 2024 Cinésie Production - Tous droits réservés.</p>
+    </footer>
+
+    <!-- Script personnalisé -->
+    <script src="scripts.js"></script>
+    
+</body>
+</html>

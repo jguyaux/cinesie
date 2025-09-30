@@ -166,6 +166,7 @@ nav a:hover {
     }
 }
 
+
 /* SECTIONS */
 .section {
     padding: 0px 0px;
@@ -180,6 +181,143 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     background: #f9f9f9;
+}
+
+/* Styles pour la carte À propos */
+.about-card {
+    grid-column: span 2; /* Occupe 2 colonnes */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    min-height: 300px;
+ background: url('images/atelier3.jpg') center/cover no-repeat;
+    position: relative;
+}
+
+/* Contenu au-dessus de l'overlay */
+.about-content {
+    text-align: left;
+    max-width: 90%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.about-card:hover {
+    transform: none !important;
+    box-shadow: none !important; 
+}
+
+.about-content h2 {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.about-description p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #555;
+    text-align: justify;
+}
+
+.about-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 1px solid #333;
+    color: #333;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.about-link:hover {
+    background: #333;
+    color: white;
+}
+
+
+/* Responsive */
+@media (max-width: 1700px) {
+    .about-card {
+        grid-column: span 1;
+        min-height: 300px;
+    }
+    
+    .about-content h2 {
+        font-size: 1.5em;
+    }
+    
+    .about-description p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 1400px) {
+    .about-card {
+        grid-column: span 1;
+        min-height: 300px;
+    }
+    
+    .about-content h2 {
+        font-size: 1.5em;
+        text-align: center;
+    }
+    
+    .about-description p {
+        font-size: 1em;
+        text-align: center; /* Optionnel : centrer aussi le texte */
+    }
+    
+    .about-link {
+        display: block; /* Change en block pour le centrage */
+        width: 50%; /* Largeur automatique selon le contenu */
+        margin: 20px auto 0; /* Centrage horizontal avec marge */
+        text-align: center;
+        padding: 10px 30px; /* Padding horizontal un peu plus large */
+    }
+}
+
+@media (max-width: 768px) {
+    .about-card {
+        grid-column: span 1;
+    }
+    
+    .about-card {
+        padding: 20px;
+        min-height: auto;
+    }
+    
+    .about-content h2 {
+        font-size: 1.3em;
+        text-align: center;
+    }
+    
+    .about-description p {
+        text-align: center;
+        font-size: 0.95em;
+    }
+    
+    .about-link {
+        width: 50%; /* Sur mobile, prend toute la largeur */
+        text-align: center;
+        margin: 20px auto 15px; /* 15px en bas pour l'espace sous le bouton */
+    }
+}
+
+/* Ajustement de l'ordre dans la grille */
+.about-card {
+    order: 4; /* Place en tout premier */
 }
 
 /* Styles pour la grille des projets */
@@ -919,18 +1057,454 @@ footer {
     background-color: #555;
 }
 
-.intro-card {
-    background-color: #000;    /* Fond noir */
+/* Styles pour la carte description atelier */
+.atelier-description {
+    grid-column: span 2;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 30px;
+    min-height: 300px;
+    position: relative;
+}
+
+.atelier-description:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Ordre dans la grille atelier */
+.atelier-1 { order: 2; }
+.atelier-description { order: 1; }
+.atelier-3 { order: 3; }
+.atelier-4 { order: 4; }
+.atelier-5 { order: 5; }
+.atelier-6 { order: 6; }
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .atelier-description {
+        grid-column: span 1;
+        min-height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .atelier-description {
+        padding: 20px;
+        min-height: auto;
+    }
+}
+
+/* Styles pour les détails de l'atelier */
+.atelier-details {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.detail-item {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.detail-item h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.detail-item p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Responsive pour l'atelier */
+@media (max-width: 768px) {
+    .atelier-details {
+        gap: 15px;
+    }
+    
+    .detail-item {
+        padding: 15px;
+    }
+}
+
+/* Styles pour la timeline */
+.timeline-section {
+    padding: 60px 20px;
+    background: #fff;
+}
+
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: #333;
+    z-index: 1;
+}
+
+.timeline-item {
+    position: relative;
+    text-align: center;
+    flex: 1;
+    padding: 0 15px;
+    z-index: 2;
+}
+
+.timeline-marker {
+    width: 60px;
+    height: 60px;
+    background: #333;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0 auto 20px;
+    position: relative;
+    z-index: 3;
+}
+
+.timeline-content {
+    background: #f8f8f8;
+    padding: 25px;
+    border-radius: 8px;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline-content h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.timeline-time {
+    color: #666;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+.timeline-content ul {
+    text-align: left;
+    margin: 0;
+    padding-left: 20px;
+    flex-grow: 1;
+}
+
+.timeline-content li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+/* Responsive pour la timeline */
+@media (max-width: 1000px) {
+    .timeline {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .timeline::before {
+        display: none;
+    }
+    
+    .timeline-item {
+        padding: 0;
+    }
+    
+    .timeline-content {
+        min-height: auto;
+    }
+}
+
+/* Styles existants pour les détails de l'atelier */
+.atelier-details {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.detail-item {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.detail-item h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.detail-item p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .atelier-details {
+        gap: 15px;
+    }
+    
+    .detail-item {
+        padding: 15px;
+    }
+}
+/* Section héro avec image intégrée */
+.atelier-hero {
+    position: relative;
+    background: url('images/atelierphoto.jpg') center/cover no-repeat;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: -20px -20px 60px -20px;
     padding: 20px;
 }
 
-.intro-text-atelier {
-    color: #fff;               /* Texte blanc */
-    max-width: 600px;
+.atelier-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    z-index: 1;
+}
+
+.atelier-hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+.atelier-hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero-subtitle {
+    font-size: 1.4em;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.hero-highlights {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.highlight-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.highlight-number {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.highlight-text {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+/* Section informations pratiques améliorée */
+.info-section {
+    padding: 60px 0;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.info-content h2 {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.visual-card {
+    background: #f8f8f8;
+    padding: 40px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.visual-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.visual-icon {
+    font-size: 2em;
+    width: 60px;
     text-align: center;
-    font-size: 4em;
-    line-height: 1.8;
+}
+
+.visual-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.visual-text strong {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.visual-text span {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Section CTA améliorée */
+.contact-cta {
+    background: #333;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    margin: 60px -20px -20px -20px;
+}
+
+.cta-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.cta-content > p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.cta-button {
+    padding: 15px 30px;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.cta-button.primary {
+    background: white;
+    color: #333;
+}
+
+.cta-button.secondary {
+    background: transparent;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.contact-info {
+    opacity: 0.8;
+}
+
+/* Améliorations de la timeline */
+.timeline-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-intro {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 1.1em;
+    color: #666;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .atelier-hero-content h1 {
+        font-size: 2.5em;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .hero-highlights {
+        gap: 20px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-button {
+        width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .atelier-hero {
+        min-height: 50vh;
+        margin: -20px -10px 40px -10px;
+    }
+    
+    .atelier-hero-content h1 {
+        font-size: 2em;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1em;
+    }
+    
+    .highlight-number {
+        font-size: 2em;
+    }
 }
