@@ -84,8 +84,8 @@ function onYouTubeIframeAPIReady() {
 function onPlayerReady(event) {
     // Récupérer la durée de la vidéo
     videoDuration = event.target.getDuration();
-    // Démarrer à 5 secondes
-    event.target.seekTo(5);
+    // Démarrer à 12 secondes
+    event.target.seekTo(12);
     event.target.playVideo();
 }
 
@@ -97,7 +97,7 @@ function onPlayerStateChange(event) {
             var currentTime = player.getCurrentTime();
             // Si on arrive à 5 secondes avant la fin, revenir à 5 secondes après le début
             if (currentTime >= videoDuration - 5) {
-                player.seekTo(5);
+                player.seekTo(12);
             }
         }, 1000);
     }
