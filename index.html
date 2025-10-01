@@ -83,7 +83,7 @@ function onPlayerStateChange(event) {
         setInterval(function() {
             var currentTime = player.getCurrentTime();
             // Si on arrive à 5 secondes avant la fin, revenir à 5 secondes après le début
-            if (currentTime >= videoDuration - 10) {
+            if (currentTime >= videoDuration - 12) {
                 player.seekTo(12);
             }
         }, 1000);
@@ -96,7 +96,7 @@ function onPlayerStateChange(event) {
         <div class="main-container">
             <div class="section-header">
                 <h2>Cinésie Production</h2>
-                <p>Donner de l'imapact aux projets qui transforment notre société</p>
+                <p>Donner de l'impact aux projets qui transforment notre société</p>
             </div>
             
             <div class="about-grid-home">
@@ -180,7 +180,7 @@ function onPlayerStateChange(event) {
                 <a href="ateliers.html" class="cta-button">Découvrir tous nos ateliers</a>
             </div>
         </div>
-    </section>
+    </section>      
 
     <!-- SECTION CONTACT -->
     <section class="home-section bg-dark">
