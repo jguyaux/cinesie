@@ -34,16 +34,10 @@
         </nav>
     </header>
 
-<!-- HERO SECTION AVEC VIDÉO -->
 <section class="home-hero">
     <div class="video-background">
         <div class="video-overlay"></div>
-        <iframe 
-            src="https://www.youtube.com/embed/HpXN33MK2kw?autoplay=1&mute=1&loop=1&playlist=HpXN33MK2kw&controls=0&modestbranding=1&rel=0&showinfo=0&background=1"
-            frameborder="0" 
-            allow="autoplay; encrypted-media" 
-            allowfullscreen>
-        </iframe>
+        <div id="youtube-player"></div>
     </div>
     <div class="hero-content">
         <h1>L'image au service du mouvement</h1>
@@ -54,6 +48,61 @@
         </div>
     </div>
 </section>
+
+<script>
+// Chargement de l'API YouTube
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var player;
+var videoDuration = 0;
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('youtube-player', {
+        height: '100%',
+        width: '100%',
+        videoId: 'HpXN33MK2kw',
+        playerVars: {
+            'autoplay': 1,
+            'mute': 1,
+            'controls': 0,
+            'showinfo': 0,
+            'rel': 0,
+            'modestbranding': 1,
+            'loop': 1,
+            'playlist': 'HpXN33MK2kw'
+        },
+        events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+        }
+    });
+}
+
+function onPlayerReady(event) {
+    // Récupérer la durée de la vidéo
+    videoDuration = event.target.getDuration();
+    // Démarrer à 5 secondes
+    event.target.seekTo(5);
+    event.target.playVideo();
+}
+
+function onPlayerStateChange(event) {
+    // Quand la vidéo est en cours de lecture
+    if (event.data == YT.PlayerState.PLAYING) {
+        // Vérifier toutes les secondes si on approche de la fin
+        setInterval(function() {
+            var currentTime = player.getCurrentTime();
+            // Si on arrive à 5 secondes avant la fin, revenir à 5 secondes après le début
+            if (currentTime >= videoDuration - 5) {
+                player.seekTo(5);
+            }
+        }, 1000);
+    }
+}
+</script>
 
     <!-- SECTION À PROPOS -->
     <section id="apropos" class="home-section">

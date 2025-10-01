@@ -1514,7 +1514,7 @@ footer {
 /* Hero Section avec vidéo */
 .home-hero {
     position: relative;
-    min-height: 80vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1726,12 +1726,56 @@ footer {
     color: #666;
 }
 
-/* Section Projets */
+/* Section Projets - Accueil */
 .projects-grid-home {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2.5px;
     margin-bottom: 50px;
+    width: 100vw; /* Prend toute la largeur de l'écran */
+    margin-left: calc(-50vw + 50%); /* Centre la grille pleine largeur */
+    margin-right: calc(-50vw + 50%);
+}
+
+/* Assurer que les cartes prennent toute la largeur disponible */
+.projects-grid-home .project-card {
+    width: 100%;
+}
+
+/* Images qui prennent toute la largeur */
+.projects-grid-home .project-image {
+    width: 100%;
+}
+
+.projects-grid-home .project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Sur tablette : 2 projets par ligne */
+@media (max-width: 1200px) {
+    .projects-grid-home {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+    }
+}
+
+/* Sur mobile : 1 projet par ligne et limite à 6 projets */
+@media (max-width: 768px) {
+    .projects-grid-home {
+        grid-template-columns: 1fr;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+    }
+    
+    /* Cache les projets au-delà du 6ème sur mobile */
+    .projects-grid-home .project-card:nth-child(n+7) {
+        display: none;
+    }
 }
 
 /* Section Contact */
