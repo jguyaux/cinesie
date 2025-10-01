@@ -188,73 +188,111 @@ const ateliers = {
         }
     },
 
-    lumiere: {
-        titre: "Atelier Lumière",
-        description: "Maîtrisez l'art de l'éclairage pour sublimer vos images et vidéos",
-        image: "images/atelier-lumiere.jpg",
-        highlights: [
-            { nombre: "1", texte: "Journée" },
-            { nombre: "8", texte: "Participants max" },
-            { nombre: "150€", texte: "Par personne" }
-        ],
-        timeline: [
-            {
-                etape: "1",
-                titre: "💡 Théorie de la lumière",
-                horaire: "9h30 - 12h30",
-                points: [
-                    "Comprendre la température de couleur",
-                    "Maîtriser les rapports de contraste",
-                    "Direction et qualité de la lumière"
-                ]
-            },
-            {
-                etape: "2",
-                titre: "🎭 Mise en pratique",
-                horaire: "13h30 - 17h00", 
-                points: [
-                    "Exercices avec matériel professionnel",
-                    "Création d'ambiances lumineuses",
-                    "Portrait et mise en scène"
-                ]
-            }
-        ],
-        details: [
-            {
-                icone: "📅",
-                titre: "Date et horaire",
-                texte: "Une journée de 9h30 à 17h00"
-            },
-            {
-                icone: "📍",
-                titre: "Lieu", 
-                texte: "Bruxelles - Studio équipé<br><em>Tout le matériel est fourni</em>"
-            }
-        ],
-        visual: [
-            {
-                icone: "💡",
-                titre: "Matériel pro",
-                sousTitre: "Lumière continue et flash"
-            },
-            {
-                icone: "🎭",
-                titre: "Pratique intensive", 
-                sousTitre: "Exercices concrets"
-            },
-            {
-                icone: "👥",
-                titre: "8 participants max",
-                sousTitre: "Accompagnement personnalisé"
-            }
-        ],
-        contact: {
-            titre: "Prêt·e à maîtriser la lumière ?",
-            description: "Inscrivez-vous à notre atelier et transformez votre approche de l'éclairage",
-            boutonPrincipal: "Réserver ma place",
-            boutonSecondaire: "En savoir plus"
+    video: {
+    titre: "Atelier Vidéo Complet",
+    description: "Formation intensive de 3 jours pour maîtriser toute la chaîne de production vidéo, de la prise de vues à la post-production",
+    image: "images/atelier-video.jpg",
+    highlights: [
+        { nombre: "3", texte: "Jours intensifs" },
+        { nombre: "6", texte: "Participants max" },
+        { nombre: "450€", texte: "Par personne" }
+    ],
+    timeline: [
+        {
+            etape: "1",
+            titre: "🎥 Jour 1 - Initiation technique",
+            horaire: "9h30 - 17h00",
+            points: [
+                "Fondamentaux de la vidéo : résolution, débit, codecs",
+                "Prise en main du matériel professionnel (caméras, micros)",
+                "Maîtrise de l'audio : perche, micro-cravate, enregistreurs",
+                "Éclairage 3 points et composition d'image"
+            ]
+        },
+        {
+            etape: "2", 
+            titre: "🎬 Jour 2 - Tournage en studio",
+            horaire: "9h30 - 17h00",
+            points: [
+                "Préparation d'une interview professionnelle",
+                "Mise en place du plateau et des éclairages",
+                "Tournage avec multiple caméras et sons directs",
+                "Direction d'interview et techniques de cadrage"
+            ]
+        },
+        {
+            etape: "3",
+            titre: "💻 Jour 3 - Post-production",
+            horaire: "9h30 - 17h00", 
+            points: [
+                "Import et organisation des rushs tournés",
+                "Montage multicam et synchronisation audio/vidéo",
+                "Étalonnage et correction couleur des images",
+                "Mixage audio et export final du projet"
+            ]
+        },
+        {
+            etape: "4",
+            titre: "🎯 Restitution collective",
+            horaire: "17h00 - 17h30",
+            points: [
+                "Visionnage des projets réalisés",
+                "Retours personnalisés et conseils",
+                "Pistes de perfectionnement et ressources"
+            ]
         }
+    ],
+    details: [
+        {
+            icone: "📅",
+            titre: "Date et horaire",
+            texte: "Trois journées complètes de 9h30 à 17h00"
+        },
+        {
+            icone: "📍",
+            titre: "Lieu",
+            texte: "Bruxelles - Studio professionnel équipé<br><em>Tout le matériel est fourni</em>"
+        },
+        {
+            icone: "🎯",
+            titre: "Public",
+            texte: "Débutants souhaitant une formation complète<br><strong>Aucun prérequis technique nécessaire</strong>"
+        },
+        {
+            icone: "💼",
+            titre: "Matériel fourni",
+            texte: "Caméras professionnelles, éclairage, matériel audio, stations de montage"
+        }
+    ],
+    visual: [
+        {
+            icone: "🎥",
+            titre: "Pratique intensive",
+            sousTitre: "3 jours de formation immersive"
+        },
+        {
+            icone: "👥",
+            titre: "6 participants max", 
+            sousTitre: "Accompagnement sur-mesure"
+        },
+        {
+            icone: "💻",
+            titre: "Projet réel",
+            sousTitre: "Interview produite de A à Z"
+        },
+        {
+            icone: "🎓",
+            titre: "Formation complète",
+            sousTitre: "De la technique à la création"
+        }
+    ],
+    contact: {
+        titre: "Prêt·e à devenir autonome en vidéo ?",
+        description: "Rejoignez notre formation intensive et maîtrisez toute la chaîne de production",
+        boutonPrincipal: "Réserver ma formation",
+        boutonSecondaire: "Programme détaillé"
     }
+}
 };
 
 // Fonction COMPLÈTE

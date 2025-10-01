@@ -3,26 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cinésie production | Vidéo | Bruxelles</title>
-    <meta name="description" content="Cinésie Production est une société de production audiovisuelle basée à Bruxelles, dédiée à la création de contenus valorisant les initiatives écologiques et sociales. Découvrez nos projets engagés et nos services adaptés à vos besoins">
-    <meta property="og:title" content="Cinésie production | Vidéo | Bruxelles">
-    <meta property="og:description" content="Société de production audiovisuelle basée à Bruxelles">
-    <meta property="og:image" content="images/og-image.jpg">
-    <meta property="og:url" content="https://cinesie.com">
+    <title>Cinésie Production | Production audiovisuelle engagée - Bruxelles</title>
+    <meta name="description" content="Cinésie Production - Société de production audiovisuelle basée à Bruxelles, créatrice de contenus valorisant les initiatives écologiques et sociales">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="images/favico.svg">
     <meta name="google-site-verification" content="T4iRZUlVsxJhO3E-glsmUzUN11FviYiPqVxgLXwq-Bg" />
 </head>
 <body>
-    
     <!-- HEADER -->
     <header>
         <a href="index.html">
-            <img src="images/logo.svg" alt="Logo" class="logo">
+            <img src="images/logo.svg" alt="Logo Cinésie Production" class="logo">
         </a>
         <nav>
             <div class="menu-toggle" id="menu-toggle">
@@ -31,247 +25,174 @@
                 <span class="bar"></span>
             </div>
             <ul class="menu" id="menu">
-                <li><a href="index.html"class="active">Projets</a></li>
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="projets.html">Projets</a></li>
                 <li><a href="about.html">À propos</a></li>
-                <li><a href="showreel.html">Showreel</a></li>
+                <li><a href="ateliers.html">Ateliers</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
- 
 
-    <!-- SECTION PROJETS -->
-    <section id="projects" class="section">
-        <div class="projects-grid">
+<!-- HERO SECTION AVEC VIDÉO -->
+<section class="home-hero">
+    <div class="video-background">
+        <div class="video-overlay"></div>
+        <iframe 
+            src="https://www.youtube.com/embed/HpXN33MK2kw?autoplay=1&mute=1&loop=1&playlist=HpXN33MK2kw&controls=0&modestbranding=1&rel=0&showinfo=0&background=1"
+            frameborder="0" 
+            allow="autoplay; encrypted-media" 
+            allowfullscreen>
+        </iframe>
+    </div>
+    <div class="hero-content">
+        <h1>L'image au service du mouvement</h1>
+        <p class="hero-subtitle">Production audiovisuelle engagée pour des récits qui transforment</p>
+        <div class="hero-cta">
+            <a href="#apropos" class="cta-button">Découvrir notre univers</a>
+            <a href="contact.html" class="cta-button secondary">Nous contacter</a>
+        </div>
+    </div>
+</section>
 
-             <!-- Carte À propos (occupe 2 cartes) -->
-        <div class="project-card about-card">
-            <div class="about-content">
-                <h2>L'image au service du mouvement</h2>
-                <div class="about-description">
+    <!-- SECTION À PROPOS -->
+    <section id="apropos" class="home-section">
+        <div class="main-container">
+            <div class="section-header">
+                <h2>Cinésie Production</h2>
+                <p>Donner de l'imapact aux projets qui transforment notre société</p>
+            </div>
+            
+            <div class="about-grid-home">
+                <div class="about-video">
+                    <div class="video-container">
+                        <!-- Remplacez par votre vidéo de présentation -->
+                        <iframe src="https://www.youtube.com/embed/VOTRE_VIDEO_ID" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3>Notre mission</h3>
                     <p>Cinésie est une société de production audiovisuelle basée à <strong> Bruxelles</strong>, dédiée à la création de contenus valorisant les <strong> initiatives écologiques et sociales.</strong> À travers des documentaires, portraits, clips, aftermovies, capsules... <strong>nous mettons en lumière celles et ceux qui œuvrent pour un monde plus juste et durable : les associations, ONG, artistes et acteurs·ices de changements.</strong></p>
-                    <a href="about.html" class="about-link">En savoir plus</a>
+                    <a href="about.html" class="text-link">En savoir plus sur notre histoire →</a>
                 </div>
             </div>
         </div>
+    </section>
 
-            <!-- Projet 1 -->
-            <div class="project-card project-1">
-                <a href="projet1.html" class="project-link">
-                    <div class="project-image">
-                        <img src="images/projet1.jpg" alt="Projet 1" class="default-image">
-                        <img src="images/projet1-hover.jpg" alt="Projet 1 Hover" class="hover-image">
-                        <div class="project-title">Terrain Vague</div>
-                    </div>
-                    <div class="project-info">
-                        <p>Live session 1</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Projet 2 -->
-            <div class="project-card project-2">
-                <a href="projet2.html" class="project-link">
-                    <div class="project-image">
-                        <img src="images/projet2.jpg" alt="Projet 2" class="default-image">
-                        <img src="images/projet2-image2.jpg" alt="Projet 2 Hover" class="hover-image">
-                        <div class="project-title">Rendre Visible l'Invisible</div>
-                    </div>
-                    <div class="project-info">
-                        <p>Aftermovie</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Projet 3 -->
-            <div class="project-card project-3">
-                <a href="projet3.html" class="project-link">
-                    <div class="project-image">
-                        <img src="images/projet3.jpg" alt="Projet 3" class="default-image">
-                        <img src="images/projet3-image4.webp" alt="Projet 3 Hover" class="hover-image">
-                        <div class="project-title">La trace ASBL</div>
-                    </div>
-                    <div class="project-info">
-                        <p>Vidéo de présentation</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Projet 4 -->
-            <div class="project-card project-4">
-                <a href="projet4.html" class="project-link">
-                    <div class="project-image">
-                        <img src="images/projet4.jpg" alt="Projet 4" class="default-image">
-                        <img src="images/projet4-image1.jpg" alt="Projet 4 Hover" class="hover-image">
-                        <div class="project-title">Domaine de Wespin</div>
-                    </div>
-                    <div class="project-info">
-                        <p>Crowdfunding</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Projet 5 -->
-            <div class="project-card project-5">
-                <a href="projet5.html" class="project-link">
-                    <div class="project-image">
-                        <img src="images/projet5.jpg" alt="Projet 5" class="default-image">
-                        <img src="images/projet5-image8.jpg" alt="Projet 5 Hover" class="hover-image">
-                        <div class="project-title">Équilibre</div>
-                    </div>
-                    <div class="project-info">
-                        <p>Documentaire</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Projet 6 -->
-            <div class="project-card project-6">
-                <a href="projet6.html" class="project-link">
-                    <div class="project-image">
-                        <img src="images/projet6.jpg" alt="Projet 6" class="default-image">
-                        <img src="images/Dyptik 02.png" alt="Projet 6 Hover" class="hover-image">
-                        <div class="project-title">En soi vers l'autre</div>
-                    </div>
-                    <div class="project-info">
-                        <p>Documentaire</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Projet 7 -->
-            <div class="project-card project-7">
-                <a href="projet7.html" class="project-link">
-                    <div class="project-image">
-                        <img src="images/projet7.png" alt="Projet 7" class="default-image">
-                        <img src="images/projet7-image2.png" alt="Projet 7 Hover" class="hover-image">
-                        <div class="project-title">La vie au bout de chez soi</div>
-                    </div>
-                    <div class="project-info">
-                        <p>Documentaire</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Projet 8 -->
-            <div class="project-card project-8">
-                <a href="projet8.html" class="project-link">
-                    <div class="project-image">
-                        <img src="images/projet8-image1.jpg" alt="Projet 8" class="default-image">
-                        <img src="images/projet8-image6.jpg" alt="Projet 8 Hover" class="hover-image">
-                        <div class="project-title">Souffle de couleurs</div>
-                    </div>
-                    <div class="project-info">
-                        <p>Portrait d'artiste</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Projet 9 -->
-            <div class="project-card project-9">
-                <a href="projet9.html" class="project-link">
-                    <div class="project-image">
-                        <img src="images/projet9.jpg" alt="Projet 9" class="default-image">
-                        <img src="images/Mirage 01.png" alt="Projet 9 Hover" class="hover-image">
-                        <div class="project-title">Mirage, un jour de fête</div>
-                    </div>
-                    <div class="project-info">
-                        <p>Aftermovie</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Projet 10 -->
-            <div class="project-card project-10">
-                <a href="leridiculenetuepas.html" class="project-link">
-                    <div class="project-image">
-                        <img src="images/Bubble 01.png" alt="Projet 9" class="default-image">
-                        <img src="images/Bubble 03.png" alt="Projet 9 Hover" class="hover-image">
-                        <div class="project-title"> Le ridicule ne tue pas...</div>
-                    </div>
-                    <div class="project-info">
-                        <p>Documentaire</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Projet 11 -->
-            <div class="project-card project-11">
-                <a href="libre.html" class="project-link">
-                    <div class="project-image">
-                        <img src="images/Libre-image4.png" alt="Projet 9" class="default-image">
-                        <img src="images/Libre-image1.png" alt="Projet 9 Hover" class="hover-image">
-                        <div class="project-title">Libre</div>
-                    </div>
-                    <div class="project-info">
-                        <p>Documentaire</p>
-                    </div>  
-                </a>
-            </div>
-             <!-- Projet 12 -->
-                       <div class="project-card project-12">
-                        <a href="terrainvaguels2.html" class="project-link">
-                            <div class="project-image">
-                                <img src="images/terrainvague8.jpg" alt="Projet 9" class="default-image">
-                                <img src="images/terrainvague5.jpg" alt="Projet 9 Hover" class="hover-image">
-                                <div class="project-title">Terrain vague</div>
-                            </div>
-                            <div class="project-info">
-                                <p>Live session 2</p>
-                            </div>  
-                        </a>
-                    </div>
-            <!-- Projet 13 -->
-            <div class="project-card project-13">
-                <a href="kill me.html" class="project-link">
-                    <div class="project-image">
-                        <img src="images/killme12.jpg" alt="Projet 9" class="default-image">
-                        <img src="images/killme4.jpg" alt="Projet 9 Hover" class="hover-image">
-                        <div class="project-title">Kill me</div>
-                    </div>
-                    <div class="project-info">
-                        <p>Clip musical</p>
-                    </div>  
-                </a>
-            </div>
-            <!-- Projet 14 -->
-            <div class="project-card project-13">
-                <a href="huitquestionscap.html" class="project-link">
-                    <div class="project-image">
-                        <img src="images/echos1.jpg" alt="Projet 9" class="default-image">
-                        <img src="images/echos2.jpg" alt="Projet 9 Hover" class="hover-image">
-                        <div class="project-title">L'outil CAP</div>
-                    </div>
-                    <div class="project-info">
-                        <p>Capsules tutorielles</p>
-                    </div>  
-                </a>
-            </div>
-                        <!-- Projet 15 -->
-            <div class="project-card project-13">
-                <a href="fdss.html" class="project-link">
-                    <div class="project-image">
-                        <img src="images/fdss2.jpg" alt="Projet 9" class="default-image">
-                        <img src="images/fdss3.jpg" alt="Projet 9 Hover" class="hover-image">
-                        <div class="project-title">Fédé. des Services Sociaux</div>
-                    </div>
-                    <div class="project-info">
-                        <p>Capsules réseaux sociaux</p>
-                    </div>  
-                </a>
-            </div>
-            </div>
+        <!-- SECTION PROJETS -->
+    <section class="home-section">
+        <div class="main-container">
+            <div class="section-header">
+                <h2>Nos Réalisations</h2>
+                <p>Découvrez une sélection de nos projets récents</p>
             </div>
             
+            <div class="projects-grid-home">
+                <!-- Les 6 derniers projets seront générés ici par JavaScript -->
+                <!-- Structure identique à votre grille actuelle -->
+            </div>
+            
+            <div class="section-cta">
+                <a href="projets.html" class="cta-button secondary">Voir tout le portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION ATELIERS -->
+    <section class="home-section bg-light">
+        <div class="main-container">
+            <div class="section-header">
+                <h2>Nos Ateliers</h2>
+                <p>Formations pratiques pour découvrir et maîtriser les outils de l'image et du son</p>
+            </div>
+            
+            <div class="ateliers-grid-home">
+                <div class="atelier-card-home">
+                    <div class="atelier-icon">📸</div>
+                    <h3>Atelier Photo</h3>
+                    <p>Initiation à la photographie et street photo à Bruxelles</p>
+                    <span class="atelier-duration">1 journée</span>
+                </div>
+                
+                <div class="atelier-card-home">
+                    <div class="atelier-icon">🎬</div>
+                    <h3>Atelier Vidéo</h3>
+                    <p>Formation complète de 3 jours en production vidéo</p>
+                    <span class="atelier-duration">3 jours</span>
+                </div>
+                
+                <div class="atelier-card-home">
+                    <div class="atelier-icon">💻</div>
+                    <h3>Atelier Montage</h3>
+                    <p>Découverte des bases du montage vidéo professionnel</p>
+                    <span class="atelier-duration">2 jours</span>
+                </div>
+                
+                <div class="atelier-card-home">
+                    <div class="atelier-icon">🎧</div>
+                    <h3>Atelier Son</h3>
+                    <p>Captation et mixage audio pour vos projets</p>
+                    <span class="atelier-duration">1 journée</span>
+                </div>
+            </div>
+            
+            <div class="section-cta">
+                <a href="ateliers.html" class="cta-button">Découvrir tous nos ateliers</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION CONTACT -->
+    <section class="home-section bg-dark">
+        <div class="main-container">
+            <div class="contact-grid-home">
+                <div class="contact-text">
+                    <h2>Travaillons ensemble</h2>
+                    <p>Vous avez un projet audiovisuel ? Une idée à concrétiser ? Discutons-en autour d'un café.</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <span>cinesieprod@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span>Bruxelles, Belgique</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">💬</span>
+                            <span>Disponible pour vos projets</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-actions">
+                    <a href="contact.html" class="cta-button large">Démarrer un projet</a>
+                    <a href="showreel.html" class="text-link light">Voir notre showreel →</a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <p>Emma Landet-Lacoste, Jonas Guyaux - cinesieprod@gmail.com</p>
-            <p>&copy; 2024 Cinésie Production - Tous droits réservés.</p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/logo.svg" alt="Cinésie Production" class="logo">
+            </div>
+            <div class="footer-info">
+                <p>Emma Landet-Lacoste, Jonas Guyaux</p>
+                <p>cinesieprod@gmail.com</p>
+                <p>&copy; 2024 Cinésie Production - Tous droits réservés.</p>
+            </div>
+        </div>
     </footer>
 
-    <!-- Script personnalisé -->
+    <!-- Scripts -->
     <script src="scripts.js"></script>
+    <script src="home-config.js"></script>
 </body>
 </html>
