@@ -96,7 +96,7 @@ function onPlayerStateChange(event) {
         setInterval(function() {
             var currentTime = player.getCurrentTime();
             // Si on arrive à 5 secondes avant la fin, revenir à 5 secondes après le début
-            if (currentTime >= videoDuration - 5) {
+            if (currentTime >= videoDuration - 10) {
                 player.seekTo(12);
             }
         }, 1000);

@@ -1640,7 +1640,6 @@ footer {
 .about-video .video-container {
     position: relative;
     padding-top: 56.25%; /* 16:9 */
-    border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
@@ -1930,7 +1929,7 @@ footer {
 
 @media (max-width: 768px) {
     .home-hero {
-        min-height: 60vh;
+        min-height: 50vh;
         padding: 40px 20px;
     }
     
