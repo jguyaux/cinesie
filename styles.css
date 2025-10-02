@@ -2003,8 +2003,10 @@ footer {
 
 @media (max-width: 768px) {
     .home-hero {
-        min-height: 45vh;
+        min-height: 50vh;
         padding: 40px 20px;
+        min-width: 100%;
+        min-height: 100%;
     }
     
     .hero-content h1 {
