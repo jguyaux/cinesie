@@ -1589,9 +1589,20 @@ footer {
     flex-wrap: wrap;
 }
 
-/* Sections générales */
+/* Sections générales - ESPACEMENT RÉDUIT SUR MOBILE */
 .home-section {
     padding: 80px 0;
+}
+
+/* Réduction significative de l'espacement sur mobile */
+@media (max-width: 768px) {
+    .home-section {
+        padding: 40px 0;
+    }
+    
+    .section-header {
+        margin-bottom: 40px;
+    }
 }
 
 .bg-light {
@@ -1629,12 +1640,42 @@ footer {
     color: #ccc;
 }
 
-/* Section À propos */
+/* Section À propos - INVERSE L'ORDRE SUR MOBILE */
 .about-grid-home {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
+}
+
+/* Ordre normal sur desktop : vidéo à gauche, texte à droite */
+.about-grid-home .about-video {
+    order: 1;
+}
+
+.about-grid-home .about-text {
+    order: 2;
+}
+
+/* Inverser l'ordre sur mobile : texte d'abord, puis vidéo */
+@media (max-width: 768px) {
+    .about-grid-home {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .about-grid-home .about-video {
+        order: 2; /* Vidéo après le texte sur mobile */
+    }
+    
+    .about-grid-home .about-text {
+        order: 1; /* Texte avant la vidéo sur mobile */
+    }
+    
+    /* Réduire l'espacement dans la section about */
+    .about-grid-home {
+        gap: 20px;
+    }
 }
 
 .about-video .video-container {
@@ -1682,6 +1723,18 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     margin-bottom: 50px;
+}
+
+/* Réduire l'espacement des cartes ateliers sur mobile */
+@media (max-width: 768px) {
+    .ateliers-grid-home {
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .atelier-card-home {
+        padding: 30px 20px;
+    }
 }
 
 .atelier-card-home {
@@ -1768,6 +1821,7 @@ footer {
         width: 100vw;
         margin-left: calc(-50vw + 50%);
         margin-right: calc(-50vw + 50%);
+        margin-bottom: 30px;
     }
     
     /* Cache les projets au-delà du 6ème sur mobile */
@@ -1782,6 +1836,19 @@ footer {
     grid-template-columns: 2fr 1fr;
     gap: 60px;
     align-items: center;
+}
+
+/* Réduire l'espacement contact sur mobile */
+@media (max-width: 768px) {
+    .contact-grid-home {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .contact-info {
+        align-items: center;
+    }
 }
 
 .contact-text h2 {
@@ -1890,6 +1957,13 @@ footer {
     margin-top: 40px;
 }
 
+/* Réduire l'espacement CTA sur mobile */
+@media (max-width: 768px) {
+    .section-cta {
+        margin-top: 30px;
+    }
+}
+
 /* Footer amélioré */
 .footer-content {
     display: flex;
@@ -1909,12 +1983,13 @@ footer {
     color: #666;
 }
 
-/* Responsive */
+/* Responsive général */
 @media (max-width: 1000px) {
     .about-grid-home,
     .contact-grid-home {
         grid-template-columns: 1fr;
         gap: 40px;
+        text-align: center;
     }
     
     .hero-content h1 {
@@ -1928,7 +2003,7 @@ footer {
 
 @media (max-width: 768px) {
     .home-hero {
-        min-height: 50vh;
+        min-height: 45vh;
         padding: 40px 20px;
     }
     
@@ -1945,10 +2020,6 @@ footer {
         align-items: center;
     }
     
-    .home-section {
-        padding: 60px 0;
-    }
-    
     .section-header h2 {
         font-size: 2em;
     }
@@ -1961,5 +2032,10 @@ footer {
     
     .footer-info {
         text-align: center;
+    }
+    
+    /* Espacement supplémentaire réduit pour tous les éléments */
+    .main-container {
+        padding: 0 15px;
     }
 }

@@ -28,6 +28,31 @@ function chargerMenu() {
     if (logo) {
         logo.insertAdjacentHTML('afterend', menuHTML);
     }
+    
+    // Initialiser la fonctionnalité du menu hamburger
+    initialiserMenuHamburger();
+}
+
+// Fonction pour gérer le menu hamburger
+function initialiserMenuHamburger() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    
+    if (menuToggle && menu) {
+        menuToggle.addEventListener('click', function() {
+            menu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+        
+        // Fermer le menu quand on clique sur un lien
+        const menuLinks = menu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+    }
 }
 
 // Charger le menu quand la page est prête
