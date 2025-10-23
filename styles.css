@@ -1805,7 +1805,7 @@ footer {
 }
 
 /* Sur tablette : 2 projets par ligne */
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
     .projects-grid-home {
         grid-template-columns: repeat(2, 1fr);
         width: 100vw;
@@ -1815,7 +1815,7 @@ footer {
 }
 
 /* Sur mobile : 1 projet par ligne et limite à 6 projets */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .projects-grid-home {
         grid-template-columns: 1fr;
         width: 100vw;

@@ -8,13 +8,13 @@ const ateliers = {
         image: "images/atelierphoto.jpg",
         highlights: [
             { nombre: "1", texte: "Journée" },
-            { nombre: "8", texte: "Participants max" },
+            { nombre: "6", texte: "Participants max" },
             { nombre: "120€", texte: "Par personne" }
         ],
         timeline: [
             {
                 etape: "1",
-                titre: "🕤 Matinée théorique",
+                titre: "Matinée théorique",
                 horaire: "9h30 - 12h30",
                 points: [
                     "Comprendre les fondamentaux : ouverture, vitesse, ISO",
@@ -24,17 +24,17 @@ const ateliers = {
             },
             {
                 etape: "2",
-                titre: "🍽️ Pause conviviale",
+                titre: "Pause conviviale",
                 horaire: "12h30 - 13h30",
                 points: [
-                    "Déjeuner offert",
+                    "Lunch",
                     "Échanges et questions",
                     "Préparation de la session pratique"
                 ]
             },
             {
                 etape: "3",
-                titre: "📸 Après-midi pratique",
+                titre: "Après-midi pratique",
                 horaire: "13h30 - 17h00",
                 points: [
                     "Session de street photo à Bruxelles",
@@ -44,7 +44,7 @@ const ateliers = {
             },
             {
                 etape: "4",
-                titre: "💫 Conclusion",
+                titre: "Conclusion",
                 horaire: "17h00 - 17h30",
                 points: [
                     "Revue des photos réalisées",
@@ -73,13 +73,13 @@ const ateliers = {
         visual: [
             {
                 icone: "👥",
-                titre: "8 participants max",
+                titre: "6 participants max",
                 sousTitre: "Accompagnement personnalisé"
             },
             {
                 icone: "💶", 
                 titre: "120€ par personne",
-                sousTitre: "Déjeuner et matériel inclus"
+                sousTitre: "150 euros pour un cours particulier. Un sylabus sera fourni lors de la matinée théorique."
             },
             {
                 icone: "📷",
@@ -97,17 +97,17 @@ const ateliers = {
 
     montage: {
         titre: "Atelier Montage Vidéo",
-        description: "Apprenez les bases du montage vidéo avec des logiciels professionnels pour donner vie à vos projets",
-        image: "images/atelier-montage.jpg",
+        description: "Apprenez les bases du montage vidéo avec Adobe Premiere Pro pour donner vie à vos projets",
+        image: "images/atelier7.png",
         highlights: [
-            { nombre: "2", texte: "Journées" },
-            { nombre: "6", texte: "Participants max" },
-            { nombre: "200€", texte: "Par personne" }
+            { nombre: "1", texte: "Journée" },
+            { nombre: "4", texte: "Participants max" },
+            { nombre: "120€", texte: "Par personne" }
         ],
         timeline: [
             {
                 etape: "1",
-                titre: "🎬 Découverte du logiciel",
+                titre: "Découverte du logiciel",
                 horaire: "Jour 1 - 9h30-12h30",
                 points: [
                     "Interface et outils principaux",
@@ -117,7 +117,7 @@ const ateliers = {
             },
             {
                 etape: "2",
-                titre: "✂️ Techniques de montage",
+                titre: "Techniques de montage",
                 horaire: "Jour 1 - 13h30-17h00",
                 points: [
                     "Coupes et transitions",
@@ -127,7 +127,7 @@ const ateliers = {
             },
             {
                 etape: "3",
-                titre: "🎨 Post-production",
+                titre: "Post-production",
                 horaire: "Jour 2 - 9h30-12h30",
                 points: [
                     "Étalonnage et correction couleur",
@@ -137,11 +137,11 @@ const ateliers = {
             },
             {
                 etape: "4",
-                titre: "📤 Export et finalisation",
+                titre: "Export et finalisation",
                 horaire: "Jour 2 - 13h30-17h00",
                 points: [
                     "Paramètres d'export optimaux",
-                    "Compression et formats",
+                    "Mixage sonore",
                     "Présentation des projets"
                 ]
             }
@@ -155,7 +155,7 @@ const ateliers = {
             {
                 icone: "📍",
                 titre: "Lieu",
-                texte: "Bruxelles - Notre studio<br><em>Matériel fourni sur place</em>"
+                texte: "Bruxelles - Notre studio<br><em>Venir avec son ordinateur</em>"
             },
             {
                 icone: "🎯",
@@ -166,18 +166,18 @@ const ateliers = {
         visual: [
             {
                 icone: "👥",
-                titre: "6 participants max",
+                titre: "4 participants max",
                 sousTitre: "Accompagnement personnalisé"
             },
             {
                 icone: "💶",
-                titre: "200€ par personne", 
-                sousTitre: "Matériel inclus"
+                titre: "120€ par personne", 
+                sousTitre: "150 euros pour un cours particulier"
             },
             {
                 icone: "💻",
                 titre: "Logiciels pro",
-                sousTitre: "Formation sur outils professionnels"
+                sousTitre: "Formation sur Adobe Premiere Pro (avoir le logiciel)"
             }
         ],
         contact: {
@@ -189,110 +189,217 @@ const ateliers = {
     },
 
     video: {
-    titre: "Atelier Vidéo Complet",
-    description: "Formation intensive de 3 jours pour maîtriser toute la chaîne de production vidéo, de la prise de vues à la post-production",
-    image: "images/atelier-video.jpg",
-    highlights: [
-        { nombre: "3", texte: "Jours intensifs" },
-        { nombre: "6", texte: "Participants max" },
-        { nombre: "450€", texte: "Par personne" }
-    ],
-    timeline: [
-        {
-            etape: "1",
-            titre: "🎥 Jour 1 - Initiation technique",
-            horaire: "9h30 - 17h00",
-            points: [
-                "Fondamentaux de la vidéo : résolution, débit, codecs",
-                "Prise en main du matériel professionnel (caméras, micros)",
-                "Maîtrise de l'audio : perche, micro-cravate, enregistreurs",
-                "Éclairage 3 points et composition d'image"
-            ]
-        },
-        {
-            etape: "2", 
-            titre: "🎬 Jour 2 - Tournage en studio",
-            horaire: "9h30 - 17h00",
-            points: [
-                "Préparation d'une interview professionnelle",
-                "Mise en place du plateau et des éclairages",
-                "Tournage avec multiple caméras et sons directs",
-                "Direction d'interview et techniques de cadrage"
-            ]
-        },
-        {
-            etape: "3",
-            titre: "💻 Jour 3 - Post-production",
-            horaire: "9h30 - 17h00", 
-            points: [
-                "Import et organisation des rushs tournés",
-                "Montage multicam et synchronisation audio/vidéo",
-                "Étalonnage et correction couleur des images",
-                "Mixage audio et export final du projet"
-            ]
-        },
-        {
-            etape: "4",
-            titre: "🎯 Restitution collective",
-            horaire: "17h00 - 17h30",
-            points: [
-                "Visionnage des projets réalisés",
-                "Retours personnalisés et conseils",
-                "Pistes de perfectionnement et ressources"
-            ]
+        titre: "Atelier Vidéo Complet",
+        description: "Formation intensive de 3 jours pour maîtriser toute la chaîne de production vidéo, de la prise de vues à la post-production",
+        image: "images/atelier2.jpg",
+        highlights: [
+            { nombre: "3", texte: "Jours intensifs" },
+            { nombre: "6", texte: "Participants max" },
+            { nombre: "450€", texte: "Par personne" }
+        ],
+        timeline: [
+            {
+                etape: "1",
+                titre: "Jour 1 - Initiation technique",
+                horaire: "9h30 - 17h00",
+                points: [
+                    "Fondamentaux de la vidéo : résolution, débit, codecs",
+                    "Prise en main du matériel professionnel (caméras, micros)",
+                    "Maîtrise de l'audio : perche, micro-cravate, enregistreurs",
+                    "Éclairage 3 points et composition d'image"
+                ]
+            },
+            {
+                etape: "2", 
+                titre: "Jour 2 - Tournage en studio",
+                horaire: "9h30 - 17h00",
+                points: [
+                    "Préparation d'une interview professionnelle",
+                    "Mise en place du plateau et des éclairages",
+                    "Tournage avec multiple caméras et sons directs",
+                    "Direction d'interview et techniques de cadrage"
+                ]
+            },
+            {
+                etape: "3",
+                titre: "Jour 3 - Post-production",
+                horaire: "9h30 - 17h00", 
+                points: [
+                    "Import et organisation des rushs tournés",
+                    "Montage multicam et synchronisation audio/vidéo",
+                    "Étalonnage et correction couleur des images",
+                    "Mixage audio et export final du projet"
+                ]
+            },
+            {
+                etape: "4",
+                titre: "Restitution collective",
+                horaire: "17h00 - 17h30",
+                points: [
+                    "Visionnage des projets réalisés",
+                    "Retours personnalisés et conseils",
+                    "Pistes de perfectionnement et ressources"
+                ]
+            }
+        ],
+        details: [
+            {
+                icone: "📅",
+                titre: "Date et horaire",
+                texte: "Trois journées complètes de 9h30 à 17h00"
+            },
+            {
+                icone: "📍",
+                titre: "Lieu",
+                texte: "Bruxelles - Studio professionnel équipé<br><em>Tout le matériel est fourni</em>"
+            },
+            {
+                icone: "🎯",
+                titre: "Public",
+                texte: "Débutants souhaitant une formation complète<br><strong>Aucun prérequis technique nécessaire</strong>"
+            },
+            {
+                icone: "💼",
+                titre: "Matériel fourni",
+                texte: "Caméras professionnelles, éclairage, matériel audio, stations de montage"
+            }
+        ],
+        visual: [
+            {
+                icone: "🎥",
+                titre: "Pratique intensive",
+                sousTitre: "3 jours de formation immersive"
+            },
+            {
+                icone: "👥",
+                titre: "6 participants max", 
+                sousTitre: "Accompagnement sur-mesure"
+            },
+            {
+                icone: "💻",
+                titre: "Projet réel",
+                sousTitre: "Interview produite de A à Z"
+            },
+            {
+                icone: "🎓",
+                titre: "Formation complète",
+                sousTitre: "De la technique à la création"
+            }
+        ],
+        contact: {
+            titre: "Prêt·e à devenir autonome en vidéo ?",
+            description: "Rejoignez notre formation intensive et maîtrisez toute la chaîne de production",
+            boutonPrincipal: "Réserver ma formation",
+            boutonSecondaire: "Programme détaillé"
         }
-    ],
-    details: [
-        {
-            icone: "📅",
-            titre: "Date et horaire",
-            texte: "Trois journées complètes de 9h30 à 17h00"
-        },
-        {
-            icone: "📍",
-            titre: "Lieu",
-            texte: "Bruxelles - Studio professionnel équipé<br><em>Tout le matériel est fourni</em>"
-        },
-        {
-            icone: "🎯",
-            titre: "Public",
-            texte: "Débutants souhaitant une formation complète<br><strong>Aucun prérequis technique nécessaire</strong>"
-        },
-        {
-            icone: "💼",
-            titre: "Matériel fourni",
-            texte: "Caméras professionnelles, éclairage, matériel audio, stations de montage"
+    },
+
+    videoParticipative: {
+        titre: "Atelier Vidéo Participative",
+        description: "Un processus collectif de 4 jours pour créer ensemble un film qui reflète notre réalité de groupe",
+        image: "images/videoparticipative.jpg",
+        highlights: [
+            { nombre: "4", texte: "Jours de création" },
+            { nombre: "8", texte: "Participants max" },
+            { nombre: "Sur devis", texte: "Adapté au groupe" }
+        ],
+        timeline: [
+            {
+                etape: "1",
+                titre: "Jour 1 - Emergence collective",
+                horaire: "10h00 - 17h00",
+                points: [
+                    "Tour de table et partage des attentes",
+                    "Exercices de cohésion et confiance",
+                    "Brainstorming sur nos réalités à partager",
+                    "Initiation aux bases de la vidéo participative"
+                ]
+            },
+            {
+                etape: "2", 
+                titre: "Jour 2 - Construction du récit",
+                horaire: "10h00 - 17h00",
+                points: [
+                    "Ateliers d'écriture collective",
+                    "Définition des messages clés du groupe",
+                    "Répartition des rôles selon les affinités",
+                    "Préparation du tournage : scénario et planning"
+                ]
+            },
+            {
+                etape: "3",
+                titre: "Jour 3 - Tournage collaboratif",
+                horaire: "10h00 - 17h00", 
+                points: [
+                    "Mise en pratique des techniques de tournage",
+                    "Tournage en sous-groupes avec rotation des rôles",
+                    "Respect de la parole de chacun",
+                    "Captation des moments authentiques du groupe"
+                ]
+            },
+            {
+                etape: "4",
+                titre: "Jour 4 - Montage et restitution",
+                horaire: "10h00 - 18h00",
+                points: [
+                    "Visionnage collectif des rushs",
+                    "Décisions communes sur le montage",
+                    "Finalisation du film avec voix-off et musique",
+                    "Projection festive et échanges avec le groupe"
+                ]
+            }
+        ],
+        details: [
+            {
+                icone: "🤝",
+                titre: "Approche",
+                texte: "Méthodologie participative et inclusive<br><em>Chaque voix compte</em>"
+            },
+            {
+                icone: "📍",
+                titre: "Lieu",
+                texte: "Dans vos locaux ou lieu neutre<br><em>Matériel d'enregistrement fourni</em>"
+            },
+            {
+                icone: "🎯",
+                titre: "Public",
+                texte: "Équipes, associations, collectivités<br><strong>Ouvert à tous, sans prérequis technique</strong>"
+            },
+            {
+                icone: "💫",
+                titre: "Objectifs",
+                texte: "Renforcer les liens, donner la parole, créer une mémoire collective"
+            }
+        ],
+        visual: [
+            {
+                icone: "🎭",
+                titre: "Expression authentique",
+                sousTitre: "Vos réalités, votre film"
+            },
+            {
+                icone: "👥", 
+                titre: "Intelligence collective",
+                sousTitre: "Décisions partagées"
+            },
+            {
+                icone: "🎬",
+                titre: "Film collaboratif",
+                sousTitre: "Œuvre commune aboutie"
+            },
+            {
+                icone: "🌱",
+                titre: "Transformation",
+                sousTitre: "Renforcement du groupe"
+            }
+        ],
+        contact: {
+            titre: "Prêt·e à créer votre film participatif ?",
+            description: "Donnez voix à votre collectif et transformez votre réalité en récit partagé",
+            boutonPrincipal: "Étudier mon projet",
+            boutonSecondaire: "Témoignages et exemples"
         }
-    ],
-    visual: [
-        {
-            icone: "🎥",
-            titre: "Pratique intensive",
-            sousTitre: "3 jours de formation immersive"
-        },
-        {
-            icone: "👥",
-            titre: "6 participants max", 
-            sousTitre: "Accompagnement sur-mesure"
-        },
-        {
-            icone: "💻",
-            titre: "Projet réel",
-            sousTitre: "Interview produite de A à Z"
-        },
-        {
-            icone: "🎓",
-            titre: "Formation complète",
-            sousTitre: "De la technique à la création"
-        }
-    ],
-    contact: {
-        titre: "Prêt·e à devenir autonome en vidéo ?",
-        description: "Rejoignez notre formation intensive et maîtrisez toute la chaîne de production",
-        boutonPrincipal: "Réserver ma formation",
-        boutonSecondaire: "Programme détaillé"
     }
-}
 };
 
 // Fonction COMPLÈTE
