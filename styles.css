@@ -2041,3 +2041,36 @@ footer {
         padding: 0 15px;
     }
 }
+
+.header-social {
+    display: flex;
+    align-items: center;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: transparent;
+    color: #000; /* Noir */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    border: 1px solid #000; /* Optionnel : bordure noire */
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    color: #333; /* Gris foncé au survol */
+    background: rgba(0, 0, 0, 0.05); /* Léger fond au survol */
+}
+
+/* Alternative avec un SVG si vous préférez */
+.social-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
