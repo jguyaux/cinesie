@@ -21,9 +21,14 @@ function chargerMenu() {
                 <li><a href="contact.html" ${pageActuelle === 'contact.html' ? 'class="active"' : ''}>Contact</a></li>
             </ul>
         </nav>
+        <div class="header-social">
+            <a href="https://instagram.com/cinesie.prod" target="_blank" class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
     `;
     
-    // Ajouter le menu après le logo
+    // Ajouter le menu et l'icône Instagram après le logo
     const logo = header.querySelector('a[href="index.html"]');
     if (logo) {
         logo.insertAdjacentHTML('afterend', menuHTML);
