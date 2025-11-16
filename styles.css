@@ -2095,10 +2095,14 @@ footer {
 .filter-item {
     font-family: 'Helvetica', sans-serif;
     font-size: 15px;
+    text-transform: uppercase;
     color: #999;
     cursor: pointer;
     transition: color 0.2s ease;
-    letter-spacing: 0.5px;}
+    letter-spacing: 0.5px;
+    font-weight: 300; /* Texte très léger */
+}
+ 
 
 .filter-item:hover {
     color: #666;
