@@ -88,3 +88,30 @@ function toggleMenu() {
         toggle.classList.toggle('active');
     }
 }
+
+// Filtrage des projets - version minimaliste
+document.addEventListener('DOMContentLoaded', function() {
+    const filterItems = document.querySelectorAll('.filter-item');
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    filterItems.forEach(item => {
+        item.addEventListener('click', function() {
+            // Retirer la classe active de tous les éléments
+            filterItems.forEach(filter => filter.classList.remove('active'));
+            // Ajouter la classe active à l'élément cliqué
+            this.classList.add('active');
+            
+            const filterValue = this.getAttribute('data-filter');
+            
+            projectCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                
+                if (filterValue === 'all' || category === filterValue) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+});
