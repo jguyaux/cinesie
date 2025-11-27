@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendre Visible l'invisible 2025 | Aftermovie Cinésie Production</title>
+    <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="menu-loader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <!-- Lien vers Google Fonts pour la police Dancing Script -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="images/favico.svg">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <a href="index.html">
+            <img src="images/logo.svg" alt="Logo" class="logo">
+        </a>
+    </header>
+
+    <!-- Contenu du projet -->
+    <main class="project-page">
+        <!-- Section vidéo et description -->
+        <section class="project-details">
+            <div class="project-title">
+                <h2>Rendre Visible l'Invisible : Journée mondiale du refus de la misère</h2>
+                <h3>Aftermovie / l'Arizona s'attaque aux pauvres plutôt qu'à la pauvreté</h3>
+            </div>
+            <div class="video-container responsive-square">
+                <iframe src="https://www.youtube.com/embed/0wQ1GXrfvPU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            
+            <div class="project-description">
+                <p>Nous étions à nouveau présent cette année à l'événement du front Rendre Visible l'Invisible dans le cadre de <strong> journée mondiale du refus de la misère </strong> afin de filmer l'événement. Cette année, le front se mobilisait contre les mesures antisociales du gouvernement Arizona qui va fragiliser encore plus les plus précaires.</p>
+                <p>Réalisation: Jonas Guyaux et Emma Landet-Lacoste</p>
+            </div>
+        </section>        
+
+        <!-- Grille d'arrêts sur image -->
+        <section class="image-grid">
+            <div class="image-item">
+                <img src="images/rvi1.jpg" alt="Arrêt sur image 1">
+            </div>
+            <div class="image-item">
+                <img src="images/rvi2.jpg" alt="Arrêt sur image 2">
+            </div>
+            <div class="image-item">
+                <img src="images/rvi3.jpg" alt="Arrêt sur image 3">
+            </div>
+            <div class="image-item">
+                <img src="images/rvi4.jpg" alt="Arrêt sur image 4">
+            </div>
+            <div class="image-item">
+                <img src="images/rvi5.jpg" alt="Arrêt sur image 4">
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Emma Landet-Lacoste, Jonas Guyaux - cinesieprod@gmail.com</p>
+            <p>&copy; 2024 Cinésie Production - Tous droits réservés.</p>
+    </footer>
+
+    <!-- Script personnalisé -->
+    <script src="scripts.js"></script>
+
+    <!-- Visionneuse Modale -->
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    
+    <!-- Flèche gauche -->
+    <button class="prev" id="prevBtn">&#10094;</button>
+    
+    <!-- Image dans la modale -->
+    <img class="modal-content" id="modalImage">
+    
+    <!-- Flèche droite -->
+    <button class="next" id="nextBtn">&#10095;</button>
+
+    <div id="caption"></div>
+</div>
+</body>
+</html>

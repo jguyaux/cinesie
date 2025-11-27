@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Précarité et orientation vers le sépcialisé | Interview</title>
+    <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="menu-loader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <!-- Lien vers Google Fonts pour la police Dancing Script -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="images/favico.svg">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <a href="index.html">
+            <img src="images/logo.svg" alt="Logo" class="logo">
+        </a>
+    </header>
+
+    <!-- Contenu du projet -->
+    <main class="project-page">
+        <!-- Section vidéo et description -->
+        <section class="project-details">
+            <div class="project-title">
+                <h2>Précarité et orientation vers le sépcialisé</h2>
+                <h3>Interview d'une militante de l'association ATD Quart Monde</h3>
+            </div>
+            <div class="video-container responsive-square">
+                <iframe src="https://www.youtube.com/embed/IGnL6xNgndQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            
+            <div class="project-description">
+                <p>Réalisation d'une vidéo de témoignage (format long et court) pour l'association ATD Quart Monde qui lutte contre la pauvreté à partir du vécu des personnes qui la vivent. L'objectif de la vidéo était de mettre en lumière l'injustice qui amène les enfant des familles précarisées à être orientés dans l'enseignement spécialisé. Le point de vue est celui d'une maman, Jessica, qui raconte comment elle n'a pas été consulté dans les rélfexions et décisions prises autour de son enfant. 3 fois plus d'élèves issus de milieux précaires sont orientés vers le spécialisé. L'enseignement en Belgique est dans les plus inégalitaires d'Europe...</p>
+                <p>Réalisation: Jonas Guyaux et Emma Landet-Lacoste</p>
+            </div>
+        </section>        
+
+        <!-- Grille d'arrêts sur image -->
+        <section class="image-grid">
+            <div class="image-item">
+                <img src="images/atd1.jpg" alt="Arrêt sur image 1">
+            </div>
+            <div class="image-item">
+                <img src="images/atd2.jpg" alt="Arrêt sur image 2">
+            </div>
+            <div class="image-item">
+                <img src="images/atd11.png" alt="Arrêt sur image 3">
+            </div>
+            <div class="image-item">
+                <img src="images/atd5.jpg" alt="Arrêt sur image 4">
+            </div>
+            <div class="image-item">
+                <img src="images/atd6.jpg" alt="Arrêt sur image 4">
+            </div>
+             <div class="image-item">
+                <img src="images/atd10.jpg" alt="Arrêt sur image 4">
+            </div>
+            
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Emma Landet-Lacoste, Jonas Guyaux - cinesieprod@gmail.com</p>
+            <p>&copy; 2024 Cinésie Production - Tous droits réservés.</p>
+    </footer>
+
+    <!-- Script personnalisé -->
+    <script src="scripts.js"></script>
+
+    <!-- Visionneuse Modale -->
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    
+    <!-- Flèche gauche -->
+    <button class="prev" id="prevBtn">&#10094;</button>
+    
+    <!-- Image dans la modale -->
+    <img class="modal-content" id="modalImage">
+    
+    <!-- Flèche droite -->
+    <button class="next" id="nextBtn">&#10095;</button>
+
+    <div id="caption"></div>
+</div>
+</body>
+</html>
