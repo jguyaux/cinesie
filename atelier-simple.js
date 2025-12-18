@@ -79,7 +79,7 @@ const ateliers = {
             {
                 icone: "💶", 
                 titre: "120€ par personne",
-                sousTitre: "150 euros pour un cours particulier. Un sylabus sera fourni lors de la matinée théorique."
+                sousTitre: "200 euros pour un cours particulier. Un sylabus sera fourni lors de la matinée théorique."
             },
             {
                 icone: "📷",
