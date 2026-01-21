@@ -152,7 +152,18 @@ function chargerDerniersProjets() {
             hoverImage: "images/atd2.jpg",
             lien: "atdquartmonde.html",
             ordre: 18
-        }
+        },
+
+        {
+
+        titre: "Alliance Féministe Francophone",
+        description: "Capsule réseaux sociaux",
+        image: "images/equipopa.jpg",
+        hoverImage: "images/equipopb.jpg",
+        lien: "equipop.html",
+        ordre: 19
+    }
+        
     ];
 
     // Trier par ordre décroissant (les plus récents en premier) et prendre les 9 premiers
