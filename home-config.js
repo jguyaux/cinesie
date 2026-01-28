@@ -162,6 +162,15 @@ function chargerDerniersProjets() {
         hoverImage: "images/equipopb.jpg",
         lien: "equipop.html",
         ordre: 19
+         },
+         
+        {
+        titre: "Nos Oignons ASBL",
+        description: "Vidéo de présentation",
+        image: "images/nosoignons21.jpg",
+        hoverImage: "images/nosoignons9.jpg",
+        lien: "nosoignons.html",
+        ordre: 20 // À ajuster selon l'ordre souhaité
     }
         
     ];
