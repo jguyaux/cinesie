@@ -2200,3 +2200,41 @@ footer {
     */
 }
 
+.avis-carrousel-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.avis-carrousel {
+    display: flex;
+    gap: 25px;
+    width: 100%;
+    
+}
+
+.avis-card {
+    background: #f8f8f8;
+    border: 0.5px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: calc(33.333% - 17px);
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+    .avis-card {
+        min-width: calc(50% - 13px);
+    }
+}
+
+@media (max-width: 600px) {
+    .avis-card {
+        min-width: 100%;
+    }
+}

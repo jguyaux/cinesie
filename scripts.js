@@ -115,3 +115,56 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// ===== CARROUSEL AVIS =====
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.avis-card');
+    const prevBtn = document.querySelector('.avis-prev');
+    const nextBtn = document.querySelector('.avis-next');
+    const dotsContainer = document.querySelector('.avis-dots');
+
+    if (!cards.length || !prevBtn || !nextBtn || !dotsContainer) return;
+
+    let current = 0;
+
+    function getVisible() {
+        if (window.innerWidth < 600) return 1;
+        if (window.innerWidth < 900) return 2;
+        return 3;
+    }
+
+    // Créer les points
+    cards.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.classList.add('avis-dot');
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+    });
+
+    function updateDisplay() {
+        const visible = getVisible();
+        cards.forEach((card, i) => {
+            if (i >= current && i < current + visible) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+        document.querySelectorAll('.avis-dot').forEach((dot, i) => {
+            dot.classList.toggle('active', i === current);
+        });
+    }
+
+    function goTo(index) {
+        const visible = getVisible();
+        const max = cards.length - visible;
+        current = Math.max(0, Math.min(index, max));
+        updateDisplay();
+    }
+
+    prevBtn.addEventListener('click', () => goTo(current - 1));
+    nextBtn.addEventListener('click', () => goTo(current + 1));
+    window.addEventListener('resize', () => goTo(current));
+
+    updateDisplay();
+});
