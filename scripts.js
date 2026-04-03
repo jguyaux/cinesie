@@ -127,12 +127,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let current = 0;
 
-    function getVisible() {
-        if (window.innerWidth < 600) return 1;
-        if (window.innerWidth < 900) return 2;
-        return 3;
-    }
-
     // Créer les points
     cards.forEach((_, i) => {
         const dot = document.createElement('button');
@@ -142,13 +136,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function updateDisplay() {
-        const visible = getVisible();
         cards.forEach((card, i) => {
-            if (i >= current && i < current + visible) {
-                card.style.display = 'flex';
-            } else {
-                card.style.display = 'none';
-            }
+            card.style.display = i === current ? 'flex' : 'none';
         });
         document.querySelectorAll('.avis-dot').forEach((dot, i) => {
             dot.classList.toggle('active', i === current);
@@ -156,15 +145,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function goTo(index) {
-        const visible = getVisible();
-        const max = cards.length - visible;
-        current = Math.max(0, Math.min(index, max));
+        current = (index + cards.length) % cards.length; // boucle infinie
         updateDisplay();
     }
 
     prevBtn.addEventListener('click', () => goTo(current - 1));
     nextBtn.addEventListener('click', () => goTo(current + 1));
-    window.addEventListener('resize', () => goTo(current));
 
     updateDisplay();
 });
