@@ -31,13 +31,30 @@ function chargerDerniersProjets() {
         { titre: 'Nos Oignons ASBL', description: 'Vidéo de présentation', image: 'images/nosoignons21.jpg', hoverImage: 'images/nosoignons9.jpg', lien: 'nosoignons.html', ordre: 20 }
     ];
 
-    // determine featured if present and avoid duplicating it
-    const featuredHref = container.querySelector('.featured-project a') ? container.querySelector('.featured-project a').getAttribute('href') : null;
+    // Choose featured explicitly (Loco ASBL) and inject it first
+    const featured = tousLesProjets.find(p => p.lien === 'loco-asbl.html') || tousLesProjets[0];
+    const featuredHtml = `
+        <div class="project-card featured-project" data-category="associations">
+            <a href="${featured.lien}" class="project-link">
+                <div class="project-image">
+                    <img src="${featured.image}" alt="${featured.titre}" class="default-image">
+                    <img src="${featured.hoverImage}" alt="${featured.titre}" class="hover-image">
+                    <div class="project-title">${featured.titre}</div>
+                </div>
+                <div class="project-info">
+                    <p>${featured.description}</p>
+                </div>
+            </a>
+        </div>
+    `;
 
+    container.insertAdjacentHTML('beforeend', featuredHtml);
+
+    // Append 8 other projects (excluding featured)
     const autres = tousLesProjets
-        .filter(p => p.lien !== featuredHref)
+        .filter(p => p.lien !== featured.lien)
         .sort((a, b) => b.ordre - a.ordre)
-        .slice(0, 8); // 8 + featured = 9
+        .slice(0, 8);
 
     const html = autres.map(projet => `
         <div class="project-card">
