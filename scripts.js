@@ -191,13 +191,13 @@ function injectProjectNav() {
     nav.className = 'project-nav';
     nav.innerHTML = `
         <div class="project-nav-inner">
-            <a class="proj-nav prev" href="${prev.file}">
-                <img src="${prev.thumb}" alt="${prev.title} thumbnail">
+            <a class="proj-nav prev" href="${prev.file}" aria-label="Projet précédent: ${prev.title}">
+                <span class="arrow">‹</span>
                 <div class="proj-meta"><span>Projet précédent</span><strong>${prev.title}</strong></div>
             </a>
-            <a class="proj-nav next" href="${next.file}">
-                <img src="${next.thumb}" alt="${next.title} thumbnail">
+            <a class="proj-nav next" href="${next.file}" aria-label="Projet suivant: ${next.title}">
                 <div class="proj-meta"><span>Projet suivant</span><strong>${next.title}</strong></div>
+                <span class="arrow">›</span>
             </a>
         </div>
     `;
