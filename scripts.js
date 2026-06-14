@@ -10,6 +10,9 @@ if (menuToggle && menu) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    // Ensure modal exists (some project pages don't include it)
+    try { ensureImageModalExists(); } catch(e) {}
+
     // Obtenir la modale
     var modal = document.getElementById("imageModal");
 
@@ -147,6 +150,24 @@ function enableAvisSwipe() {
             carousel.classList.remove('dragging');
         }
     });
+}
+
+// Ensure an image modal exists on pages that don't include it
+function ensureImageModalExists() {
+    if (document.getElementById('imageModal')) return;
+
+    const modal = document.createElement('div');
+    modal.id = 'imageModal';
+    modal.className = 'modal';
+    modal.innerHTML = `
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage" src="" alt="">
+        <button id="prevBtn" class="prev" aria-label="Image précédente">‹</button>
+        <button id="nextBtn" class="next" aria-label="Image suivante">›</button>
+        <div id="caption"></div>
+    `;
+
+    document.body.appendChild(modal);
 }
 
 document.addEventListener('DOMContentLoaded', enableAvisSwipe);
