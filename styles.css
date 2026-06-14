@@ -580,9 +580,6 @@ nav a:hover {
         z-index: 1200;
         opacity: 0.65; /* subtle by default */
         transition: opacity 180ms ease, transform 180ms ease;
-        cursor: pointer;
-        background: rgba(255,255,255,0.9);
-        border: 1px solid rgba(0,0,0,0.06);
     }
     .project-nav .proj-nav.prev {
         left: 40px; /* moved inward from the very edge */
@@ -590,15 +587,6 @@ nav a:hover {
     .project-nav .proj-nav.next {
         right: 40px; /* moved inward from the very edge */
     }
-}
-
-/* Project nav arrows: make visible and styled */
-.project-nav .arrow {
-    display: inline-block !important;
-    font-size: 48px;
-    line-height: 1;
-    opacity: 0.95;
-    color: inherit;
 }
 
 /* On small screens keep them inline (not fixed) to avoid overlap */
@@ -1171,9 +1159,6 @@ iframe:focus { outline: none; }
     padding: 10px;
     font-size: 20px;
 }
-
-/* Hide any caption/legend inside the modal across the site */
-#caption { display: none !important; }
 
 /* Le bouton de fermeture (x) */
 .close {
@@ -2098,14 +2083,17 @@ footer {
 }
 
 /* Section Projets - Accueil */
+/* Section Projets - Accueil (centered grid) */
 .projects-grid-home {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
     margin-bottom: 50px;
-    width: 100vw; /* Prend toute la largeur de l'écran */
-    margin-left: calc(-50vw + 50%); /* Centre la grille pleine largeur */
-    margin-right: calc(-50vw + 50%);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 16px;
+    box-sizing: border-box;
 }
 
 /* Assurer que les cartes prennent toute la largeur disponible */
@@ -2128,9 +2116,6 @@ footer {
 @media (max-width: 1400px) {
     .projects-grid-home {
         grid-template-columns: repeat(2, 1fr);
-        width: 100vw;
-        margin-left: calc(-50vw + 50%);
-        margin-right: calc(-50vw + 50%);
     }
 }
 
@@ -2138,9 +2123,6 @@ footer {
 @media (max-width: 1000px) {
     .projects-grid-home {
         grid-template-columns: 1fr;
-        width: 100vw;
-        margin-left: calc(-50vw + 50%);
-        margin-right: calc(-50vw + 50%);
         margin-bottom: 30px;
     }
     
