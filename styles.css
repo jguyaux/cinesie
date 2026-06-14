@@ -534,8 +534,8 @@ nav a:hover {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    gap: 12px;
+    justify-content: center;
+    gap: 48px;
     align-items: center;
 }
 .proj-nav {
@@ -549,15 +549,14 @@ nav a:hover {
     border-radius: 0;
     box-shadow: none;
 }
-.proj-meta { display:flex; flex-direction:column; text-align:left; }
-.proj-meta span { font-size: 0.8rem; color:#666; }
-.proj-meta strong { font-size: 1rem; margin-top:4px; }
+/* project labels removed for minimalist arrows */
+.proj-meta { display:none; }
 
 /* Minimal arrow-only appearance */
-.proj-nav { padding: 12px 16px; }
-.proj-nav .arrow { font-size: 1.6rem; line-height: 1; color: #222; display:inline-block; width:28px; text-align:center; }
-.proj-nav.prev .proj-meta { margin-left: 8px; }
-.proj-nav.next .proj-meta { margin-right: 8px; }
+.proj-nav { padding: 8px 12px; }
+.proj-nav .arrow { font-size: 2.2rem; line-height: 1; color: #222; display:inline-block; width:34px; text-align:center; }
+.proj-nav.prev { margin-right: auto; }
+.proj-nav.next { margin-left: auto; }
 
 @media (max-width: 768px) {
     .project-nav-inner { flex-direction: column; gap: 8px; }
