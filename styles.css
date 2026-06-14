@@ -468,6 +468,24 @@ nav a:hover {
     color: white;
     font-size: 1.5em;
     text-align: center;
+/* Mobile: hide Youtube iframe and use a static background image to avoid play overlay and black bars */
+@media (max-width: 768px) {
+    .video-background {
+        position: relative; /* let it size naturally */
+        background-image: url('images/loco19.png');
+        background-size: cover;
+        background-position: center;
+        height: 45vh;
+        z-index: 0;
+    }
+    .video-background iframe {
+        display: none !important;
+        visibility: hidden !important;
+    }
+    .video-overlay { display: none !important; }
+    /* ensure hero content sits above the background image */
+    .home-hero .hero-content { position: relative; z-index: 2; }
+}
     font-weight: bold;
     font-family: 'Helvetica', sans-serif;
     text-transform: uppercase;
@@ -885,6 +903,57 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* End of avis carousel fixes */
+
+/* ===== Video background fixes to remove black bars and play overlay issues on mobile ===== */
+.video-background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    overflow: hidden;
+    background: #000; /* black background to hide letterbox */
+}
+
+#youtube-player {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+}
+
+#youtube-player iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 177.78vh; /* 16:9 in terms of viewport height to ensure cover */
+    height: 100vh;
+    transform: translate(-50%, -50%);
+    border: 0;
+}
+
+/* Mobile: scale slightly to avoid black bars and force inline playback look */
+@media (max-width: 768px) {
+    #youtube-player iframe {
+        width: 140vw;
+        height: 140vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -55%) scale(1.0);
+    }
+}
+
+/* Ensure the overlay sits above the iframe to hide YouTube controls if any appear */
+.video-background .video-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none; /* allow clicks to pass to player if needed */
+}
+
+/* Hide native YouTube focused outline on iframe in some browsers */
+iframe:focus { outline: none; }
+
+/* End video background fixes */
 .project-description {
     width: 100%; /* La description occupe toute la largeur disponible */
     padding: 10px;
@@ -1640,6 +1709,7 @@ footer {
     width: 100%;
     height: 100%;
     z-index: -1;
+    overflow: hidden;
 }
 
 .video-background iframe {
@@ -1650,7 +1720,8 @@ footer {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1.12); /* scale to avoid letterboxing */
+    transform-origin: center center;
     pointer-events: none;
 }
 
