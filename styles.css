@@ -554,14 +554,14 @@ nav a:hover {
 
 /* Minimal arrow-only appearance */
 .proj-nav { padding: 8px 12px; }
-.proj-nav .arrow { font-size: 2.8rem; line-height: 1; color: #222; display:inline-block; width:40px; text-align:center; }
+.proj-nav .arrow { font-size: 3.6rem; line-height: 1; color: #222; display:inline-block; width:48px; text-align:center; }
 .proj-nav.prev { margin-right: auto; }
 .proj-nav.next { margin-left: auto; }
 
 /* Hover/focus to increase visibility */
 .proj-nav:hover, .proj-nav:focus {
     opacity: 1;
-    transform: translateY(-50%) scale(1.04);
+    transform: translateY(-50%) scale(1.08);
 }
 
 /* Make prev/next arrows fixed on desktop so they follow the scroll */
