@@ -589,8 +589,14 @@ nav a:hover {
     }
 }
 
-/* Hide arrows if user prefers no visible arrows */
-.project-nav .arrow { display: none !important; }
+/* Project nav arrows: make visible and styled */
+.project-nav .arrow {
+    display: inline-block !important;
+    font-size: 48px;
+    line-height: 1;
+    opacity: 0.95;
+    color: inherit;
+}
 
 /* On small screens keep them inline (not fixed) to avoid overlap */
 @media (max-width: 768px) {
