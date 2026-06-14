@@ -2397,19 +2397,25 @@ footer {
 
 .avis-carrousel {
     display: flex;
+    gap: 18px;
     width: 100%;
+    overflow: hidden; /* ensure only visible slide is shown */
+    align-items: stretch;
+    justify-content: center;
 }
 
 .avis-card {
-    background: transparent;
-    border: none;
-    padding: 40px 60px;
+    flex: 0 0 100%;
+    max-width: 900px; /* limit width on large screens */
+    background: #fff;
+    padding: 28px 40px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    width: 100%;
+    gap: 18px;
     box-sizing: border-box;
-    text-align: center;
+    text-align: left;
+    margin: 0 auto; /* center single card */
+    border-radius: 8px;
 }
 
 .avis-stars {
@@ -2528,5 +2534,42 @@ footer {
 
     .avis-carrousel-wrapper {
         gap: 10px;
+    }
+}
+
+/* Ensure full display of avis cards on small screens: horizontal swipe and no clipped content */
+@media (max-width: 480px) {
+    .avis-carrousel {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        gap: 12px;
+        padding-bottom: 8px;
+    }
+
+    .avis-card {
+        min-width: 88% !important;
+        max-width: 92% !important;
+        scroll-snap-align: start;
+        padding: 16px !important;
+        box-sizing: border-box;
+        background: #fff !important;
+        border-radius: 8px !important;
+        margin: 0 6px;
+    }
+
+    .avis-text {
+        max-height: none !important;
+        white-space: normal !important;
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+    }
+
+    .avis-carrousel-wrapper button {
+        display: none !important;
+    }
+
+    .avis-dots {
+        margin-top: 12px !important;
     }
 }
