@@ -554,9 +554,15 @@ nav a:hover {
 
 /* Minimal arrow-only appearance */
 .proj-nav { padding: 8px 12px; }
-.proj-nav .arrow { font-size: 2.2rem; line-height: 1; color: #222; display:inline-block; width:34px; text-align:center; }
+.proj-nav .arrow { font-size: 2.8rem; line-height: 1; color: #222; display:inline-block; width:40px; text-align:center; }
 .proj-nav.prev { margin-right: auto; }
 .proj-nav.next { margin-left: auto; }
+
+/* Hover/focus to increase visibility */
+.proj-nav:hover, .proj-nav:focus {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.04);
+}
 
 /* Make prev/next arrows fixed on desktop so they follow the scroll */
 @media (min-width: 769px) {
@@ -568,16 +574,18 @@ nav a:hover {
         top: 50%;
         transform: translateY(-50%);
         background: transparent;
-        padding: 8px 10px;
+        padding: 10px 12px;
         border-radius: 4px;
         box-shadow: none;
         z-index: 1200;
+        opacity: 0.65; /* subtle by default */
+        transition: opacity 180ms ease, transform 180ms ease;
     }
     .project-nav .proj-nav.prev {
-        left: 16px;
+        left: 40px; /* moved inward from the very edge */
     }
     .project-nav .proj-nav.next {
-        right: 16px;
+        right: 40px; /* moved inward from the very edge */
     }
 }
 
