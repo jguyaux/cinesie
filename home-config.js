@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function chargerDerniersProjets() {
-    const container = document.querySelector('.projects-grid-home');
+    const container = document.querySelector('.projects-grid');
     if (!container) return;
     
     // Tous les projets dans l'ordre de la page projets (du plus ancien au plus récent)
@@ -176,12 +176,17 @@ function chargerDerniersProjets() {
         
     ];
 
-    // Trier par ordre décroissant (les plus récents en premier) et prendre les 9 premiers
-    const neufDerniersProjets = tousLesProjets
-        .sort((a, b) => b.ordre - a.ordre)
-        .slice(0, 9);
+    // If a featured project is present in the grid, avoid duplicating it on the homepage
+    const featuredLink = container.querySelector('.featured-project a') ? container.querySelector('.featured-project a').getAttribute('href') : null;
 
-    container.innerHTML = neufDerniersProjets.map(projet => `
+    // Trier par ordre décroissant (les plus récents en premier) et prendre 8 autres projets (plus le featured = 9 total)
+    const autresProjets = tousLesProjets
+        .filter(p => p.lien !== featuredLink)
+        .sort((a, b) => b.ordre - a.ordre)
+        .slice(0, 8);
+
+    // Append the project cards after the featured project (do not overwrite container content)
+    const html = autresProjets.map(projet => `
         <div class="project-card">
             <a href="${projet.lien}" class="project-link">
                 <div class="project-image">
@@ -195,4 +200,6 @@ function chargerDerniersProjets() {
             </a>
         </div>
     `).join('');
+
+    container.insertAdjacentHTML('beforeend', html);
 }

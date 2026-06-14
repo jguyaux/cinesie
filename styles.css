@@ -2131,7 +2131,8 @@ footer {
     }
     
     /* Cache les projets au-delà du 6ème sur mobile */
-    .projects-grid-home .project-card:nth-child(n+7) {
+    .projects-grid-home .project-card:nth-child(n+7),
+    .projects-grid .project-card:nth-child(n+7) {
         display: none;
     }
 }
