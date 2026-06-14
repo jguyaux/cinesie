@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cinésie production | Atelier Photo</title>
-    <meta name="description" content="Atelier d'initiation à la photographie - Une journée complète pour maîtriser votre appareil photo et pratiquer la street photo à Bruxelles">
+    <title>Atelier Photo à Bruxelles | Street photo – 120€ – Cinésie Production</title>
+    <meta name="description" content="Atelier d'initiation à la photographie à Bruxelles : une journée pour maîtriser votre appareil et pratiquer la street photo. 8 participants max, déjeuner inclus. 120€.">
+    <meta name="keywords" content="production vidéo Bruxelles, vidéo association Bruxelles, documentaire ONG Belgique, réalisation audiovisuelle engagée">
+    <meta property="og:title" content="Atelier Photo à Bruxelles | Street photo – Cinésie Production">
+    <meta property="og:description" content="Atelier d'initiation d'une journée pour maîtriser votre appareil et pratiquer la street photo à Bruxelles.">
+    <meta property="og:image" content="https://cinesie.com/images/og-image.jpg">
+    <meta property="og:url" content="https://cinesie.com/atelier.html?atelier=photo">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_BE">
     <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="atelier-simple.js"></script>
@@ -199,8 +206,53 @@
         <p>&copy; 2024 Cinésie Production - Tous droits réservés.</p>
     </footer>
 
-    <!-- Script personnalisé -->
-    <script src="scripts.js"></script>
-    
+        <!-- Script personnalisé -->
+        <script src="scripts.js"></script>
+
+        <!-- Schema.org Course -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "name": "Atelier Photo – Initiation à la photographie",
+            "description": "Une journée complète pour maîtriser votre appareil photo et pratiquer la street photo dans Bruxelles.",
+            "provider": { "@type": "Organization", "name": "Cinésie Production", "url": "https://cinesie.com" },
+            "offers": {
+                "@type": "Offer",
+                "price": "120",
+                "priceCurrency": "EUR"
+            },
+            "hasCourseInstance": {
+                "@type": "CourseInstance",
+                "courseMode": "in-person",
+                "location": { "@type": "Place", "name": "Bruxelles, Belgique" },
+                "duration": "PT8H"
+            }
+        }
+        </script>
+
+        <!-- Schema.org LocalBusiness -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Cinésie Production",
+            "description": "Société de production audiovisuelle engagée à Bruxelles, spécialisée dans la création vidéo pour associations, ONG et entreprises de l'économie sociale.",
+            "url": "https://cinesie.com",
+            "email": "cinesieprod@gmail.com",
+            "telephone": "+32473592882",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Bruxelles",
+                "addressCountry": "BE"
+            },
+            "founders": [
+                { "@type": "Person", "name": "Emma Landet-Lacoste" },
+                { "@type": "Person", "name": "Jonas Guyaux" }
+            ],
+            "sameAs": []
+        }
+        </script>
+
 </body>
 </html>

@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="production vidéo Bruxelles, vidéo association Bruxelles, documentaire ONG Belgique, réalisation audiovisuelle engagée">
+    <meta property="og:title" content="Cinésie Production | Vidéo engagée – Bruxelles">
+    <meta property="og:description" content="Documentaires, aftermovies et capsules vidéo pour associations, ONG et acteurs du changement social à Bruxelles.">
+    <meta property="og:image" content="https://cinesie.com/images/og-image.jpg">
+    <meta property="og:url" content="https://cinesie.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_BE">
     <title>Cinésie Production | Production audiovisuelle engagée - Bruxelles</title>
     <meta name="description" content="Cinésie Production - Société de production audiovisuelle basée à Bruxelles, créatrice de contenus valorisant les initiatives écologiques et sociales">
     <link rel="stylesheet" href="styles.css">
@@ -306,6 +313,30 @@ function onPlayerStateChange(event) {
 
     <!-- Scripts -->
     <script src="scripts.js"></script>
-    <script src="home-config.js"></script>
+        <script src="home-config.js"></script>
+
+        <!-- Schema.org LocalBusiness -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Cinésie Production",
+            "description": "Société de production audiovisuelle engagée à Bruxelles, spécialisée dans la création vidéo pour associations, ONG et entreprises de l'économie sociale.",
+            "url": "https://cinesie.com",
+            "email": "cinesieprod@gmail.com",
+            "telephone": "+32473592882",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Bruxelles",
+                "addressCountry": "BE"
+            },
+            "founders": [
+                { "@type": "Person", "name": "Emma Landet-Lacoste" },
+                { "@type": "Person", "name": "Jonas Guyaux" }
+            ],
+            "sameAs": []
+        }
+        </script>
+
 </body>
 </html>

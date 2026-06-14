@@ -4,44 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>En soi vers l'autre | Documentaire Cinésie Production</title>
+    <meta name="keywords" content="production vidéo Bruxelles, vidéo association Bruxelles, documentaire ONG Belgique, réalisation audiovisuelle engagée">
+    <meta property="og:title" content="Cinésie Production | Vidéo engagée – Bruxelles">
+    <meta property="og:description" content="Documentaires, aftermovies et capsules vidéo pour associations, ONG et acteurs du changement social à Bruxelles.">
+    <meta property="og:image" content="https://cinesie.com/images/og-image.jpg">
+    <meta property="og:url" content="https://cinesie.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_BE">
     <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="menu-loader.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-    <!-- Lien vers Google Fonts pour la police Dancing Script -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="images/favico.svg">
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L5HLQ9BQ4K"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-L5HLQ9BQ4K');
-</script>
-
 </head>
 <body>
-    <!-- HEADER -->
     <header>
         <a href="index.html">
             <img src="images/logo.svg" alt="Logo" class="logo">
         </a>
     </header>
 
-    <!-- Contenu du projet -->
     <main class="project-page">
-        <!-- Section vidéo et description -->
         <section class="project-details">
             <div class="project-title">
                 <h2>En soi, vers l'autre</h2>
                 <h3>Documentaire sur la compagnie Dyptik</h3>
             </div>
-                    <!-- Image de remplacement (pas de vidéo) -->
             <div class="video-container image-placeholder">
                 <img src="images/Dyptik 01.png" alt="Image de couv">
             </div>
@@ -49,11 +39,9 @@
                 <p><strong>Synopsis : </strong>Bouleversée par la compagnie de danse Dyptik que j’ai rencontrée en 2018, je décide de les suivre et de décortiquer leur processus créatif afin de comprendre comment il font pour susciter autant d’émotion. Pour celà, nous allons nous plonger au coeur de cette compagnie, que ce soit dans les temps de recherches et de travail, ou dans leur différentes créations.</p>
                 <p><strong> Réalisation : </strong> Emma Landet-Lacoste / Participation : Compagnie Dyptik (Souhail Marchiche et Mehdi Meghari) / Musique : Patrick De Oliveira</p>
                 <p><strong>Séléctionné au Brussels Short Film Festival 2025 et Faito Doc International School Film Festival en Italie</strong></p>
-                
             </div>
-        </section>        
+        </section>
 
-        <!-- Grille d'arrêts sur image -->
         <section class="image-grid">
             <div class="image-item">
                 <img src="images/Dyptik 02.png" alt="Arrêt sur image 2">
@@ -115,31 +103,27 @@
         </section>
     </main>
 
-    <!-- FOOTER -->
     <footer>
         <p>Emma Landet-Lacoste, Jonas Guyaux - cinesieprod@gmail.com</p>
         <p>&copy; 2024 Cinésie Production - Tous droits réservés.</p>
     </footer>
 
-    <!-- Script personnalisé -->
     <script src="scripts.js"></script>
 
-<!-- Visionneuse Modale -->
-<div id="imageModal" class="modal">
-    <span class="close">&times;</span>
-    
-    <!-- Flèche gauche -->
-    <button class="prev" id="prevBtn">&#10094;</button>
-    
-    <!-- Image dans la modale -->
-    <img class="modal-content" id="modalImage">
-    
-    <!-- Flèche droite -->
-    <button class="next" id="nextBtn">&#10095;</button>
-
-    <div id="caption"></div>
-</div>
-
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Cinésie Production",
+      "description": "Société de production audiovisuelle engagée à Bruxelles, spécialisée dans la création vidéo pour associations, ONG et entreprises de l'économie sociale.",
+      "url": "https://cinesie.com",
+      "email": "cinesieprod@gmail.com",
+      "telephone": "+32473592882",
+      "address": { "@type": "PostalAddress", "addressLocality": "Bruxelles", "addressCountry": "BE" },
+      "founders": [ { "@type": "Person", "name": "Emma Landet-Lacoste" }, { "@type": "Person", "name": "Jonas Guyaux" } ],
+      "sameAs": []
+    }
+    </script>
 
 </body>
 </html>

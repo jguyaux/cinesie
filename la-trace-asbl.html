@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="production vidéo Bruxelles, vidéo association Bruxelles, documentaire ONG Belgique, réalisation audiovisuelle engagée">
+    <meta property="og:title" content="Cinésie Production | Vidéo engagée – Bruxelles">
+    <meta property="og:description" content="Documentaires, aftermovies et capsules vidéo pour associations, ONG et acteurs du changement social à Bruxelles.">
+    <meta property="og:image" content="https://cinesie.com/images/og-image.jpg">
+    <meta property="og:url" content="https://cinesie.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_BE">
     <title>l'ASBL La Trace | Vidéo de présentation Cinésie Production</title>
     <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -11,7 +17,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-    <!-- Lien vers Google Fonts pour la police Dancing Script -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="images/favico.svg">
 
@@ -19,7 +24,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5HLQ9BQ4K"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag(){dataLayer.push(arguments);} 
   gtag('js', new Date());
 
   gtag('config', 'G-L5HLQ9BQ4K');
@@ -120,6 +125,32 @@
 
     <div id="caption"></div>
 </div>
+
+    <!-- Script personnalisé -->
+    <script src="scripts.js"></script>
+
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Cinésie Production",
+      "description": "Société de production audiovisuelle engagée à Bruxelles, spécialisée dans la création vidéo pour associations, ONG et entreprises de l'économie sociale.",
+      "url": "https://cinesie.com",
+      "email": "cinesieprod@gmail.com",
+      "telephone": "+32473592882",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bruxelles",
+        "addressCountry": "BE"
+      },
+      "founders": [
+        { "@type": "Person", "name": "Emma Landet-Lacoste" },
+        { "@type": "Person", "name": "Jonas Guyaux" }
+      ],
+      "sameAs": []
+    }
+    </script>
 
 </body>
 

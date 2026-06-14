@@ -51,21 +51,21 @@
 <!-- Projets récents et importants -->
 <url>
   <loc>https://cinesie.com/terrainvaguels2.html</loc>
-  <lastmod>2025-02-20</lastmod>
+  <lastmod>2026-06-14</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.70</priority>
 </url>
 
 <url>
-  <loc>https://cinesie.com/projet5.html</loc>
-  <lastmod>2025-02-20</lastmod>
+  <loc>https://cinesie.com/equilibre.html</loc>
+  <lastmod>2026-06-14</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.70</priority>
 </url>
 
 <url>
-  <loc>https://cinesie.com/projet2.html</loc>
-  <lastmod>2025-02-20</lastmod>
+  <loc>https://cinesie.com/rendre-visible-linvisible-1.html</loc>
+  <lastmod>2026-06-14</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.70</priority>
 </url>
@@ -91,52 +91,59 @@
   <priority>0.70</priority>
 </url>
 
-<!-- Projets moins prioritaires -->
+<!-- Projets moins prioritaires (slugs) -->
 <url>
-  <loc>https://cinesie.com/projet1.html</loc>
-  <lastmod>2025-02-20</lastmod>
+  <loc>https://cinesie.com/terrain-vague-1.html</loc>
+  <lastmod>2026-06-14</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.50</priority>
 </url>
 
 <url>
-  <loc>https://cinesie.com/projet3.html</loc>
-  <lastmod>2025-02-20</lastmod>
+  <loc>https://cinesie.com/la-trace-asbl.html</loc>
+  <lastmod>2026-06-14</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.50</priority>
 </url>
 
 <url>
-  <loc>https://cinesie.com/projet4.html</loc>
-  <lastmod>2025-02-20</lastmod>
+  <loc>https://cinesie.com/domaine-de-wespin.html</loc>
+  <lastmod>2026-06-14</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.50</priority>
 </url>
 
 <url>
-  <loc>https://cinesie.com/projet6.html</loc>
-  <lastmod>2025-02-20</lastmod>
+  <loc>https://cinesie.com/en-soi-vers-lautre.html</loc>
+  <lastmod>2026-06-14</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.50</priority>
 </url>
 
 <url>
-  <loc>https://cinesie.com/projet7.html</loc>
-  <lastmod>2025-02-20</lastmod>
+  <loc>https://cinesie.com/la-vie-au-bout-de-chez-soi.html</loc>
+  <lastmod>2026-06-14</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.50</priority>
 </url>
 
 <url>
-  <loc>https://cinesie.com/projet8.html</loc>
-  <lastmod>2025-02-20</lastmod>
+  <loc>https://cinesie.com/souffle-de-couleurs.html</loc>
+  <lastmod>2026-06-14</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.50</priority>
 </url>
 
 <url>
-  <loc>https://cinesie.com/projet9.html</loc>
-  <lastmod>2025-02-20</lastmod>
+  <loc>https://cinesie.com/mirage-un-jour-de-fete.html</loc>
+  <lastmod>2026-06-14</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.50</priority>
+</url>
+
+<url>
+  <loc>https://cinesie.com/loco-asbl.html</loc>
+  <lastmod>2026-06-14</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.50</priority>
 </url>

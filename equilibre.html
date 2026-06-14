@@ -18,7 +18,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5HLQ9BQ4K"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag(){dataLayer.push(arguments);} 
   gtag('js', new Date());
 
   gtag('config', 'G-L5HLQ9BQ4K');
@@ -107,8 +107,31 @@
             <p>&copy; 2024 Cinésie Production - Tous droits réservés.</p>
     </footer>
 
-    <!-- Script personnalisé -->
-    <script src="scripts.js"></script>
+        <!-- Script personnalisé -->
+        <script src="scripts.js"></script>
+
+        <!-- Schema.org LocalBusiness -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Cinésie Production",
+            "description": "Société de production audiovisuelle engagée à Bruxelles, spécialisée dans la création vidéo pour associations, ONG et entreprises de l'économie sociale.",
+            "url": "https://cinesie.com",
+            "email": "cinesieprod@gmail.com",
+            "telephone": "+32473592882",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Bruxelles",
+                "addressCountry": "BE"
+            },
+            "founders": [
+                { "@type": "Person", "name": "Emma Landet-Lacoste" },
+                { "@type": "Person", "name": "Jonas Guyaux" }
+            ],
+            "sameAs": []
+        }
+        </script>
 
 <!-- Visionneuse Modale -->
 <div id="imageModal" class="modal">
