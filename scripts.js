@@ -259,6 +259,11 @@ document.addEventListener('DOMContentLoaded', function() {
     injectBackToPortfolio();
 });
 
+// If the script is loaded after DOMContentLoaded, ensure nav is still injected
+if (document.readyState === 'interactive' || document.readyState === 'complete') {
+    try { injectProjectNav(); } catch (e) { /* safe-fail */ }
+}
+
 function toggleMenu() {
     const menu = document.querySelector('.menu');
     const toggle = document.querySelector('.menu-toggle');
