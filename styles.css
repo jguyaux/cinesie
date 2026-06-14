@@ -526,6 +526,9 @@ nav a:hover {
 .project-nav {
     margin-top: 22px;
     width: 100%;
+    display: block; /* ensure it occupies full width and breaks the flow */
+    clear: both; /* force placement below floated/grid content */
+    box-sizing: border-box;
 }
 .project-nav-inner {
     max-width: 1200px;
