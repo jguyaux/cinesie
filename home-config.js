@@ -16,14 +16,14 @@ function chargerDerniersProjets() {
             hoverImage: "images/loco20.png",
             lien: "loco-asbl.html",
             ordre: 1000
-        },
         {
-            titre: "Terrain Vague",
-            description: "Live session 1",
-            image: "images/projet1.jpg",
-            hoverImage: "images/projet1-hover.jpg",
-            lien: "terrain-vague-1.html",
-            ordre: 1
+            titre: "Loco ASBL",
+            description: "Vidéo promotionnelle — récupération des invendus en cantines scolaires",
+            image: "images/loco14.png",
+            hoverImage: "images/loco16.png",
+            lien: "loco-asbl.html",
+            ordre: 1000
+        },
         },
         {
             titre: "Rendre Visible l'Invisible",
