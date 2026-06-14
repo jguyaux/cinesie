@@ -544,10 +544,10 @@ nav a:hover {
     gap: 12px;
     text-decoration: none;
     color: inherit;
-    background: #fff;
-    padding: 10px 12px;
-    border-radius: 6px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    background: transparent; /* remove gray/white box */
+    padding: 6px 8px; /* smaller padding for minimal look */
+    border-radius: 0;
+    box-shadow: none;
 }
 .proj-meta { display:flex; flex-direction:column; text-align:left; }
 .proj-meta span { font-size: 0.8rem; color:#666; }
@@ -555,7 +555,7 @@ nav a:hover {
 
 /* Minimal arrow-only appearance */
 .proj-nav { padding: 12px 16px; }
-.proj-nav .arrow { font-size: 1.6rem; line-height: 1; color: #333; display:inline-block; width:28px; text-align:center; }
+.proj-nav .arrow { font-size: 1.6rem; line-height: 1; color: #222; display:inline-block; width:28px; text-align:center; }
 .proj-nav.prev .proj-meta { margin-left: 8px; }
 .proj-nav.next .proj-meta { margin-right: 8px; }
 
