@@ -280,6 +280,8 @@ function markProjetsMenuActive(retries = 10) {
 
 // Inject a "Retour au portfolio" button before the footer on project pages
 function injectBackToPortfolio() {
+    // Only add the back-to-portfolio button on individual project pages
+    if (!document.querySelector('.image-grid')) return;
     if (document.querySelector('.back-to-portfolio')) return;
     const footer = document.querySelector('footer');
     if (!footer) return;
