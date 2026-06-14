@@ -589,6 +589,9 @@ nav a:hover {
     }
 }
 
+/* Hide arrows if user prefers no visible arrows */
+.project-nav .arrow { display: none !important; }
+
 /* On small screens keep them inline (not fixed) to avoid overlap */
 @media (max-width: 768px) {
     .project-nav .proj-nav.prev,
