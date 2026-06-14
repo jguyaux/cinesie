@@ -197,6 +197,25 @@ function injectProjectNav() {
     const idx = projects.findIndex(p => p.file === path || (p.file === 'kill me.html' && path === 'kill%20me.html'));
     // Debug help: log injected nav info so we can confirm it runs in the browser console
     try { console.debug('injectProjectNav:', { path, idx, fileFound: idx !== -1 ? projects[idx].file : null }); } catch (e) {}
+
+    // Temporary visual debug badge to help confirm script execution in the browser
+    try {
+        const badge = document.createElement('div');
+        badge.id = 'debug-inject-badge';
+        badge.textContent = `injectProjectNav: path=${path} idx=${idx}`;
+        badge.style.position = 'fixed';
+        badge.style.bottom = '12px';
+        badge.style.left = '12px';
+        badge.style.padding = '6px 10px';
+        badge.style.background = 'rgba(0,0,0,0.85)';
+        badge.style.color = '#fff';
+        badge.style.fontSize = '12px';
+        badge.style.zIndex = 99999;
+        badge.style.borderRadius = '6px';
+        document.body.appendChild(badge);
+        setTimeout(() => { try { badge.remove(); } catch (e) {} }, 4000);
+    } catch (e) {}
+
     if (idx === -1) return;
 
     const prev = projects[(idx - 1 + projects.length) % projects.length];
