@@ -491,11 +491,11 @@ nav a:hover {
         height: 45vh;
         z-index: 0;
     }
+    /* keep iframe visible on mobile so video can play inline */
     .video-background iframe {
-        display: none !important;
-        visibility: hidden !important;
+        display: block;
+        visibility: visible;
     }
-    .video-overlay { display: none !important; }
     /* ensure hero content sits above the background image */
     .home-hero .hero-content { position: relative; z-index: 2; }
 }
