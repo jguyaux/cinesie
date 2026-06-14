@@ -10,31 +10,18 @@ if (menuToggle && menu) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Ensure image modal exists (some project pages may not include it statically)
-    function ensureImageModalExists() {
-        var existing = document.getElementById('imageModal');
-        if (existing) return existing;
-        var modal = document.createElement('div');
-        modal.id = 'imageModal';
-        modal.className = 'modal';
-        modal.innerHTML = `
-            <span class="close">&times;</span>
-            <button class="prev" id="prevBtn">&#10094;</button>
-            <img class="modal-content" id="modalImage">
-            <button class="next" id="nextBtn">&#10095;</button>
-        `;
-        document.body.appendChild(modal);
-        return modal;
-    }
+    // Obtenir la modale
+    var modal = document.getElementById("imageModal");
 
-    var modal = ensureImageModalExists();
+    // Si la modale n'existe pas sur cette page, on arrête ici
+    if (!modal) return;
 
     // Obtenir les images dans la grille
     var images = document.querySelectorAll(".image-item img");
 
     // Obtenir l'élément d'image dans la modale
     var modalImg = document.getElementById("modalImage");
-    var captionText = null; // captions removed — do not display image legends
+    var captionText = document.getElementById("caption"); // Ajout de cette variable manquante
 
     // Variables pour les boutons de navigation
     var nextBtn = document.getElementById('nextBtn');
@@ -195,27 +182,6 @@ function injectProjectNav() {
 
     const path = window.location.pathname.split('/').pop();
     const idx = projects.findIndex(p => p.file === path || (p.file === 'kill me.html' && path === 'kill%20me.html'));
-    // Debug help: log injected nav info so we can confirm it runs in the browser console
-    try { console.debug('injectProjectNav:', { path, idx, fileFound: idx !== -1 ? projects[idx].file : null }); } catch (e) {}
-
-    // Temporary visual debug badge to help confirm script execution in the browser
-    try {
-        const badge = document.createElement('div');
-        badge.id = 'debug-inject-badge';
-        badge.textContent = `injectProjectNav: path=${path} idx=${idx}`;
-        badge.style.position = 'fixed';
-        badge.style.bottom = '12px';
-        badge.style.left = '12px';
-        badge.style.padding = '6px 10px';
-        badge.style.background = 'rgba(0,0,0,0.85)';
-        badge.style.color = '#fff';
-        badge.style.fontSize = '12px';
-        badge.style.zIndex = 99999;
-        badge.style.borderRadius = '6px';
-        document.body.appendChild(badge);
-        setTimeout(() => { try { badge.remove(); } catch (e) {} }, 4000);
-    } catch (e) {}
-
     if (idx === -1) return;
 
     const prev = projects[(idx - 1 + projects.length) % projects.length];
@@ -235,6 +201,42 @@ function injectProjectNav() {
     `;
 
     grid.insertAdjacentElement('afterend', nav);
+
+    // Ensure arrows are visible even if some CSS overrides exist (desktop only)
+    try {
+        const prevEl = nav.querySelector('.proj-nav.prev');
+        const nextEl = nav.querySelector('.proj-nav.next');
+        if (prevEl) {
+            const a = prevEl.querySelector('.arrow');
+            if (a) { a.style.fontSize = '48px'; a.style.color = '#222'; }
+            if (window.innerWidth >= 769) {
+                prevEl.style.position = 'fixed';
+                prevEl.style.left = '40px';
+                prevEl.style.top = '50%';
+                prevEl.style.transform = 'translateY(-50%)';
+                prevEl.style.zIndex = '99999';
+                prevEl.style.background = 'rgba(255,255,255,0.95)';
+                prevEl.style.border = '1px solid rgba(0,0,0,0.06)';
+                prevEl.style.padding = '10px 12px';
+                prevEl.style.cursor = 'pointer';
+            }
+        }
+        if (nextEl) {
+            const a2 = nextEl.querySelector('.arrow');
+            if (a2) { a2.style.fontSize = '48px'; a2.style.color = '#222'; }
+            if (window.innerWidth >= 769) {
+                nextEl.style.position = 'fixed';
+                nextEl.style.right = '40px';
+                nextEl.style.top = '50%';
+                nextEl.style.transform = 'translateY(-50%)';
+                nextEl.style.zIndex = '99999';
+                nextEl.style.background = 'rgba(255,255,255,0.95)';
+                nextEl.style.border = '1px solid rgba(0,0,0,0.06)';
+                nextEl.style.padding = '10px 12px';
+                nextEl.style.cursor = 'pointer';
+            }
+        }
+    } catch (e) { /* safe-fail */ }
 }
 
 document.addEventListener('DOMContentLoaded', injectProjectNav);
@@ -279,11 +281,6 @@ document.addEventListener('DOMContentLoaded', function() {
     markProjetsMenuActive();
     injectBackToPortfolio();
 });
-
-// If the script is loaded after DOMContentLoaded, ensure nav is still injected
-if (document.readyState === 'interactive' || document.readyState === 'complete') {
-    try { injectProjectNav(); } catch (e) { /* safe-fail */ }
-}
 
 function toggleMenu() {
     const menu = document.querySelector('.menu');
