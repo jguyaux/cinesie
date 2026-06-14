@@ -9,7 +9,7 @@ function chargerDerniersProjets() {
     if (!container) return;
 
     const tousLesProjets = [
-        { titre: 'Loco ASBL', description: 'Vidéo promotionnelle — récupération des invendus en cantines scolaires', image: 'images/loco14.png', hoverImage: 'images/loco16.png', lien: 'loco-asbl.html', ordre: 1000 },
+        { titre: 'Loco ASBL', description: 'Vidéo promotionnelle', image: 'images/loco14.png', hoverImage: 'images/loco16.png', lien: 'loco-asbl.html', ordre: 1000 },
         { titre: "Rendre Visible l'Invisible", description: 'Aftermovie 2024', image: 'images/projet2.jpg', hoverImage: 'images/projet2-image2.jpg', lien: 'rendre-visible-linvisible-1.html', ordre: 2 },
         { titre: 'La trace ASBL', description: 'Vidéo de présentation', image: 'images/projet3.jpg', hoverImage: 'images/projet3-image4.webp', lien: 'la-trace-asbl.html', ordre: 11 },
         { titre: 'Domaine de Wespin', description: 'Crowdfunding', image: 'images/projet4.jpg', hoverImage: 'images/projet4-image1.jpg', lien: 'domaine-de-wespin.html', ordre: 10 },
