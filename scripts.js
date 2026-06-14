@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
             <button class="prev" id="prevBtn">&#10094;</button>
             <img class="modal-content" id="modalImage">
             <button class="next" id="nextBtn">&#10095;</button>
-            <div id="caption"></div>
         `;
         document.body.appendChild(modal);
         return modal;
@@ -35,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Obtenir l'élément d'image dans la modale
     var modalImg = document.getElementById("modalImage");
-    var captionText = document.getElementById("caption"); // Ajout de cette variable manquante
+    var captionText = null; // captions removed — do not display image legends
 
     // Variables pour les boutons de navigation
     var nextBtn = document.getElementById('nextBtn');

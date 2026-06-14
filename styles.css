@@ -1163,6 +1163,9 @@ iframe:focus { outline: none; }
     font-size: 20px;
 }
 
+/* Hide any caption/legend inside the modal across the site */
+#caption { display: none !important; }
+
 /* Le bouton de fermeture (x) */
 .close {
     position: absolute;
