@@ -195,6 +195,8 @@ function injectProjectNav() {
 
     const path = window.location.pathname.split('/').pop();
     const idx = projects.findIndex(p => p.file === path || (p.file === 'kill me.html' && path === 'kill%20me.html'));
+    // Debug help: log injected nav info so we can confirm it runs in the browser console
+    try { console.debug('injectProjectNav:', { path, idx, fileFound: idx !== -1 ? projects[idx].file : null }); } catch (e) {}
     if (idx === -1) return;
 
     const prev = projects[(idx - 1 + projects.length) % projects.length];

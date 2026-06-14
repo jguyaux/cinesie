@@ -580,6 +580,9 @@ nav a:hover {
         z-index: 1200;
         opacity: 0.65; /* subtle by default */
         transition: opacity 180ms ease, transform 180ms ease;
+        cursor: pointer;
+        background: rgba(255,255,255,0.9);
+        border: 1px solid rgba(0,0,0,0.06);
     }
     .project-nav .proj-nav.prev {
         left: 40px; /* moved inward from the very edge */
