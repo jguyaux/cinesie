@@ -511,8 +511,8 @@ nav a:hover {
 .featured-project {
     background: #fff;
     overflow: hidden;
-    border-radius: 6px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    border-radius: 0; /* match other project-card corners */
+    box-shadow: none; /* remove extra shadow to match grid */
 }
 
 .featured-project .featured-image img {
