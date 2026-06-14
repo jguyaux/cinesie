@@ -80,6 +80,77 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+// Enable swipe (drag) + snap for avis carousel on touch devices
+function enableAvisSwipe() {
+    const carousel = document.querySelector('.avis-carrousel');
+    if (!carousel) return;
+    if (window.innerWidth > 768) return; // only for mobile/tablet
+
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    function pointerDown(e) {
+        isDown = true;
+        carousel.classList.add('dragging');
+        startX = e.pageX || (e.touches && e.touches[0].pageX);
+        scrollLeft = carousel.scrollLeft;
+        if (e.pointerId) carousel.setPointerCapture(e.pointerId);
+    }
+
+    function pointerMove(e) {
+        if (!isDown) return;
+        const x = e.pageX || (e.touches && e.touches[0].pageX);
+        const walk = startX - x;
+        carousel.scrollLeft = scrollLeft + walk;
+    }
+
+    function pointerUp() {
+        if (!isDown) return;
+        isDown = false;
+        carousel.classList.remove('dragging');
+        snapToNearest(carousel);
+    }
+
+    function snapToNearest(el) {
+        const children = Array.from(el.querySelectorAll('.avis-card'));
+        if (!children.length) return;
+        const elRect = el.getBoundingClientRect();
+        const center = elRect.left + elRect.width / 2;
+        let nearest = children.reduce((best, child) => {
+            const rect = child.getBoundingClientRect();
+            const childCenter = rect.left + rect.width / 2;
+            const dist = Math.abs(childCenter - center);
+            if (dist < best.dist) return { child, dist };
+            return best;
+        }, { child: children[0], dist: Infinity });
+
+        const childRect = nearest.child.getBoundingClientRect();
+        const offset = (childRect.left - elRect.left) - (elRect.width - childRect.width) / 2;
+        el.scrollTo({ left: el.scrollLeft + offset, behavior: 'smooth' });
+    }
+
+    // Pointer events
+    carousel.addEventListener('pointerdown', pointerDown, { passive: true });
+    carousel.addEventListener('pointermove', pointerMove, { passive: true });
+    carousel.addEventListener('pointerup', pointerUp);
+    carousel.addEventListener('pointercancel', pointerUp);
+
+    // Touch fallback
+    carousel.addEventListener('touchstart', pointerDown, { passive: true });
+    carousel.addEventListener('touchmove', pointerMove, { passive: true });
+    carousel.addEventListener('touchend', pointerUp);
+
+    // Recompute on resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            carousel.classList.remove('dragging');
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', enableAvisSwipe);
+
 function toggleMenu() {
     const menu = document.querySelector('.menu');
     const toggle = document.querySelector('.menu-toggle');
