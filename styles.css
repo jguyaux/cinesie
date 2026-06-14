@@ -558,6 +558,39 @@ nav a:hover {
 .proj-nav.prev { margin-right: auto; }
 .proj-nav.next { margin-left: auto; }
 
+/* Make prev/next arrows fixed on desktop so they follow the scroll */
+@media (min-width: 769px) {
+    .project-nav { display: block; }
+    .project-nav-inner { justify-content: center; }
+    .project-nav .proj-nav.prev,
+    .project-nav .proj-nav.next {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        background: transparent;
+        padding: 8px 10px;
+        border-radius: 4px;
+        box-shadow: none;
+        z-index: 1200;
+    }
+    .project-nav .proj-nav.prev {
+        left: 16px;
+    }
+    .project-nav .proj-nav.next {
+        right: 16px;
+    }
+}
+
+/* On small screens keep them inline (not fixed) to avoid overlap */
+@media (max-width: 768px) {
+    .project-nav .proj-nav.prev,
+    .project-nav .proj-nav.next {
+        position: static;
+        transform: none;
+        margin: 0;
+    }
+}
+
 @media (max-width: 768px) {
     .project-nav-inner { flex-direction: column; gap: 8px; }
     .proj-nav { width: 100%; justify-content: space-between; }
