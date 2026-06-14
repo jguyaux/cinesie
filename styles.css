@@ -522,108 +522,6 @@ nav a:hover {
     object-fit: cover;
 }
 
-/* Minimal project prev/next strip under image grids */
-.project-nav {
-    margin-top: 22px;
-    width: 100%;
-    display: block; /* ensure it occupies full width and breaks the flow */
-    clear: both; /* force placement below floated/grid content */
-    box-sizing: border-box;
-}
-.project-nav-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    gap: 48px;
-    align-items: center;
-}
-.proj-nav {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    color: inherit;
-    background: transparent; /* remove gray/white box */
-    padding: 6px 8px; /* smaller padding for minimal look */
-    border-radius: 0;
-    box-shadow: none;
-}
-/* project labels removed for minimalist arrows */
-.proj-meta { display:none; }
-
-/* Minimal arrow-only appearance */
-.proj-nav { padding: 8px 12px; }
-.proj-nav .arrow { font-size: 3.6rem; line-height: 1; color: #222; display:inline-block; width:48px; text-align:center; }
-.proj-nav.prev { margin-right: auto; }
-.proj-nav.next { margin-left: auto; }
-
-/* Hover/focus to increase visibility */
-.proj-nav:hover, .proj-nav:focus {
-    opacity: 1;
-    transform: translateY(-50%) scale(1.08);
-}
-
-/* Make prev/next arrows fixed on desktop so they follow the scroll */
-@media (min-width: 769px) {
-    .project-nav { display: block; }
-    .project-nav-inner { justify-content: center; }
-    .project-nav .proj-nav.prev,
-    .project-nav .proj-nav.next {
-        position: fixed;
-        top: 50%;
-        transform: translateY(-50%);
-        background: transparent;
-        padding: 10px 12px;
-        border-radius: 4px;
-        box-shadow: none;
-        z-index: 1200;
-        opacity: 0.65; /* subtle by default */
-        transition: opacity 180ms ease, transform 180ms ease;
-    }
-    .project-nav .proj-nav.prev {
-        left: 40px; /* moved inward from the very edge */
-    }
-    .project-nav .proj-nav.next {
-        right: 40px; /* moved inward from the very edge */
-    }
-}
-
-/* On small screens keep them inline (not fixed) to avoid overlap */
-@media (max-width: 768px) {
-    .project-nav .proj-nav.prev,
-    .project-nav .proj-nav.next {
-        position: static;
-        transform: none;
-        margin: 0;
-    }
-}
-
-@media (max-width: 768px) {
-    .project-nav-inner { flex-direction: column; gap: 8px; }
-    .proj-nav { width: 100%; justify-content: space-between; }
-    .proj-nav .arrow { font-size: 1.4rem; }
-}
-
-/* Back to portfolio button */
-.back-to-portfolio {
-    display: inline-block;
-    margin: 28px auto;
-    padding: 12px 18px;
-    background: #222;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 600;
-    text-align: center;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-}
-.back-to-portfolio:hover { opacity: 0.95; }
-
-@media (min-width: 769px) {
-    .back-to-portfolio { display: block; width: 220px; margin-left: auto; margin-right: auto; }
-}
-
 .project-card .project-info {
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
@@ -2083,7 +1981,6 @@ footer {
 }
 
 /* Section Projets - Accueil */
-/* Section Projets - Accueil */
 .projects-grid-home {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -2131,8 +2028,7 @@ footer {
     }
     
     /* Cache les projets au-delà du 6ème sur mobile */
-    .projects-grid-home .project-card:nth-child(n+7),
-    .projects-grid .project-card:nth-child(n+7) {
+    .projects-grid-home .project-card:nth-child(n+7) {
         display: none;
     }
 }
@@ -2638,23 +2534,6 @@ footer {
 
     .avis-carrousel-wrapper {
         gap: 10px;
-    }
-}
-
-/* enable touch swipe behavior on small+medium phones */
-@media (max-width: 768px) {
-    .avis-carrousel {
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
-        touch-action: pan-y; /* allow vertical page scrolling while enabling horizontal swipe handling */
-        gap: 12px;
-        padding-bottom: 8px;
-    }
-
-    .avis-carrousel.dragging {
-        cursor: grabbing;
-        cursor: -webkit-grabbing;
     }
 }
 

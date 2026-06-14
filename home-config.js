@@ -4,11 +4,18 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function chargerDerniersProjets() {
-    const container = document.querySelector('.projects-grid');
+    const container = document.querySelector('.projects-grid-home');
     if (!container) return;
     
     // Tous les projets dans l'ordre de la page projets (du plus ancien au plus récent)
     const tousLesProjets = [
+        {
+            titre: "Loco ASBL",
+            description: "Vidéo promotionnelle",
+            image: "images/loco19.png",
+            hoverImage: "images/loco20.png",
+            lien: "loco-asbl.html",
+            ordre: 1000
         {
             titre: "Loco ASBL",
             description: "Vidéo promotionnelle — récupération des invendus en cantines scolaires",
@@ -176,17 +183,12 @@ function chargerDerniersProjets() {
         
     ];
 
-    // If a featured project is present in the grid, avoid duplicating it on the homepage
-    const featuredLink = container.querySelector('.featured-project a') ? container.querySelector('.featured-project a').getAttribute('href') : null;
-
-    // Trier par ordre décroissant (les plus récents en premier) et prendre 8 autres projets (plus le featured = 9 total)
-    const autresProjets = tousLesProjets
-        .filter(p => p.lien !== featuredLink)
+    // Trier par ordre décroissant (les plus récents en premier) et prendre les 9 premiers
+    const neufDerniersProjets = tousLesProjets
         .sort((a, b) => b.ordre - a.ordre)
-        .slice(0, 8);
+        .slice(0, 9);
 
-    // Append the project cards after the featured project (do not overwrite container content)
-    const html = autresProjets.map(projet => `
+    container.innerHTML = neufDerniersProjets.map(projet => `
         <div class="project-card">
             <a href="${projet.lien}" class="project-link">
                 <div class="project-image">
@@ -200,6 +202,4 @@ function chargerDerniersProjets() {
             </a>
         </div>
     `).join('');
-
-    container.insertAdjacentHTML('beforeend', html);
 }
