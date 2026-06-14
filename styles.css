@@ -794,6 +794,33 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto; /* Centrer l'ensemble de la section horizontalement */
 }
 
+/* Back to portfolio button (inserted by JS) */
+.back-to-portfolio {
+    display: inline-block;
+    margin: 28px auto;
+    padding: 12px 20px;
+    background: #fff;
+    color: #222;
+    border: 1px solid rgba(0,0,0,0.12);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 0; /* match project cards */
+    box-shadow: none;
+    display: block;
+    width: fit-content;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .back-to-portfolio {
+        margin: 18px auto;
+        padding: 10px 16px;
+        font-size: 0.95em;
+    }
+}
+
 /* Section vidéo et description */
 .project-details {
     display: flex;
