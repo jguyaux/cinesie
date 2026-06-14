@@ -468,6 +468,19 @@ nav a:hover {
     color: white;
     font-size: 1.5em;
     text-align: center;
+    font-weight: bold;
+    font-family: 'Helvetica', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    max-width: 80%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    padding: 0 10px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
 /* Mobile: hide Youtube iframe and use a static background image to avoid play overlay and black bars */
 @media (max-width: 768px) {
     .video-background {
@@ -486,17 +499,27 @@ nav a:hover {
     /* ensure hero content sits above the background image */
     .home-hero .hero-content { position: relative; z-index: 2; }
 }
-    font-weight: bold;
-    font-family: 'Helvetica', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    white-space: nowrap;
-    max-width: 80%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    padding: 0 10px;
-    box-sizing: border-box;
-    z-index: 2;
+
+/* Styles specific to the homepage projects grid and featured card */
+.projects-grid-home {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.featured-project {
+    background: #fff;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.featured-project .featured-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 .project-card .project-info {
