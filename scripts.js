@@ -243,7 +243,7 @@ function injectBackToPortfolio() {
     const btn = document.createElement('a');
     btn.href = 'projets.html';
     btn.className = 'back-to-portfolio';
-    btn.textContent = '← Retour au portfolio';
+    btn.textContent = 'Retour au portfolio';
 
     // Try to insert inside main container if exists for consistent spacing
     const main = document.querySelector('main') || document.querySelector('.main-container');
