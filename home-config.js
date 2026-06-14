@@ -11,13 +11,6 @@ function chargerDerniersProjets() {
     const tousLesProjets = [
         {
             titre: "Loco ASBL",
-            description: "Vidéo promotionnelle",
-            image: "images/loco19.png",
-            hoverImage: "images/loco20.png",
-            lien: "loco-asbl.html",
-            ordre: 1000
-        {
-            titre: "Loco ASBL",
             description: "Vidéo promotionnelle — récupération des invendus en cantines scolaires",
             image: "images/loco14.png",
             hoverImage: "images/loco16.png",
