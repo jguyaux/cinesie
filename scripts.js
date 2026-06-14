@@ -264,6 +264,9 @@ document.addEventListener('DOMContentLoaded', injectProjectNav);
 
 // Mark 'Projets' menu item active on project pages (wait if menu is loaded asynchronously)
 function markProjetsMenuActive(retries = 10) {
+    // Only mark 'Projets' as active on actual project pages
+    if (!document.querySelector('.image-grid') && !document.querySelector('.project-page')) return;
+
     const setActive = () => {
         const link = document.querySelector('a[href="projets.html"]');
         if (link) {
