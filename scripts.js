@@ -205,6 +205,47 @@ function injectProjectNav() {
 
 document.addEventListener('DOMContentLoaded', injectProjectNav);
 
+// Mark 'Projets' menu item active on project pages (wait if menu is loaded asynchronously)
+function markProjetsMenuActive(retries = 10) {
+    const setActive = () => {
+        const link = document.querySelector('a[href="projets.html"]');
+        if (link) {
+            link.classList.add('active');
+            return true;
+        }
+        return false;
+    };
+
+    if (!setActive() && retries > 0) {
+        setTimeout(() => markProjetsMenuActive(retries - 1), 200);
+    }
+}
+
+// Inject a "Retour au portfolio" button before the footer on project pages
+function injectBackToPortfolio() {
+    if (document.querySelector('.back-to-portfolio')) return;
+    const footer = document.querySelector('footer');
+    if (!footer) return;
+
+    const btn = document.createElement('a');
+    btn.href = 'projets.html';
+    btn.className = 'back-to-portfolio';
+    btn.textContent = '← Retour au portfolio';
+
+    // Try to insert inside main container if exists for consistent spacing
+    const main = document.querySelector('main') || document.querySelector('.main-container');
+    if (main) {
+        main.insertAdjacentElement('afterend', btn);
+    } else {
+        footer.parentNode.insertBefore(btn, footer);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    markProjetsMenuActive();
+    injectBackToPortfolio();
+});
+
 function toggleMenu() {
     const menu = document.querySelector('.menu');
     const toggle = document.querySelector('.menu-toggle');
