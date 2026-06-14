@@ -10,11 +10,25 @@ if (menuToggle && menu) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Obtenir la modale
-    var modal = document.getElementById("imageModal");
+    // Ensure image modal exists (some project pages may not include it statically)
+    function ensureImageModalExists() {
+        var existing = document.getElementById('imageModal');
+        if (existing) return existing;
+        var modal = document.createElement('div');
+        modal.id = 'imageModal';
+        modal.className = 'modal';
+        modal.innerHTML = `
+            <span class="close">&times;</span>
+            <button class="prev" id="prevBtn">&#10094;</button>
+            <img class="modal-content" id="modalImage">
+            <button class="next" id="nextBtn">&#10095;</button>
+            <div id="caption"></div>
+        `;
+        document.body.appendChild(modal);
+        return modal;
+    }
 
-    // Si la modale n'existe pas sur cette page, on arrête ici
-    if (!modal) return;
+    var modal = ensureImageModalExists();
 
     // Obtenir les images dans la grille
     var images = document.querySelectorAll(".image-item img");
