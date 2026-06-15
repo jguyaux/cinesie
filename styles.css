@@ -1829,6 +1829,28 @@ footer {
     }
 }
 
+/* Hide injected project navigation (arrows) on touch devices or small screens */
+@media (hover: none), (pointer: coarse), (max-width: 1024px) {
+    .proj-nav, .project-nav { display: none !important; }
+}
+
+/* Small floating hint for swipe navigation on touch devices */
+.project-swipe-hint {
+    position: fixed;
+    left: 50%;
+    bottom: 22px;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.75);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    z-index: 100000;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
 /* ===== STYLES PAGE D'ACCUEIL ===== */
 
 /* Hero Section avec vidéo */

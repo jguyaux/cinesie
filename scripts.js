@@ -208,8 +208,9 @@ function injectProjectNav() {
     const idx = projects.findIndex(p => p.file === path || (p.file === 'kill me.html' && path === 'kill%20me.html'));
     if (idx === -1) return;
 
-    // On phones, prefer swipe navigation — do not show arrow controls
-    if (('ontouchstart' in window) && window.innerWidth <= 768) return;
+    // On touch-capable devices prefer swipe navigation — do not show arrow controls
+    // Use a broad detection so high-res phones/tablets don't accidentally show arrows
+    if (('ontouchstart' in window) || navigator.maxTouchPoints > 0) return;
 
     const prev = projects[(idx - 1 + projects.length) % projects.length];
     const next = projects[(idx + 1) % projects.length];
