@@ -1763,15 +1763,15 @@ footer {
 }
 
 .video-background iframe {
-    width: 100vw;
-    height: 56.25vw; /* 16:9 ratio */
-    min-height: 100vh;
-    min-width: 177.77vh; /* 16:9 ratio */
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(1.12); /* scale to avoid letterboxing */
+    /* Use viewport-height based sizing to ensure the 16:9 iframe covers very wide viewports */
+    width: 177.78vh; /* 16:9 ratio relative to viewport height */
+    height: 100vh;
+    transform: translate(-50%, -50%);
     transform-origin: center center;
+    border: 0;
     pointer-events: none;
 }
 
