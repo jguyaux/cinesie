@@ -378,6 +378,32 @@ document.addEventListener('DOMContentLoaded', function() {
         updateDisplay();
     }
 
+    // Enable touch swipe on mobile to navigate avis
+    (function enableAvisTouchSwipe() {
+        const carouselEl = document.querySelector('.avis-carrousel');
+        if (!carouselEl) return;
+        // Only enable on narrow screens
+        if (window.innerWidth > 768) return;
+
+        let touchStartX = 0;
+        const threshold = 40; // minimal px to consider a swipe
+
+        carouselEl.addEventListener('touchstart', function(e) {
+            touchStartX = e.touches && e.touches[0] ? e.touches[0].clientX : 0;
+        }, { passive: true });
+
+        carouselEl.addEventListener('touchend', function(e) {
+            const touchEndX = e.changedTouches && e.changedTouches[0] ? e.changedTouches[0].clientX : 0;
+            const delta = touchEndX - touchStartX;
+            if (Math.abs(delta) < threshold) return;
+            if (delta < 0) {
+                goTo(current + 1);
+            } else {
+                goTo(current - 1);
+            }
+        });
+    })();
+
     prevBtn.addEventListener('click', () => goTo(current - 1));
     nextBtn.addEventListener('click', () => goTo(current + 1));
 
