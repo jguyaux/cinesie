@@ -821,6 +821,28 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+/* Mobile hint for project swipe */
+@media (max-width: 768px) {
+    .project-swipe-hint {
+        position: fixed;
+        left: 50%;
+        bottom: 110px;
+        transform: translateX(-50%);
+        background: rgba(255,255,255,0.95);
+        color: #222;
+        padding: 8px 14px;
+        border: 1px solid rgba(0,0,0,0.08);
+        font-size: 0.95em;
+        font-weight: 600;
+        letter-spacing: 0.6px;
+        z-index: 999999;
+        border-radius: 0;
+        box-shadow: none;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+}
+
 /* Section vidéo et description */
 .project-details {
     display: flex;

@@ -170,36 +170,39 @@ function ensureImageModalExists() {
     document.body.appendChild(modal);
 }
 
+// Central projects list (used by nav injection and swipe)
+const PROJECTS = [
+    {file: 'loco-asbl.html', title: 'Loco ASBL', thumb: 'images/loco14.png'},
+    {file: 'terrain-vague-1.html', title: 'Terrain Vague', thumb: 'images/projet1.jpg'},
+    {file: 'rendre-visible-linvisible-1.html', title: 'Rendre Visible l\'Invisible', thumb: 'images/projet2.jpg'},
+    {file: 'la-trace-asbl.html', title: 'La trace ASBL', thumb: 'images/projet3.jpg'},
+    {file: 'domaine-de-wespin.html', title: 'Domaine de Wespin', thumb: 'images/projet4.jpg'},
+    {file: 'equilibre.html', title: 'Équilibre', thumb: 'images/projet5.jpg'},
+    {file: 'en-soi-vers-lautre.html', title: "En soi vers l'autre", thumb: 'images/projet6.jpg'},
+    {file: 'la-vie-au-bout-de-chez-soi.html', title: 'La vie au bout de chez soi', thumb: 'images/projet7.png'},
+    {file: 'souffle-de-couleurs.html', title: 'Souffle de couleurs', thumb: 'images/projet8-image1.jpg'},
+    {file: 'mirage-un-jour-de-fete.html', title: 'Mirage, un jour de fête', thumb: 'images/projet9.jpg'},
+    {file: 'leridiculenetuepas.html', title: 'Le ridicule ne tue pas...', thumb: 'images/Bubble 01.png'},
+    {file: 'libre.html', title: 'Libre', thumb: 'images/Libre-image4.png'},
+    {file: 'terrainvaguels2.html', title: 'Terrain vague (2)', thumb: 'images/terrainvague8.jpg'},
+    {file: 'kill me.html', title: 'Kill me', thumb: 'images/killme12.jpg'},
+    {file: 'huitquestionscap.html', title: 'Echos Communication', thumb: 'images/echos1.jpg'},
+    {file: 'fdss.html', title: 'Fédé. des Services Sociaux', thumb: 'images/fdss2.jpg'},
+    {file: 'adiattaprincesseeka.html', title: 'Adiatta et Princesse Eka', thumb: 'images/adeka14.jpg'},
+    {file: 'rvi2025.html', title: 'Rendre Visible l\'Invisible (2025)', thumb: 'images/rvi6.jpg'},
+    {file: 'atdquartmonde.html', title: 'ATD Quart Monde', thumb: 'images/atd8.jpg'},
+    {file: 'equipop.html', title: 'Alliance Féministe Francophone', thumb: 'images/equipopa.jpg'},
+    {file: 'nosoignons.html', title: 'Nos Oignons ASBL', thumb: 'images/nosoignons21.jpg'}
+];
+
 document.addEventListener('DOMContentLoaded', enableAvisSwipe);
 
 // Inject previous/next project navigation under image-grid on project pages
 function injectProjectNav() {
     const grid = document.querySelector('.image-grid');
     if (!grid) return;
-
-    const projects = [
-        {file: 'loco-asbl.html', title: 'Loco ASBL', thumb: 'images/loco14.png'},
-        {file: 'terrain-vague-1.html', title: 'Terrain Vague', thumb: 'images/projet1.jpg'},
-        {file: 'rendre-visible-linvisible-1.html', title: 'Rendre Visible l\'Invisible', thumb: 'images/projet2.jpg'},
-        {file: 'la-trace-asbl.html', title: 'La trace ASBL', thumb: 'images/projet3.jpg'},
-        {file: 'domaine-de-wespin.html', title: 'Domaine de Wespin', thumb: 'images/projet4.jpg'},
-        {file: 'equilibre.html', title: 'Équilibre', thumb: 'images/projet5.jpg'},
-        {file: 'en-soi-vers-lautre.html', title: "En soi vers l\'autre", thumb: 'images/projet6.jpg'},
-        {file: 'la-vie-au-bout-de-chez-soi.html', title: 'La vie au bout de chez soi', thumb: 'images/projet7.png'},
-        {file: 'souffle-de-couleurs.html', title: 'Souffle de couleurs', thumb: 'images/projet8-image1.jpg'},
-        {file: 'mirage-un-jour-de-fete.html', title: 'Mirage, un jour de fête', thumb: 'images/projet9.jpg'},
-        {file: 'leridiculenetuepas.html', title: 'Le ridicule ne tue pas...', thumb: 'images/Bubble 01.png'},
-        {file: 'libre.html', title: 'Libre', thumb: 'images/Libre-image4.png'},
-        {file: 'terrainvaguels2.html', title: 'Terrain vague (2)', thumb: 'images/terrainvague8.jpg'},
-        {file: 'kill me.html', title: 'Kill me', thumb: 'images/killme12.jpg'},
-        {file: 'huitquestionscap.html', title: 'Echos Communication', thumb: 'images/echos1.jpg'},
-        {file: 'fdss.html', title: 'Fédé. des Services Sociaux', thumb: 'images/fdss2.jpg'},
-        {file: 'adiattaprincesseeka.html', title: 'Adiatta et Princesse Eka', thumb: 'images/adeka14.jpg'},
-        {file: 'rvi2025.html', title: 'Rendre Visible l\'Invisible (2025)', thumb: 'images/rvi6.jpg'},
-        {file: 'atdquartmonde.html', title: 'ATD Quart Monde', thumb: 'images/atd8.jpg'},
-        {file: 'equipop.html', title: 'Alliance Féministe Francophone', thumb: 'images/equipopa.jpg'},
-        {file: 'nosoignons.html', title: 'Nos Oignons ASBL', thumb: 'images/nosoignons21.jpg'}
-    ];
+    // use shared PROJECTS constant
+    const projects = PROJECTS;
 
     const path = window.location.pathname.split('/').pop();
     const idx = projects.findIndex(p => p.file === path || (p.file === 'kill me.html' && path === 'kill%20me.html'));
@@ -261,6 +264,58 @@ function injectProjectNav() {
 }
 
 document.addEventListener('DOMContentLoaded', injectProjectNav);
+
+// Enable swipe navigation between projects on touch devices
+function enableProjectSwipe() {
+    // Only on project pages
+    if (!document.querySelector('.image-grid') && !document.querySelector('.project-page')) return;
+    if (window.innerWidth > 768) return; // only for mobile
+
+    const path = window.location.pathname.split('/').pop();
+    const idx = PROJECTS.findIndex(p => p.file === path || (p.file === 'kill me.html' && path === 'kill%20me.html'));
+    if (idx === -1) return;
+
+    let touchStartX = 0;
+    const threshold = 40;
+
+    document.addEventListener('touchstart', function(e) {
+        touchStartX = e.touches && e.touches[0] ? e.touches[0].clientX : 0;
+    }, { passive: true });
+
+    document.addEventListener('touchend', function(e) {
+        const touchEndX = e.changedTouches && e.changedTouches[0] ? e.changedTouches[0].clientX : 0;
+        const delta = touchEndX - touchStartX;
+        if (Math.abs(delta) < threshold) return;
+        const currentIdx = PROJECTS.findIndex(p => p.file === path || (p.file === 'kill me.html' && path === 'kill%20me.html'));
+        if (currentIdx === -1) return;
+        if (delta < 0) {
+            const next = PROJECTS[(currentIdx + 1) % PROJECTS.length];
+            window.location.href = next.file;
+        } else {
+            const prev = PROJECTS[(currentIdx - 1 + PROJECTS.length) % PROJECTS.length];
+            window.location.href = prev.file;
+        }
+    }, { passive: true });
+}
+
+// Inject a small hint for mobile users indicating swipe is available
+function injectProjectSwipeHint() {
+    if (window.innerWidth > 768) return;
+    if (!document.querySelector('.image-grid') && !document.querySelector('.project-page')) return;
+    if (document.querySelector('.project-swipe-hint')) return;
+
+    const hint = document.createElement('div');
+    hint.className = 'project-swipe-hint';
+    hint.innerText = 'Balayez ← → pour changer de projet';
+    document.body.appendChild(hint);
+    // auto-hide after 3.5s
+    setTimeout(() => { hint.style.opacity = '0'; hint.style.transition = 'opacity 0.6s ease'; }, 3500);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    enableProjectSwipe();
+    injectProjectSwipeHint();
+});
 
 // Mark 'Projets' menu item active on project pages (wait if menu is loaded asynchronously)
 function markProjetsMenuActive(retries = 10) {
