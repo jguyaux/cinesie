@@ -809,11 +809,11 @@ h1, h2, h3, h4, h5, h6 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* Ensure iframe always covers the container */
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
+    /* Ensure iframe always covers the container: pick the larger dimension based on viewport */
+    width: max(100vw, calc(100vh * 16 / 9));
+    height: max(100vh, calc(100vw * 9 / 16));
+    min-width: 100vw;
+    min-height: 100vh;
     border: 0;
     pointer-events: none;
 }
