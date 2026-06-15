@@ -796,33 +796,35 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Force hero video to behave like background-cover and avoid black side bars */
 .home-hero .video-background {
-    position: absolute;
-    inset: 0;
+    position: relative;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    z-index: -1;
     overflow: hidden;
 }
 
-.home-hero .video-background iframe,
-.home-hero #youtube-player iframe {
+.video-background iframe {
     position: absolute;
     top: 50%;
     left: 50%;
+    /* Use viewport-height based sizing to ensure the 16:9 iframe covers very wide viewports */
+    width: 177.78vh; /* 16:9 ratio relative to viewport height */
+    height: 100vh;
     transform: translate(-50%, -50%);
-    /* Ensure iframe always covers the container: pick the larger dimension based on viewport */
-    width: max(100vw, calc(100vh * 16 / 9));
-    height: max(100vh, calc(100vw * 9 / 16));
-    min-width: 100vw;
-    min-height: 100vh;
+    transform-origin: center center;
     border: 0;
     pointer-events: none;
 }
 
 @media (max-width: 768px) {
-    .home-hero .video-background iframe,
-    .home-hero #youtube-player iframe {
-        /* Slight scale on small screens to avoid letterboxing */
-        transform: translate(-50%, -50%) scale(1.02);
+    .video-background iframe {
+        width: 140vw;
+        height: 140vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -55%) scale(1.0);
     }
 }
 
