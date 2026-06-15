@@ -373,6 +373,93 @@ document.addEventListener('DOMContentLoaded', function() {
     injectBackToPortfolio();
 });
 
+// Ensure the YouTube iframe fills the hero container on all screen sizes
+function fitHeroVideo() {
+    const hero = document.querySelector('.home-hero');
+    if (!hero) return;
+    // find iframe inside youtube player container or directly
+    const playerDiv = document.getElementById('youtube-player');
+    const iframe = (playerDiv && playerDiv.querySelector('iframe')) || hero.querySelector('iframe');
+    if (!iframe) return;
+
+
+    const rect = hero.getBoundingClientRect();
+    const W = Math.max(Math.round(rect.width), 1);
+    const H = Math.max(Math.round(rect.height), 1);
+
+    // assume video source aspect ratio (w/h). Change if your source is different.
+    const videoAR = 16 / 9;
+
+    // Compute final size so iframe aspect ratio == videoAR and both dimensions >= target
+    // Use a dynamic coverFactor that increases when the viewport is narrow to avoid black bars
+    const viewportRatio = W / H;
+    // detect small viewport (phones/tablets)
+    const isSmallViewport = W <= 900;
+    // Use stronger base cover on small viewports to avoid thin black bands
+    const baseCover = isSmallViewport ? 1.18 : 1.06;
+    // If viewport is much taller than video AR (narrow width), increase coverFactor
+    const extra = Math.max(0, (videoAR / Math.max(viewportRatio, 0.06) - 1)) * (isSmallViewport ? 0.22 : 0.22);
+    let coverFactor = baseCover + Math.min(extra, 1.2);
+
+    // On very narrow viewports apply an aggressive multiplier (also allow on small viewports)
+    const narrowThreshold = 0.9; // W/H threshold to consider narrow
+    const aggressiveMultiplier = viewportRatio < narrowThreshold ? (isSmallViewport ? 1.5 : 1.35) : 1;
+
+    // Ensure both dimensions independently cover the hero; multiply by aggressive multiplier
+    let finalWidth = Math.ceil(Math.max(W, H * videoAR) * coverFactor * aggressiveMultiplier);
+    let finalHeight = Math.ceil(Math.max(H, W / videoAR) * coverFactor * aggressiveMultiplier);
+
+    // Safety: make sure finalHeight at least slightly larger than hero to avoid rounding gaps
+    finalHeight = Math.max(finalHeight, Math.ceil(H * 1.08));
+
+    // apply styles inline to override CSS rules and ensure precise covering
+    iframe.style.position = 'absolute';
+    iframe.style.left = '50%';
+    iframe.style.top = '50%';
+    iframe.style.width = finalWidth + 'px';
+    iframe.style.height = finalHeight + 'px';
+    iframe.style.minWidth = '0';
+    iframe.style.minHeight = '0';
+    iframe.style.pointerEvents = 'none';
+    // keep transform translate to center; nudge vertically for better framing on narrow screens
+    const verticalNudge = viewportRatio < narrowThreshold ? '-46%' : '-50%';
+    iframe.style.transform = `translate(-50%, ${verticalNudge})`;
+}
+
+// debounce helper
+function debounce(fn, wait) {
+    let t;
+    return function(...args) {
+        clearTimeout(t);
+        t = setTimeout(() => fn.apply(this, args), wait);
+    };
+}
+
+// Try to fit video repeatedly until the iframe appears (YT API injects it asynchronously)
+(function initFitHeroVideo() {
+    const tryFit = () => {
+        fitHeroVideo();
+    };
+
+    // run on resize and orientation change
+    const onResize = debounce(() => fitHeroVideo(), 80);
+    window.addEventListener('resize', onResize);
+    window.addEventListener('orientationchange', onResize);
+
+    // attempt to fit periodically until we detect the iframe
+    const intervalId = setInterval(() => {
+        const playerDiv = document.getElementById('youtube-player');
+        const iframe = (playerDiv && playerDiv.querySelector('iframe')) || document.querySelector('.home-hero iframe');
+        if (iframe) {
+            fitHeroVideo();
+            clearInterval(intervalId);
+        }
+    }, 250);
+
+    // also run once after DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', tryFit);
+})();
+
 function toggleMenu() {
     const menu = document.querySelector('.menu');
     const toggle = document.querySelector('.menu-toggle');

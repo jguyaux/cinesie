@@ -459,19 +459,24 @@ nav a:hover {
 /* On narrow screens prefer full width and let height auto-scale */
 @media (max-width: 900px) {
     .home-hero {
-        --hero-h: 55vh;
+        /* Further reduce hero height on phones/tablets to avoid black bars */
+        --hero-h: 42vh;
         height: var(--hero-h);
-        min-height: 320px;
+        min-height: 240px;
     }
 
     .home-hero .video-background #youtube-player,
     .home-hero .video-background iframe {
-        /* On small screens let the iframe fill width and scale height */
-        width: 100vw;
-        height: auto;
+        /* On small screens: moderate zoom so the video fills the hero but is less cropped */
+        --video-scale: 1.18;
+        --video-translate-y: -44%;
+        width: auto;
+        /* Make the iframe taller than the hero but less aggressive than before */
+        height: calc(var(--hero-h) * 1.25);
+        min-width: 120vw;
         left: 50%;
-        transform: translateX(-50%);
-        top: 0;
+        top: 50%;
+        transform: translate(-50%, var(--video-translate-y)) scale(var(--video-scale));
     }
 }
 
