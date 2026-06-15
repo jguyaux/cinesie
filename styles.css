@@ -1820,11 +1820,13 @@ footer {
     position: absolute;
     top: 50%;
     left: 50%;
-    /* Use viewport-height based sizing to ensure the 16:9 iframe covers very wide viewports */
-    width: 177.78vh; /* 16:9 ratio relative to viewport height */
-    height: 100vh;
     transform: translate(-50%, -50%);
     transform-origin: center center;
+    /* Ensure iframe covers the hero area on all viewports */
+    width: max(100vw, calc(100vh * 16 / 9));
+    height: max(100vh, calc(100vw * 9 / 16));
+    min-width: 100vw;
+    min-height: 100vh;
     border: 0;
     pointer-events: none;
 }
