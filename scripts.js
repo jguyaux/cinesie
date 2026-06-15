@@ -434,7 +434,19 @@ document.addEventListener('DOMContentLoaded', function() {
             dot.classList.toggle('active', i === current);
         });
 
-        // show only the current card (one at a time)
+        const useScrollMode = ('ontouchstart' in window || navigator.maxTouchPoints > 0) && window.innerWidth <= 768;
+
+        if (useScrollMode) {
+            // ensure all cards are visible so native scroll follows the thumb
+            cards.forEach(card => {
+                card.style.display = 'flex';
+                card.removeAttribute('aria-hidden');
+            });
+            // don't force scroll here; snapping is handled by scroll-end handler
+            return;
+        }
+
+        // Desktop / non-touch: show only the current card (one at a time)
         cards.forEach((card, i) => {
             if (i === current) {
                 card.style.display = 'flex';
@@ -454,24 +466,65 @@ document.addEventListener('DOMContentLoaded', function() {
     // Enable touch / pointer swipe: use goTo so behavior is consistent
     (function enableAvisSwipeHandlers() {
         if (!carouselEl) return;
+        // Decide whether to use scroll-follow mode (mobile touch) or single-card mode
+        const useScrollMode = ('ontouchstart' in window || navigator.maxTouchPoints > 0) && window.innerWidth <= 768;
 
-        // touch
-        let touchStartX = 0;
-        const touchThreshold = 30;
-        carouselEl.addEventListener('touchstart', function(e) {
-            touchStartX = e.touches && e.touches[0] ? e.touches[0].clientX : 0;
-        }, { passive: true });
-        carouselEl.addEventListener('touchend', function(e) {
-            const touchEndX = e.changedTouches && e.changedTouches[0] ? e.changedTouches[0].clientX : 0;
-            const delta = touchEndX - touchStartX;
-            if (Math.abs(delta) < touchThreshold) return;
-            if (delta < 0) goTo(current + 1); else goTo(current - 1);
-        }, { passive: true });
+        if (useScrollMode) {
+            // In scroll mode we let native scrolling follow the thumb. We only snap on scroll end.
+            let scrollTimeout = null;
+            const touchThreshold = 80;
 
-        // pointer (mouse / pen)
+            function snapToNearest() {
+                const children = Array.from(carouselEl.querySelectorAll('.avis-card'));
+                if (!children.length) return;
+                const elRect = carouselEl.getBoundingClientRect();
+                const center = elRect.left + elRect.width / 2;
+                let nearestIndex = 0;
+                let best = Infinity;
+                children.forEach((child, i) => {
+                    const rect = child.getBoundingClientRect();
+                    const childCenter = rect.left + rect.width / 2;
+                    const dist = Math.abs(childCenter - center);
+                    if (dist < best) { best = dist; nearestIndex = i; }
+                });
+                goTo(nearestIndex);
+                // after goTo, ensure all cards remain visible in scroll mode
+                children.forEach(c => c.style.display = 'flex');
+            }
+
+            carouselEl.addEventListener('scroll', function() {
+                // during scroll we update active dot to nearest
+                if (scrollTimeout) clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    snapToNearest();
+                }, 120);
+            }, { passive: true });
+
+            // touchend: if small delta, do nothing; otherwise snap
+            let touchStartX = 0;
+            carouselEl.addEventListener('touchstart', function(e) {
+                touchStartX = e.touches && e.touches[0] ? e.touches[0].clientX : 0;
+            }, { passive: true });
+            carouselEl.addEventListener('touchend', function(e) {
+                const touchEndX = e.changedTouches && e.changedTouches[0] ? e.changedTouches[0].clientX : 0;
+                const delta = touchEndX - touchStartX;
+                if (Math.abs(delta) < touchThreshold) {
+                    // small tap/scroll — snap to nearest based on current scroll
+                    snapToNearest();
+                    return;
+                }
+                if (delta < 0) goTo(current + 1); else goTo(current - 1);
+            }, { passive: true });
+
+            // ensure initial display shows all cards
+            cards.forEach(card => { card.style.display = 'flex'; card.removeAttribute('aria-hidden'); });
+            return;
+        }
+
+        // pointer (mouse / pen) for non-touch devices: use thresholded clicks/drags
         let startX = null;
         let isPointerDown = false;
-        const ptrThreshold = 40;
+        const ptrThreshold = 100; // increase pointer threshold for less sensitivity
 
         function onPointerDown(e) {
             isPointerDown = true;
