@@ -467,6 +467,47 @@ document.addEventListener('DOMContentLoaded', function() {
         }, { passive: true });
     })();
 
+    // ALSO: add pointer-based handlers for better reliability on hybrid devices
+    (function enableAvisPointerSwipe() {
+        const carouselEl = document.querySelector('.avis-carrousel');
+        if (!carouselEl) return;
+        let startX = null;
+        let isPointerDown = false;
+        const threshold = 40;
+
+        function onPointerDown(e) {
+            isPointerDown = true;
+            startX = e.clientX || (e.touches && e.touches[0] && e.touches[0].clientX) || 0;
+            try { if (e.pointerId) carouselEl.setPointerCapture(e.pointerId); } catch (err) {}
+        }
+
+        function onPointerUp(e) {
+            if (!isPointerDown) return;
+            isPointerDown = false;
+            const endX = e.clientX || (e.changedTouches && e.changedTouches[0] && e.changedTouches[0].clientX) || 0;
+            const delta = endX - startX;
+            if (Math.abs(delta) < threshold) return;
+            if (delta < 0) {
+                goTo(current + 1);
+            } else {
+                goTo(current - 1);
+            }
+        }
+
+        carouselEl.addEventListener('pointerdown', onPointerDown, { passive: true });
+        carouselEl.addEventListener('pointerup', onPointerUp, { passive: true });
+        carouselEl.addEventListener('pointercancel', () => { isPointerDown = false; startX = null; });
+
+        // Touch fallback for some browsers
+        carouselEl.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
+        carouselEl.addEventListener('touchend', function(e) {
+            const endX = e.changedTouches[0].clientX;
+            const delta = endX - startX;
+            if (Math.abs(delta) < threshold) return;
+            if (delta < 0) goTo(current + 1); else goTo(current - 1);
+        }, { passive: true });
+    })();
+
     prevBtn.addEventListener('click', () => goTo(current - 1));
     nextBtn.addEventListener('click', () => goTo(current + 1));
 
