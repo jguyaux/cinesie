@@ -269,7 +269,8 @@ document.addEventListener('DOMContentLoaded', injectProjectNav);
 function enableProjectSwipe() {
     // Only on project pages
     if (!document.querySelector('.image-grid') && !document.querySelector('.project-page')) return;
-    if (window.innerWidth > 768) return; // only for mobile
+    // Only enable on touch-capable devices
+    if (!('ontouchstart' in window)) return;
 
     const path = window.location.pathname.split('/').pop();
     const idx = PROJECTS.findIndex(p => p.file === path || (p.file === 'kill me.html' && path === 'kill%20me.html'));
@@ -278,11 +279,15 @@ function enableProjectSwipe() {
     let touchStartX = 0;
     const threshold = 40;
 
-    document.addEventListener('touchstart', function(e) {
+    // Attach listeners on the project container so swipes inside content are detected
+    const container = document.querySelector('.project-page') || document.querySelector('.image-grid');
+    if (!container) return;
+
+    container.addEventListener('touchstart', function(e) {
         touchStartX = e.touches && e.touches[0] ? e.touches[0].clientX : 0;
     }, { passive: true });
 
-    document.addEventListener('touchend', function(e) {
+    container.addEventListener('touchend', function(e) {
         const touchEndX = e.changedTouches && e.changedTouches[0] ? e.changedTouches[0].clientX : 0;
         const delta = touchEndX - touchStartX;
         if (Math.abs(delta) < threshold) return;
@@ -433,15 +438,15 @@ document.addEventListener('DOMContentLoaded', function() {
         updateDisplay();
     }
 
-    // Enable touch swipe on mobile to navigate avis
+    // Enable touch swipe on touch-capable devices to navigate avis
     (function enableAvisTouchSwipe() {
         const carouselEl = document.querySelector('.avis-carrousel');
         if (!carouselEl) return;
-        // Only enable on narrow screens
-        if (window.innerWidth > 768) return;
+        // Only enable on touch-capable devices
+        if (!('ontouchstart' in window)) return;
 
         let touchStartX = 0;
-        const threshold = 40; // minimal px to consider a swipe
+        const threshold = 30; // px to consider a swipe
 
         carouselEl.addEventListener('touchstart', function(e) {
             touchStartX = e.touches && e.touches[0] ? e.touches[0].clientX : 0;
@@ -456,7 +461,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 goTo(current - 1);
             }
-        });
+        }, { passive: true });
     })();
 
     prevBtn.addEventListener('click', () => goTo(current - 1));
