@@ -410,12 +410,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ===== CARROUSEL AVIS =====
 document.addEventListener('DOMContentLoaded', function() {
-    const cards = document.querySelectorAll('.avis-card');
+    const carouselEl = document.querySelector('.avis-carrousel');
+    const cards = carouselEl ? carouselEl.querySelectorAll('.avis-card') : document.querySelectorAll('.avis-card');
     const prevBtn = document.querySelector('.avis-prev');
     const nextBtn = document.querySelector('.avis-next');
     const dotsContainer = document.querySelector('.avis-dots');
 
-    if (!cards.length || !prevBtn || !nextBtn || !dotsContainer) return;
+    if (!carouselEl || !cards.length || !prevBtn || !nextBtn || !dotsContainer) return;
 
     let current = 0;
 
@@ -428,11 +429,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function updateDisplay() {
-        cards.forEach((card, i) => {
-            card.style.display = i === current ? 'flex' : 'none';
-        });
+        // update active dot
         document.querySelectorAll('.avis-dot').forEach((dot, i) => {
             dot.classList.toggle('active', i === current);
+        });
+
+        // show only the current card (one at a time)
+        cards.forEach((card, i) => {
+            if (i === current) {
+                card.style.display = 'flex';
+                card.setAttribute('aria-hidden', 'false');
+            } else {
+                card.style.display = 'none';
+                card.setAttribute('aria-hidden', 'true');
+            }
         });
     }
 
@@ -441,39 +451,27 @@ document.addEventListener('DOMContentLoaded', function() {
         updateDisplay();
     }
 
-    // Enable touch swipe on touch-capable devices to navigate avis
-    (function enableAvisTouchSwipe() {
-        const carouselEl = document.querySelector('.avis-carrousel');
+    // Enable touch / pointer swipe: use goTo so behavior is consistent
+    (function enableAvisSwipeHandlers() {
         if (!carouselEl) return;
-        // Only enable on touch-capable devices
-        if (!('ontouchstart' in window)) return;
 
+        // touch
         let touchStartX = 0;
-        const threshold = 30; // px to consider a swipe
-
+        const touchThreshold = 30;
         carouselEl.addEventListener('touchstart', function(e) {
             touchStartX = e.touches && e.touches[0] ? e.touches[0].clientX : 0;
         }, { passive: true });
-
         carouselEl.addEventListener('touchend', function(e) {
             const touchEndX = e.changedTouches && e.changedTouches[0] ? e.changedTouches[0].clientX : 0;
             const delta = touchEndX - touchStartX;
-            if (Math.abs(delta) < threshold) return;
-            if (delta < 0) {
-                goTo(current + 1);
-            } else {
-                goTo(current - 1);
-            }
+            if (Math.abs(delta) < touchThreshold) return;
+            if (delta < 0) goTo(current + 1); else goTo(current - 1);
         }, { passive: true });
-    })();
 
-    // ALSO: add pointer-based handlers for better reliability on hybrid devices
-    (function enableAvisPointerSwipe() {
-        const carouselEl = document.querySelector('.avis-carrousel');
-        if (!carouselEl) return;
+        // pointer (mouse / pen)
         let startX = null;
         let isPointerDown = false;
-        const threshold = 40;
+        const ptrThreshold = 40;
 
         function onPointerDown(e) {
             isPointerDown = true;
@@ -486,30 +484,21 @@ document.addEventListener('DOMContentLoaded', function() {
             isPointerDown = false;
             const endX = e.clientX || (e.changedTouches && e.changedTouches[0] && e.changedTouches[0].clientX) || 0;
             const delta = endX - startX;
-            if (Math.abs(delta) < threshold) return;
-            if (delta < 0) {
-                goTo(current + 1);
-            } else {
-                goTo(current - 1);
-            }
+            if (Math.abs(delta) < ptrThreshold) return;
+            if (delta < 0) goTo(current + 1); else goTo(current - 1);
         }
 
         carouselEl.addEventListener('pointerdown', onPointerDown, { passive: true });
         carouselEl.addEventListener('pointerup', onPointerUp, { passive: true });
         carouselEl.addEventListener('pointercancel', () => { isPointerDown = false; startX = null; });
-
-        // Touch fallback for some browsers
-        carouselEl.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
-        carouselEl.addEventListener('touchend', function(e) {
-            const endX = e.changedTouches[0].clientX;
-            const delta = endX - startX;
-            if (Math.abs(delta) < threshold) return;
-            if (delta < 0) goTo(current + 1); else goTo(current - 1);
-        }, { passive: true });
     })();
 
     prevBtn.addEventListener('click', () => goTo(current - 1));
     nextBtn.addEventListener('click', () => goTo(current + 1));
 
+    // keep center on resize
+    window.addEventListener('resize', () => setTimeout(updateDisplay, 120));
+
+    // initialize
     updateDisplay();
 });

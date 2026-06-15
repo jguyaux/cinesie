@@ -2426,7 +2426,7 @@ footer {
     display: flex;
     gap: 18px;
     width: 100%;
-    overflow: hidden; /* ensure only visible slide is shown */
+    overflow: hidden; /* default for small screens; overridden on desktop */
     align-items: stretch;
     justify-content: center;
 }
@@ -2441,7 +2441,7 @@ footer {
     gap: 18px;
     box-sizing: border-box;
     text-align: left;
-    margin: 0 auto; /* center single card */
+    margin: 0; /* remove auto centering to allow adjacent peeks */
     border-radius: 8px;
 }
 
@@ -2519,12 +2519,12 @@ footer {
 }
 
 .avis-prev:hover {
-    transform: translateX(-5px);
+    transform: translateY(-50%) translateX(-5px);
     opacity: 1;
 }
 
 .avis-next:hover {
-    transform: translateX(5px);
+    transform: translateY(-50%) translateX(5px);
     opacity: 1;
 }
 
@@ -2562,6 +2562,47 @@ footer {
     .avis-carrousel-wrapper {
         gap: 10px;
     }
+
+    /* Mobile & small tablets: add a visible frame around each avis card */
+    .avis-card {
+        border: 1px solid rgba(0,0,0,0.06) !important;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.06) !important;
+        background: #fff !important;
+        border-radius: 8px !important;
+    }
+}
+
+/* Desktop: show partial next/previous cards as a visual peek */
+@media (min-width: 1025px) {
+    /* Desktop: show one full card at a time */
+    .avis-carrousel {
+        overflow: hidden; /* hide neighbors */
+        justify-content: center;
+    }
+    .avis-card {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 900px;
+        margin: 0; /* ensure no horizontal margin */
+        box-sizing: border-box;
+    }
+
+    /* Position navigation buttons over the carousel so they don't occupy layout space */
+    .avis-carrousel-wrapper {
+        position: relative;
+        padding: 0; /* no extra padding so card fills the wrapper */
+    }
+    .avis-prev, .avis-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        background: transparent; /* don't cover the card visually */
+        padding: 12px; /* make a comfortable hit area */
+    }
+    /* place arrows slightly outside so they don't overlap the card */
+    .avis-prev { left: -48px; }
+    .avis-next { right: -48px; }
 }
 
 /* Ensure full display of avis cards on small screens: horizontal swipe and no clipped content */
@@ -2583,6 +2624,12 @@ footer {
         background: #fff !important;
         border-radius: 8px !important;
         margin: 0 6px;
+    }
+
+    /* Mobile: add a visible frame around each avis card */
+    .avis-card {
+        border: 1px solid rgba(0,0,0,0.06) !important;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.06) !important;
     }
 
     .avis-text {
