@@ -527,7 +527,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateDisplay() {
         // update active dot
-        document.querySelectorAll('.avis-dot').forEach((dot, i) => {
+        dotsContainer.querySelectorAll('.avis-dot').forEach((dot, i) => {
             dot.classList.toggle('active', i === current);
         });
 

@@ -680,6 +680,8 @@ nav a:hover {
     .project-card .project-info {
         font-size: 0.85em;
         max-width: 90%;
+        white-space: nowrap;
+        top: 61%;
     }
 }
 
@@ -695,7 +697,8 @@ nav a:hover {
     .project-card .project-info {
         font-size: 0.8em;
         max-width: 90%;
-        top: 60%;
+        white-space: nowrap;
+        top: 61%;
     }
 }
 
@@ -2777,6 +2780,10 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .avis-carrousel {
+        justify-content: flex-start;
+    }
+
     .avis-card {
         padding: 20px;
     }
@@ -2839,6 +2846,7 @@ footer {
         scroll-snap-type: x mandatory;
         gap: 12px;
         padding-bottom: 8px;
+        justify-content: flex-start;
     }
 
     .avis-card {
