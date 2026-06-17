@@ -14,14 +14,13 @@
     <meta name="description" content="Cinésie Production - Société de production audiovisuelle basée à Bruxelles, créatrice de contenus valorisant les initiatives écologiques et sociales">
     <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="menu-loader.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="menu-loader.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js" defer></script>
     <link rel="icon" type="image/svg+xml" href="images/favico.svg">
     <meta name="google-site-verification" content="T4iRZUlVsxJhO3E-glsmUzUN11FviYiPqVxgLXwq-Bg" />
     <!-- Lien pour les icônes Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5HLQ9BQ4K"></script>
@@ -33,6 +32,23 @@
   gtag('config', 'G-L5HLQ9BQ4K');
 </script>
 
+    <link rel="canonical" href="https://cinesie.com/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Cinésie Production",
+  "url": "https://cinesie.com",
+  "logo": "https://cinesie.com/images/logo.svg",
+  "email": "cinesieprod@gmail.com",
+  "description": "Société de production audiovisuelle basée à Bruxelles, dédiée à la création de contenus valorisant les initiatives écologiques et sociales.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bruxelles",
+    "addressCountry": "BE"
+  }
+}
+</script>
 </head>
 <body>
     <!-- HEADER -->
@@ -92,9 +108,7 @@ function onYouTubeIframeAPIReady() {
 }
 
 function onPlayerReady(event) {
-    // Récupérer la durée de la vidéo
     videoDuration = event.target.getDuration();
-    // Démarrer à 12 secondes
     event.target.seekTo(12);
     event.target.playVideo();
 }

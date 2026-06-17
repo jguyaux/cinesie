@@ -459,24 +459,21 @@ nav a:hover {
 /* On narrow screens prefer full width and let height auto-scale */
 @media (max-width: 900px) {
     .home-hero {
-        /* On mobile: let the hero grow with content instead of clipping it */
-        --hero-h: 60vh;
-        min-height: max(var(--hero-h), 500px);
+        /* On mobile: height driven purely by content + padding */
         height: auto;
+        min-height: 0;
+        padding: 80px 20px;
     }
 
     .home-hero .video-background #youtube-player,
     .home-hero .video-background iframe {
-        /* On small screens: moderate zoom so the video fills the hero but is less cropped */
-        --video-scale: 1.18;
-        --video-translate-y: -44%;
-        width: auto;
-        /* Make the iframe taller than the hero but less aggressive than before */
-        height: calc(var(--hero-h) * 1.25);
-        min-width: 120vw;
+        /* Mobile: fill height and let width follow 16:9, no extra zoom */
+        height: 100%;
+        width: calc(100% * (16 / 9));
+        min-width: 100%;
+        top: 0;
         left: 50%;
-        top: 50%;
-        transform: translate(-50%, var(--video-translate-y)) scale(var(--video-scale));
+        transform: translateX(-50%);
     }
 }
 
@@ -1078,14 +1075,15 @@ h1, h2, h3, h4, h5, h6 {
     border: 0;
 }
 
-/* Mobile: scale slightly to avoid black bars and force inline playback look */
+/* Mobile: cover the hero area in 16:9 without extra zoom */
 @media (max-width: 768px) {
     #youtube-player iframe {
-        width: 140vw;
-        height: 140vw;
-        top: 50%;
+        height: 100%;
+        width: calc(100% * (16 / 9));
+        min-width: 100%;
+        top: 0;
         left: 50%;
-        transform: translate(-50%, -55%) scale(1.0);
+        transform: translateX(-50%);
     }
 }
 
@@ -1881,6 +1879,7 @@ footer {
     overflow: hidden;
 }
 
+
 .video-background iframe {
     width: 100vw;
     height: 56.25vw; /* 16:9 ratio */
@@ -2352,20 +2351,25 @@ footer {
 
 @media (max-width: 768px) {
     .home-hero {
-        padding: 60px 20px;
+        height: auto;
+        min-height: unset;
+        padding: 20px 20px;
     }
     
     .hero-content h1 {
-        font-size: 2em;
+        font-size: 1.6em;
+        margin-bottom: 8px;
     }
-    
+
     .hero-subtitle {
-        font-size: 1.1em;
+        font-size: 0.95em;
+        margin-bottom: 15px;
     }
-    
+
     .hero-cta {
         flex-direction: column;
         align-items: center;
+        gap: 10px;
     }
     
     .section-header h2 {
