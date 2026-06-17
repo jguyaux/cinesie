@@ -459,10 +459,10 @@ nav a:hover {
 /* On narrow screens prefer full width and let height auto-scale */
 @media (max-width: 900px) {
     .home-hero {
-        /* Further reduce hero height on phones/tablets to avoid black bars */
-        --hero-h: 42vh;
-        height: var(--hero-h);
-        min-height: 240px;
+        /* On mobile: let the hero grow with content instead of clipping it */
+        --hero-h: 60vh;
+        min-height: max(var(--hero-h), 500px);
+        height: auto;
     }
 
     .home-hero .video-background #youtube-player,
@@ -2352,10 +2352,7 @@ footer {
 
 @media (max-width: 768px) {
     .home-hero {
-        min-height: 50vh;
-        padding: 40px 20px;
-        min-width: 100%;
-        min-height: 100%;
+        padding: 60px 20px;
     }
     
     .hero-content h1 {
