@@ -125,29 +125,73 @@ function onPlayerStateChange(event) {
 }
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Carousel ateliers mobile
+    var atelierGrid = document.querySelector('.ateliers-grid-home');
+    var atelierDots = document.querySelectorAll('.atelier-dots .avis-dot');
+    var atelierCards = document.querySelectorAll('.ateliers-grid-home .atelier-card-home');
+
+    if (atelierGrid && atelierDots.length) {
+        atelierCards.forEach(function (card, i) {
+            var io = new IntersectionObserver(function (entries) {
+                if (entries[0].isIntersecting) {
+                    atelierDots.forEach(function (d, j) { d.classList.toggle('active', j === i); });
+                }
+            }, { root: atelierGrid, threshold: 0.5 });
+            io.observe(card);
+        });
+
+        atelierDots.forEach(function (dot, i) {
+            dot.addEventListener('click', function () {
+                atelierCards[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            });
+        });
+    }
+
+    // Animations au scroll
+    var targets = document.querySelectorAll(
+        '.section-header, .about-video, .about-text, .atelier-card-home, .avis-card, .projet-carousel'
+    );
+
+    targets.forEach(function (el, i) {
+        el.classList.add('reveal');
+        // Décalage léger pour les cartes en groupe
+        if (el.classList.contains('atelier-card-home') || el.classList.contains('avis-card')) {
+            el.style.transitionDelay = (i % 4) * 0.1 + 's';
+        }
+    });
+
+    var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    targets.forEach(function (el) { observer.observe(el); });
+});
+</script>
+
     <!-- SECTION À PROPOS -->
-    <section id="apropos" class="home-section">
-        <div class="main-container">
-            <div class="section-header">
-                <h2>Cinésie Production</h2>
-                <p>L’image au service du mouvement pour une société plus solidaire et respectueuse du vivant</p>
-            </div>
-            
+    <section id="apropos" class="home-section mission-section">
+    <div class="main-container">
             <div class="about-grid-home">
                 <div class="about-video">
                     <div class="video-container">
-                        <!-- Remplacez par votre vidéo de présentation -->
-                        <iframe src="https://www.youtube.com/embed/VtZrbpHvXEQ" 
-                                frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        <iframe src="https://www.youtube.com/embed/VtZrbpHvXEQ"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen>
                         </iframe>
                     </div>
                 </div>
                 <div class="about-text">
                     <h3>Notre mission</h3>
-                    <p>Cinésie est une société de production audiovisuelle basée à <strong> Bruxelles</strong>, dédiée à la création de contenus valorisant les <strong> initiatives écologiques et sociales.</strong> À travers des documentaires, portraits, clips, aftermovies, capsules... <strong>nous mettons en lumière celles et ceux qui œuvrent pour un monde plus juste et durable : les associations, ONG, entreprises de l'économie sociale et solidaire, artistes et acteurs·ices de changements.</strong></p>
-                    <p>Nous organisons également <a href="ateliers.html"> <strong>des ateliers (photo et vidéo) </strong> </a> pour apprendre à prendre en main les outils audiovisuels et s'initier à l'expression par l'image</p>
+                    <p>Cinésie est une société de production audiovisuelle basée à <strong> Bruxelles</strong>, dédiée à la création de contenus valorisant les <strong> initiatives écologiques et sociales.</strong> À travers des documentaires, portraits, clips, aftermovies, capsules... <strong>nous mettons en lumière celles et ceux qui œuvrent pour un monde plus juste et durable : les associations, ONG, entreprises de l’économie sociale et solidaire, artistes et acteurs·ices de changements.</strong></p>
+                    <p>Nous organisons également <a href="ateliers.html"> <strong>des ateliers (photo et vidéo) </strong> </a> pour apprendre à prendre en main les outils audiovisuels et s’initier à l’expression par l’image</p>
                     <a href="about.html" class="text-link">En savoir plus sur notre histoire →</a>
                 </div>
             </div>
@@ -157,11 +201,6 @@ function onPlayerStateChange(event) {
         <!-- SECTION PROJETS -->
     <section class="home-section">
         <div class="main-container">
-            <div class="section-header">
-                <h2>Nos Réalisations</h2>
-                <p>Découvrez une sélection de nos projets récents</p>
-            </div>
-            
             <div class="projects-grid-home">
                 <!-- Featured project and other project cards will be injected by JavaScript (home-config.js) -->
             </div>
@@ -175,35 +214,36 @@ function onPlayerStateChange(event) {
     <!-- SECTION ATELIERS -->
     <section class="home-section bg-light">
         <div class="main-container">
-            <div class="section-header">
-                <h2>Nos Ateliers</h2>
-                <p>Formations pratiques pour découvrir et maîtriser les outils de l'image et du son</p>
-            </div>
-            
             <div class="ateliers-grid-home">
-                <div class="atelier-card-home">
+                <a href="atelier.html?atelier=photo" class="atelier-card-home">
                     <div class="atelier-icon"><i class="fa-solid fa-camera"></i></div>
                     <h3>Atelier Photo</h3>
                     <p>Initiation à la photographie et street photo à Bruxelles</p>
                     <span class="atelier-duration">1 journée</span>
-                </div>
+                </a>
 
-                <div class="atelier-card-home">
+                <a href="atelier.html?atelier=video" class="atelier-card-home">
                     <div class="atelier-icon"><i class="fa-solid fa-video"></i></div>
                     <h3>Atelier Vidéo</h3>
                     <p>Formation complète de 3 jours en production vidéo</p>
                     <span class="atelier-duration">3 jours</span>
-                </div>
+                </a>
 
-                <div class="atelier-card-home">
+                <a href="atelier.html?atelier=montage" class="atelier-card-home">
                     <div class="atelier-icon"><i class="fa-solid fa-film"></i></div>
                     <h3>Atelier Montage</h3>
                     <p>Découverte des bases du montage vidéo professionnel</p>
                     <span class="atelier-duration">2 jours</span>
-                </div>
+                </a>
                 
             </div>
             
+            <div class="atelier-dots">
+                <button class="avis-dot active"></button>
+                <button class="avis-dot"></button>
+                <button class="avis-dot"></button>
+            </div>
+
             <div class="section-cta">
                 <a href="ateliers.html" class="cta-button">Découvrir tous nos ateliers</a>
             </div>
@@ -286,16 +326,12 @@ function onPlayerStateChange(event) {
                     <p>Vous avez un projet audiovisuel ? Une idée à concrétiser ? Discutons-en.</p>
                     <div class="contact-info">
                         <div class="contact-item">
-                            <span class="contact-icon">📧</span>
-                            <span>cinesieprod@gmail.com</span>
+                            <span class="contact-icon"><i class="fa-regular fa-envelope"></i></span>
+                            <a href="mailto:cinesieprod@gmail.com">cinesieprod@gmail.com</a>
                         </div>
                         <div class="contact-item">
-                            <span class="contact-icon">📍</span>
+                            <span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span>
                             <span>Bruxelles, Belgique</span>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">💬</span>
-                            <span>Disponible pour vos projets</span>
                         </div>
                     </div>
                 </div>
