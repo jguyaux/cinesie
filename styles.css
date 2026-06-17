@@ -1353,12 +1353,16 @@ footer {
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1em;
+    box-sizing: border-box;
+    background-color: #fff;
+    font-family: inherit;
 }
 
 .form-group textarea {

@@ -60,5 +60,32 @@ function initialiserMenuHamburger() {
     }
 }
 
-// Charger le menu quand la page est prête
-document.addEventListener('DOMContentLoaded', chargerMenu);
+function chargerFooter() {
+    const footer = document.querySelector('footer');
+    if (!footer) return;
+
+    const annee = new Date().getFullYear();
+    footer.innerHTML = `
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/logo.svg" alt="Cinésie Production" class="logo">
+            </div>
+            <div class="footer-info">
+                <p>Emma Landet-Lacoste, Jonas Guyaux</p>
+                <p><a href="mailto:cinesieprod@gmail.com" style="color:inherit;text-decoration:none;">cinesieprod@gmail.com</a></p>
+                <p>
+                    <a href="https://instagram.com/cinesie.prod" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">
+                        <i class="fab fa-instagram"></i> @cinesie.prod
+                    </a>
+                </p>
+                <p>&copy; ${annee} Cinésie Production — Tous droits réservés.</p>
+            </div>
+        </div>
+    `;
+}
+
+// Charger le menu et le footer quand la page est prête
+document.addEventListener('DOMContentLoaded', () => {
+    chargerMenu();
+    chargerFooter();
+});
