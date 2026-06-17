@@ -34,6 +34,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // Variable pour suivre l'index de l'image actuelle
     var currentIndex = 0;
 
+    function setProjectNavVisible(visible) {
+        document.querySelectorAll('.proj-nav').forEach(el => {
+            el.style.visibility = visible ? '' : 'hidden';
+        });
+    }
+
     // Ajouter un événement de clic pour chaque image
     images.forEach(function(image, index) {
         image.onclick = function() {
@@ -43,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 captionText.innerHTML = this.alt; // Mettre l'alt de l'image comme légende
             }
             currentIndex = index; // Enregistrer l'index de l'image cliquée
+            setProjectNavVisible(false);
         }
     });
 
@@ -50,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (closeBtn) {
         closeBtn.onclick = function() {
             modal.style.display = "none";
+            setProjectNavVisible(true);
         }
     }
 
@@ -57,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
+            setProjectNavVisible(true);
         }
     }
 
