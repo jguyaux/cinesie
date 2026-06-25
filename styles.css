@@ -583,7 +583,7 @@ nav a:hover {
 @media (max-width: 768px) {
     .video-background {
         position: relative; /* let it size naturally */
-        background-image: url('images/loco19.png');
+        background-image: url('images/loco19.jpg');
         background-size: cover;
         background-position: center;
         height: 45vh;

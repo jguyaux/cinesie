@@ -181,7 +181,7 @@ function ensureImageModalExists() {
 
 // Central projects list (used by nav injection and swipe)
 const PROJECTS = [
-    {file: 'loco-asbl.html', title: 'Loco ASBL', thumb: 'images/loco14.png'},
+    {file: 'loco-asbl.html', title: 'Loco ASBL', thumb: 'images/loco7.jpg'},
     {file: 'terrain-vague-1.html', title: 'Terrain Vague', thumb: 'images/projet1.jpg'},
     {file: 'rendre-visible-linvisible-1.html', title: 'Rendre Visible l\'Invisible', thumb: 'images/projet2.jpg'},
     {file: 'la-trace-asbl.html', title: 'La trace ASBL', thumb: 'images/projet3.jpg'},
