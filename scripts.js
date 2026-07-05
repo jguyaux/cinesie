@@ -201,7 +201,8 @@ const PROJECTS = [
     {file: 'rvi2025.html', title: 'Rendre Visible l\'Invisible (2025)', thumb: 'images/rvi6.jpg'},
     {file: 'atdquartmonde.html', title: 'ATD Quart Monde', thumb: 'images/atd8.jpg'},
     {file: 'equipop.html', title: 'Alliance Féministe Francophone', thumb: 'images/equipopa.jpg'},
-    {file: 'nosoignons.html', title: 'Nos Oignons ASBL', thumb: 'images/nosoignons21.jpg'}
+    {file: 'nosoignons.html', title: 'Nos Oignons ASBL', thumb: 'images/nosoignons21.jpg'},
+    {file: 'mentor-escale.html', title: 'Mentor-Escale', thumb: 'images/mentorescale5.jpg'}
 ];
 
 document.addEventListener('DOMContentLoaded', enableAvisSwipe);

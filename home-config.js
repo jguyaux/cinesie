@@ -11,6 +11,7 @@ function chargerProjetsParCategorie() {
         { titre: 'Loco ASBL', description: 'Vidéo promotionnelle', image: 'images/loco7.jpg', hoverImage: 'images/loco12.jpg', lien: 'loco-asbl.html', categorie: 'associations' },
         { titre: "Rendre Visible l'Invisible", description: 'Aftermovie 2025', image: 'images/rvi6.jpg', hoverImage: 'images/rvi7.jpg', lien: 'rvi2025.html', categorie: 'associations' },
         { titre: 'Nos Oignons ASBL', description: 'Vidéo de présentation', image: 'images/nosoignons21.jpg', hoverImage: 'images/nosoignons9.jpg', lien: 'nosoignons.html', categorie: 'associations' },
+        { titre: 'Mentor-Escale', description: 'Vidéo de présentation', image: 'images/mentorescale5.jpg', hoverImage: 'images/mentorescale2.jpg', lien: 'mentor-escale.html', categorie: 'associations' },
         { titre: 'ATD Quart Monde', description: 'Interview témoignage', image: 'images/atd8.jpg', hoverImage: 'images/atd2.jpg', lien: 'atdquartmonde.html', categorie: 'associations' },
         { titre: 'La trace ASBL', description: 'Vidéo de présentation', image: 'images/projet3.jpg', hoverImage: 'images/projet3-image4.webp', lien: 'la-trace-asbl.html', categorie: 'associations' },
         { titre: 'Alliance Féministe Francophone', description: 'Capsule réseaux sociaux', image: 'images/equipopa.jpg', hoverImage: 'images/equipopb.jpg', lien: 'equipop.html', categorie: 'associations' },
