@@ -943,7 +943,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Appliquer le ratio 16:9 uniquement aux vidéos */
-.video-container iframe {
+.video-container iframe,
+.video-container video {
     position: absolute;
     top: 0;
     left: 0;
