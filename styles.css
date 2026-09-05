@@ -2279,6 +2279,85 @@ footer {
     }
 }
 
+/* Carrousel de vidéos (page projet) */
+.video-carousel-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.video-carousel-track {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    width: 100%;
+    padding-bottom: 4px;
+}
+
+.video-carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.video-carousel-item {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    width: 45%;
+}
+
+.video-carousel-item .video-container {
+    width: 100%;
+}
+
+.video-carousel-item--vertical {
+    width: 200px;
+}
+
+.video-carousel-item--vertical .video-container {
+    padding-top: 177.78%; /* Ratio 9:16 pour les shorts */
+}
+
+.video-carousel-prev,
+.video-carousel-next {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    opacity: 0.4;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    line-height: 0;
+    flex-shrink: 0;
+    font-size: 1.3em;
+    color: #222;
+}
+
+.video-carousel-prev:hover {
+    opacity: 1;
+    transform: translateX(-3px);
+}
+
+.video-carousel-next:hover {
+    opacity: 1;
+    transform: translateX(3px);
+}
+
+@media (max-width: 768px) {
+    .video-carousel-item {
+        width: 78%;
+    }
+    .video-carousel-item--vertical {
+        width: 160px;
+    }
+    .video-carousel-prev,
+    .video-carousel-next {
+        display: none;
+    }
+}
+
 /* Section Contact */
 .contact-grid-home {
     display: grid;

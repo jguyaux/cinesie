@@ -61,9 +61,47 @@
                 <h1>Fédération des Services Sociaux</h1>
                 <h3>Capsules pour les réseaux sociaux</h3>
             </div>
-            <!-- Image de remplacement (pas de vidéo) -->
-            <div class="video-container image-placeholder">
-                <img src="images/fdss4.jpg" alt="Image de couverture — Fédération des Services Sociaux">
+            <!-- Carrousel de vidéos -->
+            <div class="video-carousel-wrapper">
+                <button class="video-carousel-prev" id="fdssCarouselPrev" aria-label="Vidéo précédente"><i class="fa-solid fa-chevron-left"></i></button>
+                <div class="video-carousel-track" id="fdssCarouselTrack">
+                    <div class="video-carousel-item">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/LcgX3C2z070" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="video-carousel-item">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/Hhgjew5pVRE?start=2" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="video-carousel-item">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/TlwWS2fojbE?start=24" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="video-carousel-item video-carousel-item--vertical">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/zoTc6MLVoBA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="video-carousel-item video-carousel-item--vertical">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/1FmK04Y2eKo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="video-carousel-item video-carousel-item--vertical">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/dXAE4jeHc2A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="video-carousel-item video-carousel-item--vertical">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/hkku8XKBN9k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <button class="video-carousel-next" id="fdssCarouselNext" aria-label="Vidéo suivante"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
             <div class="project-description">
                 <p> Cela fait près de deux ans que Jonas travaille à la Fédération des Services Sociaux comme chargé de communication. Il a eu, à cette occasion, l'opportunité de réaliser
@@ -103,6 +141,9 @@
             </div>
             <div class="image-item">
                 <img src="images/fdss5.jpg" alt="Tournage Fédération des Services Sociaux — Cinésie Production">
+            </div>
+            <div class="image-item">
+                <img src="images/fdss4.jpg" alt="Image de couverture — Fédération des Services Sociaux">
             </div>
         </section>
     </main>
@@ -154,6 +195,26 @@
 
     <div id="caption"></div>
 </div>
+
+<script>
+(function() {
+    const track = document.getElementById('fdssCarouselTrack');
+    const prevBtn = document.getElementById('fdssCarouselPrev');
+    const nextBtn = document.getElementById('fdssCarouselNext');
+    if (!track || !prevBtn || !nextBtn) return;
+
+    function scrollByItem(direction) {
+        const item = track.querySelector('.video-carousel-item');
+        if (!item) return;
+        const gap = parseFloat(getComputedStyle(track).gap) || 16;
+        const amount = item.getBoundingClientRect().width + gap;
+        track.scrollBy({ left: direction * amount, behavior: 'smooth' });
+    }
+
+    prevBtn.addEventListener('click', () => scrollByItem(-1));
+    nextBtn.addEventListener('click', () => scrollByItem(1));
+})();
+</script>
 
 </body>
 </html>
