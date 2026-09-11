@@ -8,6 +8,7 @@ function chargerProjetsParCategorie() {
 
     const projets = [
         // Associations & ONG
+        { titre: 'ONG Equipop', description: 'Capsules réseaux sociaux', image: 'images/EQUIPOP1.jpg', hoverImage: 'images/EQUIPOP2.jpg', lien: 'ong-equipop.html', categorie: 'associations' },
         { titre: 'Loco ASBL', description: 'Vidéo promotionnelle', image: 'images/loco7.jpg', hoverImage: 'images/loco12.jpg', lien: 'loco-asbl.html', categorie: 'associations' },
         { titre: "Rendre Visible l'Invisible", description: 'Aftermovie 2025', image: 'images/rvi6.jpg', hoverImage: 'images/rvi7.jpg', lien: 'rvi2025.html', categorie: 'associations' },
         { titre: 'Nos Oignons ASBL', description: 'Vidéo de présentation', image: 'images/nosoignons21.jpg', hoverImage: 'images/nosoignons9.jpg', lien: 'nosoignons.html', categorie: 'associations' },

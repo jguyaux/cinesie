@@ -505,7 +505,7 @@ nav a:hover {
 }
 
 .project-19 {
-    order: -2;
+    order: 7;
 }
 
 .project-22 {
@@ -518,6 +518,10 @@ nav a:hover {
 
 .project-21 {
     order: -5;
+}
+
+.project-23 {
+    order: -6;
 }
 
 .project-card .project-image {
