@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIRÉ ASBL / La machine à expulser</title>
+    <meta name="description" content="La machine à expulser : réalisation d'une série de capsules vidéo pour le CIRÉ ASBL. Cinésie Production.">
+    <meta property="og:title" content="CIRÉ ASBL | La machine à expulser | Cinésie Production">
+    <meta property="og:description" content="La machine à expulser : réalisation d'une série de capsules vidéo pour le CIRÉ ASBL. Cinésie Production.">
+    <meta property="og:image" content="https://cinesie.com/images/cire2.jpg">
+    <meta property="og:url" content="https://cinesie.com/cire-asbl.html">
+    <meta property="og:type" content="video.other">
+    <meta property="og:locale" content="fr_BE">
+    <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="menu-loader.js" defer></script>
+    <!-- Lien vers Google Fonts pour la police Dancing Script -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="images/favico.svg">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L5HLQ9BQ4K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-L5HLQ9BQ4K');
+</script>
+
+    <link rel="canonical" href="https://cinesie.com/cire-asbl.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "CIRÉ ASBL / La machine à expulser",
+  "description": "La machine à expulser : réalisation d'une série de capsules vidéo pour le CIRÉ ASBL.",
+  "image": "https://cinesie.com/images/cire2.jpg",
+  "dateCreated": "2026-10-20",
+  "creator": {
+    "@type": "Organization",
+    "name": "Cinésie Production",
+    "url": "https://cinesie.com"
+  }
+}
+</script>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <a href="index.html">
+            <img src="images/logo.svg" alt="Logo" class="logo">
+        </a>
+    </header>
+
+    <!-- Contenu du projet -->
+    <main class="project-page">
+        <!-- Section vidéo et description -->
+        <section class="project-details">
+            <div class="project-title">
+                <h1>CIRÉ ASBL</h1>
+                <h3>La machine à expulser</h3>
+            </div>
+
+            <!-- Capsules vidéo (YouTube Shorts, format vertical 9:16) -->
+            <div style="display:flex; flex-wrap:wrap; gap:24px; justify-content:center; align-items:flex-start; margin: 20px 0 30px;">
+                <div style="width:100%; max-width:320px; min-width:240px;">
+                    <div style="position:relative; width:100%; aspect-ratio:9 / 16;">
+                        <iframe src="https://www.youtube.com/embed/hWbmU6HVsFg" style="position:absolute; inset:0; width:100%; height:100%;" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!-- Ajouter les capsules suivantes ici en copiant le bloc ci-dessus et en remplaçant l'identifiant après /embed/ -->
+            </div>
+
+            <div class="project-description">
+                <p>La machine à expulser : réalisation d'une série de capsules vidéo pour le CIRÉ ASBL.</p>
+                <p>Réalisation: Jonas Guyaux et Emma Landet-Lacoste</p>
+            </div>
+        </section>
+
+        <!-- Grille d'arrêts sur image -->
+        <section class="image-grid">
+            <div class="image-item">
+                <img src="images/cire2.jpg" alt="La machine à expulser, CIRÉ ASBL — Cinésie Production">
+            </div>
+            <div class="image-item">
+                <img src="images/cire1.jpg" alt="La machine à expulser, CIRÉ ASBL — Cinésie Production">
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Emma Landet-Lacoste, Jonas Guyaux - cinesieprod@gmail.com</p>
+            <p>&copy; 2026 Cinésie Production - Tous droits réservés.</p>
+    </footer>
+
+        <!-- Script personnalisé -->
+        <script src="scripts.js"></script>
+
+        <!-- Schema.org LocalBusiness -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Cinésie Production",
+            "description": "Société de production audiovisuelle engagée à Bruxelles, spécialisée dans la création vidéo pour associations, ONG et entreprises de l'économie sociale.",
+            "url": "https://cinesie.com",
+            "email": "cinesieprod@gmail.com",
+            "telephone": "+32473592882",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Bruxelles",
+                "addressCountry": "BE"
+            },
+            "founders": [
+                { "@type": "Person", "name": "Emma Landet-Lacoste" },
+                { "@type": "Person", "name": "Jonas Guyaux" }
+            ],
+            "sameAs": []
+        }
+        </script>
+
+    <!-- Visionneuse Modale -->
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+
+    <!-- Flèche gauche -->
+    <button class="prev" id="prevBtn">&#10094;</button>
+
+    <!-- Image dans la modale -->
+    <img class="modal-content" id="modalImage">
+
+    <!-- Flèche droite -->
+    <button class="next" id="nextBtn">&#10095;</button>
+
+    <div id="caption"></div>
+</div>
+</body>
+</html>

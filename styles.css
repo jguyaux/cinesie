@@ -524,6 +524,10 @@ nav a:hover {
     order: -6;
 }
 
+.project-24 {
+    order: -7;
+}
+
 .project-card .project-image {
     position: relative;
     width: 100%;
